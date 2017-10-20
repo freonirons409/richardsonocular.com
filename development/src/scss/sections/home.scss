@@ -1,0 +1,81 @@
+.hero {
+	.slide {
+		position:relative;
+	}
+	div[data-content="content"] {
+		h1,h2,h3,h4,h5,h6 {
+
+		}
+		h1 {
+			color:$hero-font-size-h1;
+		}
+		h2 {
+			color:$hero-font-size-h2;	
+		}
+		h3 {
+			color:$hero-font-size-h3;	
+		}
+		h4 {
+			color:$hero-font-size-h4;	
+		}
+		h5 {
+			color:$hero-font-size-h5;	
+		}
+		h6 {
+			color:$hero-font-size-h6;	
+		}
+		div, p {
+
+		}
+		.btn {
+
+		}
+	}
+	.caption {
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		@media(max-width:$screen-md-min) {
+			right:50%;
+		}
+		.content {
+			padding:40px;
+			@include vertical-align(absolute);
+		}
+	}
+}
+
+//Four block sub ad features slider section
+//=================================================
+.subads__container {
+	.subads__slider {
+		.subads__slide {
+			.subads__image {
+				.subads__image__overlay {
+
+				}
+			}
+			.subads__content {
+				.inside {
+
+				}
+				div[data-content="content"] {
+
+				}
+			}
+		}
+	}
+	.swiper {
+		display:none;
+		@media(max-width:$screen-xs-max) {
+			display:block;
+			text-align:center;
+			padding:20px;
+			&:before {
+				content:"Swiper for More";
+			}
+		}
+	}
+}

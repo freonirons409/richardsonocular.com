@@ -1,0 +1,41 @@
+{{> partials/top}}
+<body class="subpage calculator">
+  {{> partials/compliance}}
+  <div class="master-container">
+
+    {{> partials/header}}
+
+    <div class="container">
+
+      {{> partials/nav}}
+
+      {{! Please Use this for a header Image for the sake of the shared content areas that have been set up }}
+      <div class="content" data-content-block="bannerImage" data-content="content" data-editable="editable">
+        {{#page.bannerImage}}
+            {{& content}}
+        {{/page.bannerImage}}
+      
+        <!-- @if NODE_ENV!='production' -->
+           <img src="http://placehold.it/1530x300" alt="">
+        <!-- @endif -->
+      </div>
+
+      <div id="main" tabindex="-1">
+          <banno:calculator data-calculator="{{page.url}}"></banno:calculator>
+          <!-- @if NODE_ENV!='production' --> 
+              {{>partials/calculator}}
+          <!-- @endif -->
+      </div>
+
+    </div>
+
+    {{> partials/footer}}
+
+  </div>
+
+  {{> partials/scripts}}
+  {{> partials/ga}}
+
+
+</body>
+</html>

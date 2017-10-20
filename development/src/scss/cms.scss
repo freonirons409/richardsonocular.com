@@ -1,0 +1,23 @@
+@mixin contentTag() {
+	padding:6px 8px;
+	display:block;
+	position: absolute;
+	left:0;
+	top:0;
+	background:#333;
+	color:$white;
+	font-size:12px;
+	font-weight:200;
+}
+.edit {
+	.overlay {
+		display:none;
+	}
+	div[data-content="content"] {
+		
+	}
+}
+// Add padding to editable areas
+div.mce-edit-focus {
+  padding: 5px;
+}

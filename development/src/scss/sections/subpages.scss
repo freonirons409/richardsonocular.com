@@ -1,0 +1,36 @@
+// Subpage
+// =========================================================================================================
+.page-title {
+  margin-bottom:20px;
+}
+
+
+// Search page
+// =========================================================================================================
+
+.search-container {
+  margin-top: 20px;
+  .search-item {
+    margin-bottom: 20px;
+
+    .search-link:hover{
+      text-decoration: none;
+      .search-title {
+        color: $gray;
+      }
+    }
+  }
+  .search-summary {
+    border-bottom: 1px solid $gray-lighter;
+    padding-bottom: 20px;
+  }
+}
+
+body.error-page {
+  .error-page-body {
+    min-height:480px;
+    @media (max-width:$screen-xs-max) {
+      min-height:300px;
+    }
+  }
+}

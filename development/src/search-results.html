@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> &rsaquo; YourFI</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-title" content="YourFI">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+<script type="text/javascript">
+
+        (function () {
+          "use strict";
+          //$.support.cors=true;
+
+          // once cached, the css file is stored on the client forever unless
+          // the URL below is changed. Any change will invalidate the cache
+          var css_href = '/assets/css/fonts.css?v='+Math.floor(Date.now() / 1000)+'';
+          // a simple event handler wrapper
+          function on(el, ev, callback) {
+            if (el.addEventListener) {
+              el.addEventListener(ev, callback, false);
+            } else if (el.attachEvent) {
+              el.attachEvent("on" + ev, callback);
+            }
+          }
+          
+          // if we have the fonts in localStorage or if we've cached them using the native batrowser cache
+          if ((window.localStorage && localStorage.font_css_cache) || document.cookie.indexOf('font_css_cache') > -1){
+            // just use the cached version
+            injectFontsStylesheet();
+          } else {
+           // otherwise, don't block the loading of the page; wait until it's done.
+            on(window, "load", injectFontsStylesheet);
+          }
+          
+          // quick way to determine whether a css file has been cached locally
+          function fileIsCached(href) {
+            return window.localStorage && localStorage.font_css_cache && (localStorage.font_css_cache_file === href);
+          }
+
+          // time to get the actual css file
+          function injectFontsStylesheet() {
+           // if this is an older browser
+            if (!window.localStorage || !window.XMLHttpRequest) {
+              var stylesheet = document.createElement('link');
+              stylesheet.href = css_href;
+              stylesheet.rel = 'stylesheet';
+              stylesheet.type = 'text/css';
+              document.getElementsByTagName('head')[0].appendChild(stylesheet);
+              // just use the native browser cache
+              // this requires a good expires header on the server
+              document.cookie = "font_css_cache";
+            
+            // if this isn't an old browser
+            } else {
+
+                // use the cached version if we already have it
+              if (fileIsCached(css_href)) {
+                
+                injectRawStyle(localStorage.font_css_cache);
+                // otherwise, load it with ajax
+              } else {
+                var request = createCORSRequest("GET", css_href);
+                if (request){
+                    request.onreadystatechange = function () {
+                      if (request.readyState === 4) {
+                        // once we have the content, quickly inject the css rules
+                        injectRawStyle(request.responseText);
+                        // and cache the text content for further use
+                        // notice that this overwrites anything that might have already been previously cached
+                        localStorage.font_css_cache = request.responseText;
+                        localStorage.font_css_cache_file = css_href;
+                      }
+                    };
+                    request.send();
+                }
+              }
+            }
+          }
+
+          function createCORSRequest(method, url){
+              var xhr = new XMLHttpRequest();
+              // Check if the XMLHttpRequest object has a "withCredentials" property.
+              // "withCredentials" only exists on XMLHTTPRequest2 objects.
+              if ("withCredentials" in xhr){
+                  xhr.open(method, url, true);
+              // Otherwise, check if XDomainRequest.
+              // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+              } else if (typeof XDomainRequest != "undefined"){
+                  xhr = new XDomainRequest();
+                  xhr.open(method, url);
+              } else {
+                  // Otherwise, CORS is not supported by the browser.
+                  xhr = null;
+              }
+              return xhr;
+          }
+
+
+          // this is the simple utitily that injects the cached or loaded css text
+          function injectRawStyle(text) {
+            var style = document.createElement('style');
+            // cater for IE8 which doesn't support style.innerHTML
+            style.setAttribute("type", "text/css");
+            if (style.styleSheet) {
+                style.styleSheet.cssText = text;
+            } else {
+                style.innerHTML = text;
+            }
+            document.getElementsByTagName('head')[0].appendChild(style);
+          }
+
+        }());
+    </script>
+    <!--[if IE 8]> <script src="/assets/js/polyfills.min.js"></script> <![endif]-->
+    <!--[if lt IE 9]> <script src="/assets/js/html5shiv.min.js"></script> <![endif]-->
+  </head>
+<body class="subpage">
+<a href="#main" class="hidden-compliance">Skip Navigation</a>
+<a class="hidden-compliance external" href="http://get.adobe.com/reader/">
+  Documents in Portable Document Format (PDF) require Adobe Acrobat Reader 5.0 or higher to view,download Adobe® Acrobat Reader.
+</a>
+  <div class="master-container">
+
+<header class="header">
+	<div class="container">
+		  <span itemscope itemtype="http://schema.org/BankOrCreditUnion">
+		  	<span itemprop="name" class="sr-only">YourFI</span>
+		  	<a href="/" class="logo pull-left" title="YourFI, Cedar Falls, IA" itemprop="url">
+			  <span class="logotype" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+			  	<img src="/assets/img/banno-logo.svg" alt="YourFI" itemprop="url">
+			  </span>
+			</a>
+		  </span>
+		  <div class="header-right pull-right">
+		    <!-- HTML for Members login component -->
+		    <banno:member-login landingPage="/member-page"></banno:member-login>
+		    <!-- End of Members Login -->
+
+		    <!-- HTML for Members login component -->
+			  <div class="banno-members-wrapper">
+			    <div class="banno-members-container">
+			      <div class="banno-members-login-container">
+			        <form action="/member-page" id="banno-members-login">
+			          <input type="email" name="email" class="email" placeholder="name@example.com" id="login-email">
+			          <input type="password" name="password" autocomplete="off" class="password" placeholder="Password" id="login-password">
+			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-login-btn">Login</button>
+			        </form>
+			        <a class="banno-members-link" id="reset-pass-control" href="#">Forgot password?</a>
+			      </div>
+			      <div class="banno-members-reset-container hide">
+			        <form method="post" id="banno-members-reset">
+			          <p class="banno-members-text">Enter your email and we'll send you a link to reset your password.</p>
+			          <input type="email" class="email" placeholder="name@example.com" id="forgot-email">
+			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-reset-btn">Send</button>
+			        </form>
+			        <a class="banno-members-link" id="login-control" href="#">Nevermind, I remember now.</a>
+			      </div>
+			    </div>
+			    <div class="alert alert-block alert-error hide" id="login-error">
+			      <h4 class="alert-heading">Unable to login!</h4>
+			      Double check your login credentials and try again.
+			    </div>
+			    <div class="alert alert-block alert-error hide" id="reset-error">
+			      <h4 class="alert-heading">Unable to reset password!</h4>
+			      Double check your email and try again.
+			    </div>
+			    <div class="alert alert-block alert-info hide" id="reset-confirm">
+			      <h4 class="alert-heading">Check your email.</h4>
+			      We're sending you an email with a link to reset your password.
+			    </div>
+			  </div>
+			  <!-- End of Members Login -->
+		  </div>
+	</div>
+</header>
+    <div class="container">
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <banno:menu menu-id="CHANGEME" ></banno:menu>
+            <ul class="banno-menu" role="menubar">
+              <li role="menuitem" class="dropdown menu-category">
+                    <span class="category-item dropdown-toggle" tabindex="0" role="button" aria-haspopup="true" data-toggle="dropdown">Banking</span>
+                    <ul role="menu" class="dropdown-menu">
+                      <li role="menuitem" class="dropdown menu-group">
+                        <span class="group-item dropdown-toggle" tabindex="0" aria-haspopup="true" data-toggle="dropdown">Individuals</span>
+                        <ul role="menu" class="dropdown-menu">
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/personal-checking">Checking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/personal-savings-and-money-market">Savings &amp; Money Market</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/cds-iras">CDs &amp; IRAs</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/mortgage-home-equity">Mortgages &amp; Home Equity</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/loans-and-lines-of-credit">Loans &amp; Lines of Credit</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/credit-cards">Credit Cards</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/online-banking">Online Banking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/mobile-banking">Mobile Banking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/banking-simplified">Banking Simplified</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li role="menuitem" class="dropdown menu-group">
+                        <span class="group-item dropdown-toggle" tabindex="0" aria-haspopup="true" data-toggle="dropdown">Businesses</span>
+                        <ul role="menu" class="dropdown-menu">
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-checking">Checking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-savings-money-market">Savings &amp; Money Market</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/cash-management">Cash Management</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-financing">Financing</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-solutions-suite">Solutions Suite</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/perks-at-work">Perks at Work</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/non-profit-banking">Non-Profit</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/government-banking">Government</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/meet-the-team">Meet the Team</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+              </li>
+              <li class="dropdown menu-category" role="menuitem">
+                <span class="category-item">Personal</span>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown menu-group" role="menuitem">
+                    <span class="group-item">Commercial Services</span>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/commercial-services-checking-compare-accounts">Checking</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/commercial-services-savings-compare-accounts">Savings</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/loans">Loans</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/cdsiras">CDs/IRAs</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/cash-managementonline-services">Cash Management/Online Services</a>
+                      </li>
+                      <li class="dropdown menu-group" role="menuitem">
+                        <span class="group-item">Convenience Services</span>
+                        <ul class="dropdown-menu" role="menu">
+                          <li class="dropdown menu-group" role="menuitem">
+                            <span class="group-item">Convenience Services</span>
+                            <ul class="dropdown-menu" role="menu">
+                              <li class="menu-internal" role="menuitem">
+                                <a href="/business/business-visa-card">Business Visa Card</a>
+                              </li>
+                              <li class="menu-internal" role="menuitem">
+                                <a href="/business/merchant-services">Merchant Services</a>
+                              </li>
+                              <li class="menu-internal" role="menuitem">
+                                <a href="/business/remote-deposit">Remote Deposit</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="menu-internal" role="menuitem">
+                            <a href="/business/business-visa-card">Business Visa Card</a>
+                          </li>
+                          <li class="menu-internal" role="menuitem">
+                            <a href="/business/merchant-services">Merchant Services</a>
+                          </li>
+                          <li class="menu-internal" role="menuitem">
+                            <a href="/business/remote-deposit">Remote Deposit</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown menu-internal" role="menuitem">
+                    <a class="dropdown-toggle" href="/personal/checking">Checking</a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/regulation-e/overdraft-consent-form">Overdraft Consent Form</a>
+                      </li>
+                      <li class="menu-external" role="menuitem">
+                        <a target="_blank" href="https://forms.banno.com/first-state.net/stop_payment/">Stop Payment</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">CDs</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">IRAs</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Mobile Banking</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Personal Loans</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Other Personal Services</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Meet Your Banking Team</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown menu-category" role="menuitem">
+                <span class="category-item">Business</span>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Checking</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Savings</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">CDs</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Public Funds</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Small Business Lending</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Business Loans</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Business Services</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Employee Benefits</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Meet Your Banking Team</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+    </div>
+  </div>
+</nav>
+      <div id="main" tabindex="-1">
+            <h1 class="page-title">Search Results</h1>
+
+            <h2>You searched for "<span class="search-query"></span>"</h2>
+
+            <h3>Please type in something to search.</h3>
+
+            <banno:sitesearch-input>
+                <form class="search-form" action="/search" method="GET">
+                  <ul class="list-inline break-mobile">
+                    <li><input name="q" placeholder="Search Again" name="Search Terms" type="search" class="form-control" required></li>
+                    <li><button type="submit" id="searchSubmitButton" class="btn btn-primary">Search</button></li>
+                  </ul>
+                </form>
+            </banno:sitesearch-input>
+
+            <section class="search-container">
+                <banno:sitesearch-result></banno:sitesearch-result>
+                      <div class="search-item">
+                        <a href="/online-banking" class="search-link">
+                          <h3 class="search-title">Online Banking</h3>
+                        </a>
+                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                      </div>
+
+                      <div class="search-item">
+                        <a href="/mobile-banking" class="search-link">
+                          <h3 class="search-title">Mobile Banking</h3>
+                        </a>
+                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                      </div>
+
+                      <div class="search-item">
+                        <a href="/rates" class="search-link">
+                          <h3 class="search-title">Rates</h3>
+                        </a>
+                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                      </div>
+
+                      <div class="search-item">
+                        <a href="/personal-checking" class="search-link">
+                          <h3 class="search-title">Checking</h3>
+                        </a>
+                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                      </div>
+
+                      <div class="search-item">
+                        <a href="/personal-savings" class="search-link">
+                          <h3 class="search-title">Savings</h3>
+                        </a>
+                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                      </div>
+            </section>
+      </div>
+    </div>
+
+<footer class="footer">
+  <div class="container">
+      <a href="#" id="scrollTop" class="visible-xs-block">
+        <img src="/assets/img/topScroll.png">
+      </a>
+      <div class="copyright">
+        <span class="copytext">
+          &copy;<script>
+            var d = new Date();
+            var year = d.getFullYear();
+            document.write(year);
+          </script> YourFI. 
+        </span>
+        <span class="fdic">Member FDIC.</span>
+        <span class="ehl">
+          Equal Housing Lender <img src="/assets/img/ehl.png" srcset="/assets/img/ehl.png 1x, /assets/img/ehl@2x.png 2x" alt="Equal Housing Lender" class="ehl">
+        </span> 
+      </div>
+  </div>
+</footer>
+  </div>
+
+<script src="/assets/js/jquery-1.10.1.min.js"></script>
+	<script defer src="/scripts/bootstrap/collapse.js"></script>
+	<script defer src="/scripts/bootstrap/dropdown.js"></script>
+	<script defer src="/scripts/bootstrap/modal.js"></script>
+	<script defer src="/scripts/bootstrap/affix.js"></script>
+	<script defer src="/scripts/bootstrap/tab.js"></script>
+	<script defer src="/scripts/bootstrap/transition.js"></script>
+	<script defer src="/scripts/plugins/bootbox.js"></script>
+	<script defer src="/scripts/plugins/jquery.placeholder.js"></script>
+	<script defer src="/scripts/plugins/plugins.js"></script>
+	<script defer src="/scripts/plugins/parsley.js"></script>
+	<script defer src="/scripts/plugins/slick.js"></script>
+	<script defer src="/scripts/plugins/dropdown.js"></script>
+	<script defer src="/scripts/lib/modernizr.custom.80639.js"></script>
+	<script defer src="/scripts/script.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXX-X', 'domain');
+  ga('create', 'UA-YYYY-Y', 'domain', {'name': 'newTracker'}); // 2nd tracker
+  ga('send', 'pageview');
+  ga('newTracker.send', 'pageview'); // send page view for 2nd tracker, make sure tracker name is same as above 
+
+</script>
+
+</body>
+</html>

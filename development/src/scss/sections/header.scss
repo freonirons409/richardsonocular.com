@@ -1,0 +1,18 @@
+// Header
+// =========================================================================================================
+
+header.header {
+  	@include clearfix();
+  	padding: 20px 0;
+  	border-radius:0;
+}
+.logo {
+  	display: block;
+  	padding: 10px 0;
+
+}
+.logotype {
+  	width: 160px;
+  	height: 40px;
+	display: block;
+}

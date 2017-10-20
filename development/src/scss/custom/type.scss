@@ -1,0 +1,62 @@
+// Type for content editors in body copy
+// ===================================================================================
+// * {
+//   -webkit-font-smoothing: antialiased;
+// }
+.content {
+	@include clearfix;
+
+	img.pull-left {
+		margin-bottom: 10px;
+		margin-right: 10px;
+	}
+	img.pull-right {
+		margin-bottom: 10px;
+		margin-left: 10px;
+	}
+	// i {
+	//   display: inline-block;
+	//   vertical-align: top;
+	// }
+
+	h1 {
+		font-size:$font-size-h1;
+	}
+	h2 {
+		font-size:$font-size-h2;
+	}
+	h3 {
+		font-size:$font-size-h3;
+	}
+	h4 {
+		font-size:$font-size-h4;
+	}
+	h5 {
+		font-size:$font-size-h5;
+	}
+	h6 {
+		font-size:$font-size-h6;
+	}
+	div,p,li,td {
+		font-size:$font-size-base;
+	}
+	.small,.sm {
+		font-weight:200;
+		font-size:$font-size-base - 1;
+	}
+	.smallest,.xs {
+		font-weight:200;
+		font-size:$font-size-base - 2;
+	}
+	.big {
+		font-weight:200;
+		font-size:$font-size-base + 1;
+	}
+	.biggest {
+		font-weight:200;
+		font-size:$font-size-base + 2;
+	}
+	blockquote {
+		
+	}
+}

@@ -1,0 +1,70 @@
+// Buttons and their states when inside a .content area
+// ===================================================================================
+.content {
+	.btn {
+		@extend .btn-default;
+		&,&.btn-default {
+
+			&:hover {
+
+			}
+			&:active {
+
+			}
+		}
+		&.btn-primary {
+			@extend .btn-primary;
+			&:hover {
+
+			}
+			&:active {
+
+			}
+		}
+		&.btn-info {
+			@extend .btn-info;
+			&:hover {
+
+			}
+			&:active {
+
+			}
+		}
+		&.btn-success {
+			@extend .btn-success;
+			&:hover {
+
+			}
+			&:active {
+
+			}
+		}
+		&.btn-warning {
+			@extend .btn-warning;
+			&:hover {
+
+			}
+			&:active {
+
+			}
+		}
+		&.btn-danger {
+			@extend .btn-danger;
+			&:hover {
+
+			}
+			&:active {
+
+			}
+		}
+		&.btn-inverse {
+			
+			&:hover {
+
+			}
+			&:active {
+
+			}
+		}
+	}
+}

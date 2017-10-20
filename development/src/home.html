@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> &rsaquo; YourFI</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-title" content="YourFI">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+<script type="text/javascript">
+
+        (function () {
+          "use strict";
+          //$.support.cors=true;
+
+          // once cached, the css file is stored on the client forever unless
+          // the URL below is changed. Any change will invalidate the cache
+          var css_href = '/assets/css/fonts.css?v='+Math.floor(Date.now() / 1000)+'';
+          // a simple event handler wrapper
+          function on(el, ev, callback) {
+            if (el.addEventListener) {
+              el.addEventListener(ev, callback, false);
+            } else if (el.attachEvent) {
+              el.attachEvent("on" + ev, callback);
+            }
+          }
+          
+          // if we have the fonts in localStorage or if we've cached them using the native batrowser cache
+          if ((window.localStorage && localStorage.font_css_cache) || document.cookie.indexOf('font_css_cache') > -1){
+            // just use the cached version
+            injectFontsStylesheet();
+          } else {
+           // otherwise, don't block the loading of the page; wait until it's done.
+            on(window, "load", injectFontsStylesheet);
+          }
+          
+          // quick way to determine whether a css file has been cached locally
+          function fileIsCached(href) {
+            return window.localStorage && localStorage.font_css_cache && (localStorage.font_css_cache_file === href);
+          }
+
+          // time to get the actual css file
+          function injectFontsStylesheet() {
+           // if this is an older browser
+            if (!window.localStorage || !window.XMLHttpRequest) {
+              var stylesheet = document.createElement('link');
+              stylesheet.href = css_href;
+              stylesheet.rel = 'stylesheet';
+              stylesheet.type = 'text/css';
+              document.getElementsByTagName('head')[0].appendChild(stylesheet);
+              // just use the native browser cache
+              // this requires a good expires header on the server
+              document.cookie = "font_css_cache";
+            
+            // if this isn't an old browser
+            } else {
+
+                // use the cached version if we already have it
+              if (fileIsCached(css_href)) {
+                
+                injectRawStyle(localStorage.font_css_cache);
+                // otherwise, load it with ajax
+              } else {
+                var request = createCORSRequest("GET", css_href);
+                if (request){
+                    request.onreadystatechange = function () {
+                      if (request.readyState === 4) {
+                        // once we have the content, quickly inject the css rules
+                        injectRawStyle(request.responseText);
+                        // and cache the text content for further use
+                        // notice that this overwrites anything that might have already been previously cached
+                        localStorage.font_css_cache = request.responseText;
+                        localStorage.font_css_cache_file = css_href;
+                      }
+                    };
+                    request.send();
+                }
+              }
+            }
+          }
+
+          function createCORSRequest(method, url){
+              var xhr = new XMLHttpRequest();
+              // Check if the XMLHttpRequest object has a "withCredentials" property.
+              // "withCredentials" only exists on XMLHTTPRequest2 objects.
+              if ("withCredentials" in xhr){
+                  xhr.open(method, url, true);
+              // Otherwise, check if XDomainRequest.
+              // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+              } else if (typeof XDomainRequest != "undefined"){
+                  xhr = new XDomainRequest();
+                  xhr.open(method, url);
+              } else {
+                  // Otherwise, CORS is not supported by the browser.
+                  xhr = null;
+              }
+              return xhr;
+          }
+
+
+          // this is the simple utitily that injects the cached or loaded css text
+          function injectRawStyle(text) {
+            var style = document.createElement('style');
+            // cater for IE8 which doesn't support style.innerHTML
+            style.setAttribute("type", "text/css");
+            if (style.styleSheet) {
+                style.styleSheet.cssText = text;
+            } else {
+                style.innerHTML = text;
+            }
+            document.getElementsByTagName('head')[0].appendChild(style);
+          }
+
+        }());
+    </script>
+    <!--[if IE 8]> <script src="/assets/js/polyfills.min.js"></script> <![endif]-->
+    <!--[if lt IE 9]> <script src="/assets/js/html5shiv.min.js"></script> <![endif]-->
+  </head>
+<body>
+<a href="#main" class="hidden-compliance">Skip Navigation</a>
+<a class="hidden-compliance external" href="http://get.adobe.com/reader/">
+  Documents in Portable Document Format (PDF) require Adobe Acrobat Reader 5.0 or higher to view,download Adobe® Acrobat Reader.
+</a>
+  <div class="master-container">
+
+<header class="header">
+	<div class="container">
+		  <span itemscope itemtype="http://schema.org/BankOrCreditUnion">
+		  	<span itemprop="name" class="sr-only">YourFI</span>
+		  	<a href="/" class="logo pull-left" title="YourFI, Cedar Falls, IA" itemprop="url">
+			  <span class="logotype" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+			  	<img src="/assets/img/banno-logo.svg" alt="YourFI" itemprop="url">
+			  </span>
+			</a>
+		  </span>
+		  <div class="header-right pull-right">
+		    <!-- HTML for Members login component -->
+		    <banno:member-login landingPage="/member-page"></banno:member-login>
+		    <!-- End of Members Login -->
+
+		    <!-- HTML for Members login component -->
+			  <div class="banno-members-wrapper">
+			    <div class="banno-members-container">
+			      <div class="banno-members-login-container">
+			        <form action="/member-page" id="banno-members-login">
+			          <input type="email" name="email" class="email" placeholder="name@example.com" id="login-email">
+			          <input type="password" name="password" autocomplete="off" class="password" placeholder="Password" id="login-password">
+			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-login-btn">Login</button>
+			        </form>
+			        <a class="banno-members-link" id="reset-pass-control" href="#">Forgot password?</a>
+			      </div>
+			      <div class="banno-members-reset-container hide">
+			        <form method="post" id="banno-members-reset">
+			          <p class="banno-members-text">Enter your email and we'll send you a link to reset your password.</p>
+			          <input type="email" class="email" placeholder="name@example.com" id="forgot-email">
+			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-reset-btn">Send</button>
+			        </form>
+			        <a class="banno-members-link" id="login-control" href="#">Nevermind, I remember now.</a>
+			      </div>
+			    </div>
+			    <div class="alert alert-block alert-error hide" id="login-error">
+			      <h4 class="alert-heading">Unable to login!</h4>
+			      Double check your login credentials and try again.
+			    </div>
+			    <div class="alert alert-block alert-error hide" id="reset-error">
+			      <h4 class="alert-heading">Unable to reset password!</h4>
+			      Double check your email and try again.
+			    </div>
+			    <div class="alert alert-block alert-info hide" id="reset-confirm">
+			      <h4 class="alert-heading">Check your email.</h4>
+			      We're sending you an email with a link to reset your password.
+			    </div>
+			  </div>
+			  <!-- End of Members Login -->
+		  </div>
+	</div>
+</header>
+    <div class="container">
+<nav class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <banno:menu menu-id="CHANGEME" ></banno:menu>
+            <ul class="banno-menu" role="menubar">
+              <li role="menuitem" class="dropdown menu-category">
+                    <span class="category-item dropdown-toggle" tabindex="0" role="button" aria-haspopup="true" data-toggle="dropdown">Banking</span>
+                    <ul role="menu" class="dropdown-menu">
+                      <li role="menuitem" class="dropdown menu-group">
+                        <span class="group-item dropdown-toggle" tabindex="0" aria-haspopup="true" data-toggle="dropdown">Individuals</span>
+                        <ul role="menu" class="dropdown-menu">
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/personal-checking">Checking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/personal-savings-and-money-market">Savings &amp; Money Market</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/cds-iras">CDs &amp; IRAs</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/mortgage-home-equity">Mortgages &amp; Home Equity</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/loans-and-lines-of-credit">Loans &amp; Lines of Credit</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/credit-cards">Credit Cards</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/online-banking">Online Banking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/mobile-banking">Mobile Banking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/personal-banking/banking-simplified">Banking Simplified</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li role="menuitem" class="dropdown menu-group">
+                        <span class="group-item dropdown-toggle" tabindex="0" aria-haspopup="true" data-toggle="dropdown">Businesses</span>
+                        <ul role="menu" class="dropdown-menu">
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-checking">Checking</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-savings-money-market">Savings &amp; Money Market</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/cash-management">Cash Management</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-financing">Financing</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/business-solutions-suite">Solutions Suite</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/perks-at-work">Perks at Work</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/non-profit-banking">Non-Profit</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/government-banking">Government</a>
+                          </li>
+                          <li role="menuitem" class="menu-internal">
+                            <a href="/commercial-banking/meet-the-team">Meet the Team</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+              </li>
+              <li class="dropdown menu-category" role="menuitem">
+                <span class="category-item">Personal</span>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="dropdown menu-group" role="menuitem">
+                    <span class="group-item">Commercial Services</span>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/commercial-services-checking-compare-accounts">Checking</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/commercial-services-savings-compare-accounts">Savings</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/loans">Loans</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/cdsiras">CDs/IRAs</a>
+                      </li>
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/business/cash-managementonline-services">Cash Management/Online Services</a>
+                      </li>
+                      <li class="dropdown menu-group" role="menuitem">
+                        <span class="group-item">Convenience Services</span>
+                        <ul class="dropdown-menu" role="menu">
+                          <li class="dropdown menu-group" role="menuitem">
+                            <span class="group-item">Convenience Services</span>
+                            <ul class="dropdown-menu" role="menu">
+                              <li class="menu-internal" role="menuitem">
+                                <a href="/business/business-visa-card">Business Visa Card</a>
+                              </li>
+                              <li class="menu-internal" role="menuitem">
+                                <a href="/business/merchant-services">Merchant Services</a>
+                              </li>
+                              <li class="menu-internal" role="menuitem">
+                                <a href="/business/remote-deposit">Remote Deposit</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="menu-internal" role="menuitem">
+                            <a href="/business/business-visa-card">Business Visa Card</a>
+                          </li>
+                          <li class="menu-internal" role="menuitem">
+                            <a href="/business/merchant-services">Merchant Services</a>
+                          </li>
+                          <li class="menu-internal" role="menuitem">
+                            <a href="/business/remote-deposit">Remote Deposit</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown menu-internal" role="menuitem">
+                    <a class="dropdown-toggle" href="/personal/checking">Checking</a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li class="menu-internal" role="menuitem">
+                        <a href="/regulation-e/overdraft-consent-form">Overdraft Consent Form</a>
+                      </li>
+                      <li class="menu-external" role="menuitem">
+                        <a target="_blank" href="https://forms.banno.com/first-state.net/stop_payment/">Stop Payment</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">CDs</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">IRAs</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Mobile Banking</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Personal Loans</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Other Personal Services</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Meet Your Banking Team</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown menu-category" role="menuitem">
+                <span class="category-item">Business</span>
+                <ul class="dropdown-menu" role="menu">
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Checking</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Savings</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">CDs</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Public Funds</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Small Business Lending</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Business Loans</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Business Services</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Employee Benefits</a>
+                  </li>
+                  <li class="menu-internal" role="menuitem">
+                    <a href="#">Meet Your Banking Team</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+    </div>
+  </div>
+</nav>
+        <div id="main" tabindex="-1">
+
+<div class="slider hero">
+  <div class="slide">
+      <div class="image">
+          <div data-content-block="hero1image" data-content="content" data-editable="editable">
+
+            <img src="http://placehold.it/1140x445" alt="Slide 1">
+          </div>
+      </div>
+      <div class="caption">
+        <div class="content" data-content-block="hero1content" data-content="content" data-editable="editable" >
+              <h2>Lorem ipsum dolor.</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, unde!</p>
+              <p><a href="#" class="btn btn-default">Lorem ipsum.</a></p>
+        </div>
+      </div>
+  </div>
+  <div class="slide">
+      <div class="image">
+          <div data-content-block="hero2image" data-content="content" data-editable="editable">
+
+            <img src="http://placehold.it/1140x445" alt="Slide 1">
+          </div>
+      </div>
+      <div class="caption">
+        <div class="content" data-content-block="hero2content" data-content="content" data-editable="editable" >
+              <h2>Lorem ipsum dolor.</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, unde!</p>
+              <p><a href="#" class="btn btn-primary">Lorem ipsum.</a></p>
+        </div>
+      </div>
+  </div>
+  <div class="slide">
+      <div class="image">
+          <div data-content-block="hero3image" data-content="content" data-editable="editable">
+
+            <img src="http://placehold.it/1140x445" alt="Slide 1">
+          </div>
+      </div>
+      <div class="caption">
+        <div class="content" data-content-block="hero3content" data-content="content" data-editable="editable" >
+              <h2>Lorem ipsum dolor.</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, unde!</p>
+              <p><a href="#" class="btn btn-warning">Lorem ipsum.</a></p>
+        </div>
+      </div>
+  </div>
+</div>
+            <hr>
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            <span data-content-block="accordionHeader1" data-content="content" data-editable="editable" >
+                    Accoridon Header 1
+            </span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body content">
+          <div data-content-block="accordionContent1" data-content="content" data-editable="editable" >
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam tempora recusandae mollitia inventore fuga quaerat totam id, delectus autem veritatis, tenetur minus provident qui iure in, cupiditate, atque odit unde dolores! Suscipit ea quaerat aliquid cupiditate temporibus eos repellat saepe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            <span data-content-block="accordionHeader2" data-content="content" data-editable="editable" >
+                    Accoridon Header 2
+            </span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body content">
+          <div data-content-block="accordionContent2" data-content="content" data-editable="editable" >
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam tempora recusandae mollitia inventore fuga quaerat totam id, delectus autem veritatis, tenetur minus provident qui iure in, cupiditate, atque odit unde dolores! Suscipit ea quaerat aliquid cupiditate temporibus eos repellat saepe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            <span data-content-block="accordionHeader3" data-content="content" data-editable="editable" >
+                    Accoridon Header 3
+            </span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body content">
+          <div data-content-block="accordionContent3" data-content="content" data-editable="editable" >
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam tempora recusandae mollitia inventore fuga quaerat totam id, delectus autem veritatis, tenetur minus provident qui iure in, cupiditate, atque odit unde dolores! Suscipit ea quaerat aliquid cupiditate temporibus eos repellat saepe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+            <span data-content-block="accordionHeader4" data-content="content" data-editable="editable" >
+                    Accoridon Header 4
+            </span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body content">
+          <div data-content-block="accordionContent4" data-content="content" data-editable="editable" >
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam tempora recusandae mollitia inventore fuga quaerat totam id, delectus autem veritatis, tenetur minus provident qui iure in, cupiditate, atque odit unde dolores! Suscipit ea quaerat aliquid cupiditate temporibus eos repellat saepe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+            <hr>
+
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a data-toggle="tab" href="#tab1">
+      <span data-content-block="tab1title" data-content="content" data-editable="editable" >
+              Tab One
+      </span>
+    </a>
+  </li>
+  <li>
+    <a data-toggle="tab" href="#tab2">
+      <span data-content-block="tab2title" data-content="content" data-editable="editable" >
+              Tab Two
+      </span>
+    </a>
+  </li>
+  <li>
+    <a data-toggle="tab" href="#tab3">
+      <span data-content-block="tab3title" data-content="content" data-editable="editable" >
+              Tab Three
+      </span>
+    </a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div id="tab1" class="tab-pane fade in active">
+    <div class="content" data-content-block="tab1content" data-content="content" data-editable="editable" >
+          <h2>Tab 1 Content</h2>
+          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
+    </div>
+  </div>
+  <div id="tab2" class="tab-pane fade in active">
+    <div class="content" data-content-block="tab2content" data-content="content" data-editable="editable" >
+          <h2>Tab 2 Content</h2>
+          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
+
+    </div>
+  </div>
+  <div id="tab3" class="tab-pane fade">
+    <div class="content" data-content-block="tab3content" data-content="content" data-editable="editable" >
+          <h2>Tab 3 Content</h2>
+          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illum odio perspiciatis voluptate, error, quas autem. Consequatur temporibus iure a doloribus, incidunt vitae tempore totam veniam sunt id iusto est at aliquid quasi, rerum illo voluptatem laudantium laborum consectetur unde nobis corporis sapiente distinctio. Rem!</p>
+
+    </div>
+  </div>
+</div>
+            <hr>
+
+<div class="subads__container hidden-content">
+    <div class="subads__slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+        <div class="subads__slide">
+            <div class="subads__image">
+              <div class="subads__image__overlay"></div>
+              <div data-content-block="feature1image" data-content="content" data-editable="editable" >
+                    <img src="http://placehold.it/600x500" alt="">
+              </div>
+            </div>
+            <div class="subads__content">
+                <div class="inside">
+                  <div data-content-block="feature1content" data-content="content" data-editable="editable" >
+                        <h2>Feature 1</h2>
+                        <a href="http://www.google.com" class="btn btn-default">Test External Link</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="subads__slide">
+            <div class="subads__image">
+              <div class="subads__image__overlay"></div>
+              <div data-content-block="feature2image" data-content="content" data-editable="editable" >
+                    <img src="http://placehold.it/600x500/333333/ffffff" alt="">
+              </div>
+            </div>
+            <div class="subads__content">
+                <div class="inside">
+                  <div data-content-block="feature2content" data-content="content" data-editable="editable" >
+                        <h2>Feature 2</h2>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="subads__slide">
+            <div class="subads__image">
+              <div class="subads__image__overlay"></div>
+              <div data-content-block="feature3image" data-content="content" data-editable="editable" >
+                    <img src="http://placehold.it/600x500/f9f9f9/333333" alt="">
+              </div>
+            </div>
+            <div class="subads__content">
+                <div class="inside">
+                  <div data-content-block="feature3content" data-content="content" data-editable="editable" >
+                        <h2>Feature 3</h2>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="subads__slide">
+            <div class="subads__image">
+              <div class="subads__image__overlay"></div>
+              <div data-content-block="feature4image" data-content="content" data-editable="editable" >
+                    <img src="http://placehold.it/600x500/555555/ffffff" alt="">
+              </div>
+            </div>
+            <div class="subads__content">
+                <div class="inside">
+                  <div data-content-block="feature4content" data-content="content" data-editable="editable" >
+                        <h2>Feature 4</h2>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper"></div>
+</div>
+            <hr>
+
+
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <h2>Stocks</h2>
+<banno:stock></banno:stock>
+
+<div class="b-stocks" default-symbol="^IXIC,NYA,^NYA-SM">
+              <div class="b-stocks-loading" style="display: none;">
+                <div class="b-stocks-loading-img"></div>
+              </div>
+              <div class="b-stocks-error" style="display: none;">
+                <span>I am sorry, an error has occurred.</span>
+              </div>
+              <div class="b-stocks-inner" style="display: block;">
+                <table class="b-stocks-display">
+                  <tbody class="b-stocks-table-body">
+                    <tr class="row">
+                      <td>
+                        <span class="b-stocks-symbol">^IXIC</span>
+                        <span class="b-stocks-name">NASDAQ Composite</span>         
+                      </td>         
+                      <td>
+                        <span class="b-stocks-price">3581.31</span>
+                      </td>         
+                      <td>
+                        <span class="b-stocks-change b-stocks-gain">+3.01</span>
+                      </td>
+                    </tr>
+                    <tr class="row">
+                      <td>
+                        <span class="b-stocks-symbol">NYA</span>
+                        <span class="b-stocks-name">NYA</span>
+                      </td>
+                      <td>
+                        <span class="b-stocks-price">0.00</span>
+                      </td>
+                      <td>
+                        <span class="b-stocks-change b-stocks-loss">N/A</span>         
+                      </td>        
+                    </tr>
+                    <tr class="row">
+                      <td>          
+                        <span class="b-stocks-symbol">^NYA-SM</span>          
+                        <span class="b-stocks-name">NYSE COMPOSITE IN</span>         
+                      </td>         
+                      <td>          
+                        <span class="b-stocks-price">828.514</span>         
+                      </td>         
+                      <td>          
+                        <span class="b-stocks-change b-stocks-gain">0.00</span>         
+                      </td>        
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="4">
+                        <span class="b-stocks-add-stock">Add a Stock</span>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <div class="b-stocks-options" style="display:none;">
+                  <div class="b-stocks-options-header">
+                    <span class="b-stocks-options-text">Add a Stock</span>
+                    <span class="b-stocks-options-close">×</span>
+                  </div>
+                  <div class="b-stocks-options-inner">
+                    <form class="b-stocks-find">
+                      <input type="text" class="b-stocks-search-input" placeholder="Enter symbol or name">
+                      <button type="submit" class="btn b-stocks-search-btn">Find</button>
+                    </form>
+                    <form class="b-stocks-search" style="display: none;">
+                      <select class="b-stocks-selection"></select>
+                      <button type="button" class="btn btn-primary b-stocks-add-btn">
+                        <span>Add</span>
+                      </button>
+                    </form>
+                    <div class="b-stocks-search-error" style="display:none">
+                      <span>No results were found. Try again.</span>
+                    </div>
+                    <div class="b-stocks-dupes" style="display:none">
+                      <span>This stock is already in the list.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="b-stocks-overlay" style="position: absolute; top: 0px; right: 0px; width: 100%; height: 51px; display: none;">
+                  <input type="button" class="btn b-stocks-remove-button" value="Remove">
+                </div>
+              </div>
+            </div>              </div>
+              <div class="col-lg-4 col-md-6">
+                <h2>Weather</h2>
+<banno:weather></banno:weather>
+
+<div class="b-weather" b-weather-location="63452" b-weather-celsius="false">
+                <div class="b-weather-inner">
+                  <div class="b-weather-display">
+                    <div class="b-weather-row b-weather-now">
+                      <span class="b-weather-day">Now</span>
+                      <img class="b-weather-ico b-weather-current-icon" src="/assets/img/weather/32.png">
+                      <span class="b-weather-temp b-weather-current-temp">42°</span>
+                    </div>
+                    <div class="b-weather-row b-weather-2">
+                      <span class="b-weather-day">Fri</span>
+                      <img class="b-weather-ico" src="/assets/img/weather/28.png">
+                      <span class="b-weather-temp b-weather-high">41°</span>
+                      <span class="b-weather-temp b-weather-low">28°</span>
+                    </div>
+                    <div class="b-weather-row b-weather-3">
+                      <span class="b-weather-day">Sat</span>
+                      <img class="b-weather-ico" src="/assets/img/weather/11.png">
+                      <span class="b-weather-temp b-weather-high">48°</span>
+                      <span class="b-weather-temp b-weather-low">28°</span>
+                    </div>
+                    <div class="b-weather-row b-weather-4">
+                      <span class="b-weather-day">Sun</span>
+                      <img class="b-weather-ico" src="/assets/img/weather/41.png">
+                      <span class="b-weather-temp b-weather-high">36°</span>
+                      <span class="b-weather-temp b-weather-low">27°</span>
+                    </div>
+                    <div class="b-weather-row b-weather-5">
+                      <span class="b-weather-day">Mon</span>
+                      <img class="b-weather-ico" src="/assets/img/weather/41.png">
+                      <span class="b-weather-temp b-weather-high">36°</span>
+                      <span class="b-weather-temp b-weather-low">19°</span>
+                    </div>
+                  </div>
+                  <div class="b-weather-details">
+                    <div class="b-weather-city-info">
+                      <span class="b-weather-city">Lewistown, MO</span>
+                      <span class="b-weather-info"></span>
+                    </div>
+                  </div>
+                  <div class="b-weather-settings hide">
+                    <form class="b-weather-search-form" action="">
+                      <input class="b-weather-search-input">
+                      <button type="submit" class="btn success b-weather-search-btn">FIND</button>
+                    </form>
+                    <form class="b-weather-settings-form" action="">
+                      <select class="b-weather-results"></select>
+                      <div class="b-weather-settings-degrees">
+                        <label><input type="radio" name="scale" value="false" checked="checked">°F</label>
+                        <label><input type="radio" name="scale" value="true">°C</label>
+                      </div>
+                      <button type="submit" class="b-weather-ok-btn btn success" disabled="disabled">OK</button>
+                      <button type="button" class="b-weather-cancel-btn btn">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+            </div>              </div>
+              <div class="col-lg-4 visible-lg-inline">
+                <h2>Ag</h2>
+<banno:ag></banno:ag>
+
+<div class="b-ag">
+              <div class="b-ag-inner-test" style="display: block;">
+                <table class="b-ag-display">
+                  <thead>
+                    <tr>
+                      <th>Futures</th>
+                      <th>M</th>
+                      <th>Last</th>
+                      <th>Change</th>
+                    </tr>
+                  </thead>
+                  <tbody class="b-ag-table-body">
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Corn</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">S</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">550-6</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-loss">-10-0</span>                
+                      </td>              
+                    </tr>
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Soybeans</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">A</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">1448-0</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-loss">-24-0</span>                
+                      </td>              
+                    </tr>
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Wheat</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">S</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">684-6</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-loss">+1-6</span>                
+                      </td>              
+                    </tr>
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Milk</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">J</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">17.39</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-gain">+0.01</span>                
+                      </td>              
+                    </tr>
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Feeder Cattle</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">A</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">150.250</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-gain">+0.125</span>                
+                      </td>              
+                    </tr>
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Live Cattle</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">A</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">121.900</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-loss">-0.025</span>                
+                      </td>              
+                    </tr>
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Lean Hogs</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">J</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">102.000</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-loss">-0.175</span>                
+                      </td>              
+                    </tr>
+                    <tr>                
+                      <td>                  
+                        <span class="b-ag-name">Cotton</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-m">O</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-last">85.20</span>                
+                      </td>                
+                      <td>                  
+                        <span class="b-ag-change b-ag-gain">+0.02</span>                
+                      </td>              
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>               </div>
+            </div>
+        </div>
+        
+    </div>
+
+<footer class="footer">
+  <div class="container">
+      <a href="#" id="scrollTop" class="visible-xs-block">
+        <img src="/assets/img/topScroll.png">
+      </a>
+      <div class="copyright">
+        <span class="copytext">
+          &copy;<script>
+            var d = new Date();
+            var year = d.getFullYear();
+            document.write(year);
+          </script> YourFI. 
+        </span>
+        <span class="fdic">Member FDIC.</span>
+        <span class="ehl">
+          Equal Housing Lender <img src="/assets/img/ehl.png" srcset="/assets/img/ehl.png 1x, /assets/img/ehl@2x.png 2x" alt="Equal Housing Lender" class="ehl">
+        </span> 
+      </div>
+  </div>
+</footer>
+  </div>
+
+<script src="/assets/js/jquery-1.10.1.min.js"></script>
+	<script defer src="/scripts/bootstrap/collapse.js"></script>
+	<script defer src="/scripts/bootstrap/dropdown.js"></script>
+	<script defer src="/scripts/bootstrap/modal.js"></script>
+	<script defer src="/scripts/bootstrap/affix.js"></script>
+	<script defer src="/scripts/bootstrap/tab.js"></script>
+	<script defer src="/scripts/bootstrap/transition.js"></script>
+	<script defer src="/scripts/plugins/bootbox.js"></script>
+	<script defer src="/scripts/plugins/jquery.placeholder.js"></script>
+	<script defer src="/scripts/plugins/plugins.js"></script>
+	<script defer src="/scripts/plugins/parsley.js"></script>
+	<script defer src="/scripts/plugins/slick.js"></script>
+	<script defer src="/scripts/plugins/dropdown.js"></script>
+	<script defer src="/scripts/lib/modernizr.custom.80639.js"></script>
+	<script defer src="/scripts/script.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXX-X', 'domain');
+  ga('create', 'UA-YYYY-Y', 'domain', {'name': 'newTracker'}); // 2nd tracker
+  ga('send', 'pageview');
+  ga('newTracker.send', 'pageview'); // send page view for 2nd tracker, make sure tracker name is same as above 
+
+</script>
+
+</body>
+</html>
