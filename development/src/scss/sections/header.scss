@@ -16,3 +16,12 @@ header.header {
   	height: 40px;
 	display: block;
 }
+.toggle-login {
+	@extend .btn;
+	@extend .btn-primary;
+	@media (max-width:$screen-xs-max) {
+		float:right;
+		margin-bottom:0;
+		margin-top:10px;
+	}
+}

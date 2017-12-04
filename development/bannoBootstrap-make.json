@@ -124,75 +124,75 @@
       "title":"Financial Calculators",
       "content": [
         {
-          "name": "accordionHeading1",
+          "name": "accordionHeader1",
           "content": "Auto"
         },
         {
-          "name": "accordionBody1",
+          "name": "accordionContent1",
           "content": "<ul><li><a href='/calculator/auto-rebate' data-link-id='/calculator/auto-rebate' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Auto Rebate vs. Low Interest Financing</a></li></ul>"
         },
         {
-          "name": "accordionHeading2",
+          "name": "accordionHeader2",
           "content": "Credit Card &amp; Debt"
         },
         {
-          "name": "accordionBody2",
+          "name": "accordionContent2",
           "content": "<ul><li><a href='/calculator/debt-amount' data-link-id='/calculator/debt-amount' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Managing Debt</a></li><li><a href='/calculator/student-rolldown' data-link-id='/calculator/student-rolldown' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Student Loan Consolidation &amp; Payoff</a></li><li><a href='/calculator/debt-consolidate' data-link-id='/calculator/debt-consolidate' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Personal Debt Consolidation</a></li><li><a href='/calculator/payoff-cc' data-link-id='/calculator/payoff-cc' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Credit Card Payoff</a></li></ul>"
         },
         {
-          "name": "accordionHeading3",
+          "name": "accordionHeader3",
           "content": "Insurance"
         },
         {
-          "name": "accordionBody3",
+          "name": "accordionContent3",
           "content": "<ul><li><a href='/calculator/hsa-goal' data-link-id='/calculator/hsa-goal' data-link-type-id='page' data-disclaimer-id='null' target='_self'>HSA Goals</a></li><li><a href='/calculator/hsa-contribution' data-link-id='/calculator/hsa-contribution' data-link-type-id='page' data-disclaimer-id='null' target='_self'>HSA Contributions</a></li><li><a href='/calculator/hsa-savings' data-link-id='/calculator/hsa-savings' data-link-type-id='page' data-disclaimer-id='null' target='_self'>HSA Savings</a></li><li><a href='/calculator/hsa-vs-traditional' data-link-id='/calculator/hsa-vs-traditional' data-link-type-id='page' data-disclaimer-id='null' target='_self'>HSA vs. Traditional Health Plan</a></li><li><a href='/calculator/life-insurance' data-link-id='/calculator/life-insurance' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Life Insurance</a></li><li><a href='/calculator/disability' data-link-id='/calculator/disability' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Disability Insurance</a></li></ul>"
         },
         {
-          "name": "accordionHeading4",
+          "name": "accordionHeader4",
           "content": "Loans"
         },
         {
-          "name": "accordionBody4",
+          "name": "accordionContent4",
           "content": "<ul><li><a href='/calculator/line-taxes' data-link-id='/calculator/line-taxes' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Loan &amp; Credit Line Tax Savings</a></li><li><a href='/calculator/simple-loan' data-link-id='/calculator/simple-loan' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Amortizing Loan</a></li><li><a href='/calculator/payment-options' data-link-id='/calculator/payment-options' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Loan &amp; Credit Line Payment</a></li><li><a href='/calculator/compare-loan' data-link-id='/calculator/compare-loan' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Loan Comparison</a></li><li><a href='/calculator/payoff-line' data-link-id='/calculator/payoff-line' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Line of Credit Payoff</a></li><li><a href='/calculator/complex-loan' data-link-id='/calculator/complex-loan' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Alternative Payment Frequencies</a></li><li><a href='/calculator/enhanced-loan' data-link-id='/calculator/enhanced-loan' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Enhanced Loan Options</a></li><li><a href='/calculator/consolidate' data-link-id='/calculator/consolidate' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Debt Consolidation</a></li><li><a href='/calculator/credit-line' data-link-id='/calculator/credit-line' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Home Equity Line of Credit</a></li><li><a href='/calculator/existing-loan' data-link-id='/calculator/existing-loan' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Existing Loan Analysis</a></li></ul>"
         },
         {
-          "name": "accordionHeading5",
+          "name": "accordionHeader5",
           "content": "Mortgage"
         },
         {
-          "name": "accordionBody5",
+          "name": "accordionContent5",
           "content": "<ul><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/bi-weekly' href='/calculator/bi-weekly'>Bi-Weekly Payment</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-loan' href='/calculator/mortgage-loan'>Mortgage Loan</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-taxes' href='/calculator/mortgage-taxes'>Mortgage Tax</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-adjustable' href='/calculator/mortgage-adjustable'>Adjustable Rate Mortgage</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-apr' href='/calculator/mortgage-apr'>Mortgage APR</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/reverse-mortgage' href='/calculator/reverse-mortgage'>Reverse Mortgage</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-payoff' href='/calculator/mortgage-payoff'>Mortgage Payoff</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-points' href='/calculator/mortgage-points'>Mortgage Points</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-qualifier' href='/calculator/mortgage-qualifier'>Mortgage Qualifier</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-refinance' href='/calculator/mortgage-refinance'>Mortgage Refinance</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-rent-vs-buy' href='/calculator/mortgage-rent-vs-buy'>Rent vs. Buy</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/should-i-refi' href='/calculator/should-i-refi'>Refinance Savings</a></li><li><a target='_self' data-disclaimer-id='null' data-link-type-id='page' data-link-id='/calculator/mortgage-compare' href='/calculator/mortgage-compare'>Mortgage Comparison</a></li></ul>"
         },
         {
-          "name": "accordionHeading6",
+          "name": "accordionHeader6",
           "content": "Personal Finance"
         },
         {
-          "name": "accordionBody6",
+          "name": "accordionContent6",
           "content": "<ul><li><a href='/calculator/credit-assessment' data-link-id='/calculator/credit-assessment' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Credit Assessment</a></li><li><a href='/calculator/net-worth' data-link-id='/calculator/net-worth' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Net Worth</a></li><li><a href='/calculator/checkbook' data-link-id='/calculator/checkbook' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Checkbook</a></li><li><a href='/calculator/home-budget' data-link-id='/calculator/home-budget' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Home Budget</a></li></ul>"
         },
         {
-          "name": "accordionHeading7",
+          "name": "accordionHeader7",
           "content": "Retirement"
         },
         {
-          "name": "accordionBody7",
+          "name": "accordionContent7",
           "content": "<ul><li><a href='/calculator/roth-ira' data-link-id='/calculator/roth-ira' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Roth IRA</a></li><li><a href='/calculator/roth-transfer' data-link-id='/calculator/roth-transfer' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Roth Conversion</a></li><li><a href='/calculator/retire-401k' data-link-id='/calculator/retire-401k' data-link-type-id='page' data-disclaimer-id='null' target='_self'>401k Savings</a></li><li><a href='/calculator/regular-ira' data-link-id='/calculator/regular-ira' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Traditional IRA</a></li><li><a href='/calculator/social-security' data-link-id='/calculator/social-security' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Social Security</a></li><li><a href='/calculator/retirement-plan' data-link-id='/calculator/retirement-plan' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Retirement Plan</a></li></ul>"
         },
         {
-          "name": "accordionHeading8",
+          "name": "accordionHeader8",
           "content": "Savings"
         },
         {
-          "name": "accordionBody8",
+          "name": "accordionContent8",
           "content": "<ul><li><a href='/calculator/compound-interest' data-link-id='/calculator/compound-interest' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Compound Interest</a></li><li><a href='/calculator/college-savings' data-link-id='/calculator/college-savings' data-link-type-id='page' data-disclaimer-id='null' target='_self'>College Savings</a></li><li><a href='/calculator/cert-deposit' data-link-id='/calculator/cert-deposit' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Certificate of Deposit</a></li><li><a href='/calculator/cd-ladder' data-link-id='/calculator/cd-ladder' data-link-type-id='page' data-disclaimer-id='null' target='_self'>CD Ladder</a></li><li><a href='/calculator/spend-less' data-link-id='/calculator/spend-less' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Spend Less</a></li><li><a href='/calculator/compound-savings' data-link-id='/calculator/compound-savings' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Accumulate Savings</a></li><li><a href='/calculator/millionaire' data-link-id='/calculator/millionaire' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Save a Million</a></li><li><a href='/calculator/savings' data-link-id='/calculator/savings' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Savings Goals</a></li><li><a href='/calculator/emergency' data-link-id='/calculator/emergency' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Emergency Savings</a></li><li><a href='/calculator/lunch-saver' data-link-id='/calculator/lunch-saver' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Lunch Savings</a></li><li><a href='/calculator/savings-variables' data-link-id='/calculator/savings-variables' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Savings, Taxes, &amp; Inflation</a></li></ul>"
         },
         {
-          "name": "accordionHeading9",
+          "name": "accordionHeader9",
           "content": "Taxes"
         },
         {
-          "name": "accordionBody9",
+          "name": "accordionContent9",
           "content": "<ul><li><a href='/calculator/tax1040' data-link-id='/calculator/tax1040' data-link-type-id='page' data-disclaimer-id='null' target='_self'>1040 Tax</a></li><li><a href='/calculator/tax-margin' data-link-id='/calculator/tax-margin' data-link-type-id='page' data-disclaimer-id='null' target='_self'>Marginal Tax Rate</a></li><li><a href='/calculator/tax-ez1040' data-link-id='/calculator/tax-ez1040' data-link-type-id='page' data-disclaimer-id='null' target='_self'>1040EZ Tax</a></li></ul>"
         }
       ]
@@ -957,18 +957,31 @@
       "templateId":"home",
       "title":"Home",
       "description":"Home page",
-      "imageLocation": "/assets/templates/home.png",
+      "imageLocation": "/assets/templates/images/home.png",
       "contentAreaNames":[
-         "bodyCopy"
+         "hero1image",
+         "hero1content",
+         "hero2image",
+         "hero2content",
+         "hero3image",
+         "hero3content",
+         "feature1image",
+         "feature1content",
+         "feature2image",
+         "feature2content",
+         "feature3image",
+         "feature3content",
+         "feature4image",
+         "feature4content",
       ]
     },
     {
       "templateId":"subpage",
       "title":"Subpage",
       "description":"Default subpage with main body area and 2 sub ads",
-      "imageLocation": "/assets/templates/2-column_sidebar-right.png",
+      "imageLocation": "/assets/templates/images/2-column_sidebar-right.png",
       "contentAreaNames":[
-         "bodyCopy",
+         "bodyCopy1",
          "subAd1",
          "subAd2"
       ]
@@ -978,9 +991,9 @@
       "title":"404",
       "description":"404 Page that holds 404 GA",
       "devOnly": true,
-      "imageLocation": "/assets/templates/dev-only.png",
+      "imageLocation": "/assets/templates/images/dev-only.png",
       "contentAreaNames":[
-         "bodyCopy",
+         "bodyCopy1",
          "subAd1",
          "subAd2"
       ]
@@ -989,7 +1002,7 @@
       "templateId":"search-results",
       "title":"Search Results",
       "description":"Search results page with 2 sub ads",
-      "imageLocation": "/assets/templates/search-results.png",
+      "imageLocation": "/assets/templates/images/search-results.png",
       "devOnly": true,
       "contentAreaNames":[
          "subAd1",
@@ -1000,7 +1013,7 @@
       "templateId":"blank",
       "title":"Blank",
       "description":"One main body area",
-      "imageLocation": "/assets/templates/1-column.png",
+      "imageLocation": "/assets/templates/images/1-column.png",
       "contentAreaNames":[
          "bodyCopy"
       ]
@@ -1009,45 +1022,76 @@
       "templateId":"calculator",
       "title":"Calculator",
       "description":"Page to hold the dinkytown calculator",
-      "imageLocation": "/assets/templates/calculator.png",
+      "imageLocation": "/assets/templates/images/calculator.png",
       "contentAreaNames":[
         "bannerImage"
+      ]
+    },
+    {
+      "templateId":"calculator-menu",
+      "title":"Calculator Menu Page",
+      "description":"Page for the list of dinkytown calculators.",
+      "imageLocation": "/assets/templates/images/calculator.png",
+      "contentAreaNames":[
+        "bodyCopy1",
+        "accordionHeader1",
+        "accordionContent1",
+        "accordionHeader2",
+        "accordionContent2",
+        "accordionHeader3",
+        "accordionContent3",
+        "accordionHeader4",
+        "accordionContent4",
+        "accordionHeader5",
+        "accordionContent5",
+        "accordionHeader6",
+        "accordionContent6",
+        "accordionHeader7",
+        "accordionContent7",
+        "accordionHeader8",
+        "accordionContent8",
+        "accordionHeader9",
+        "accordionContent9",
+        "accordionHeader10",
+        "accordionContent10"
       ]
     },
     {
       "templateId":"2-col-accordion",
       "title":"2 Column Accordions",
       "description":"10 accordions divided into 2 columns",
-      "imageLocation": "/assets/templates/2-column-sub.png",
+      "imageLocation": "/assets/templates/images/2-column-sub.png",
       "contentAreaNames":[
         "bodyCopy1",
-        "accordionHeading1",
-        "accordionBody1",
-        "accordionHeading2",
-        "accordionBody2",
-        "accordionHeading3",
-        "accordionBody3",
-        "accordionHeading4",
-        "accordionBody4",
-        "accordionHeading5",
-        "accordionBody5",
-        "accordionHeading6",
-        "accordionBody6",
-        "accordionHeading7",
-        "accordionBody7",
-        "accordionHeading8",
-        "accordionBody8",
-        "accordionHeading9",
-        "accordionBody9",
-        "accordionHeading10",
-        "accordionBody10"
+        "bodyCopy2",
+        "bodyCopy3",
+        "accordionHeader1",
+        "accordionContent1",
+        "accordionHeader2",
+        "accordionContent2",
+        "accordionHeader3",
+        "accordionContent3",
+        "accordionHeader4",
+        "accordionContent4",
+        "accordionHeader5",
+        "accordionContent5",
+        "accordionHeader6",
+        "accordionContent6",
+        "accordionHeader7",
+        "accordionContent7",
+        "accordionHeader8",
+        "accordionContent8",
+        "accordionHeader9",
+        "accordionContent9",
+        "accordionHeader10",
+        "accordionContent10"
       ]
     },
     {
       "templateId":"atm",
       "title":"ATM",
       "description":"ATM Locator",
-      "imageLocation": "/assets/templates/atm.png",
+      "imageLocation": "/assets/templates/images/atm.png",
       "devOnly": true,
       "contentAreaNames":[
 
@@ -1057,10 +1101,10 @@
       "templateId":"contact",
       "title":"Contact Us",
       "description":"Contact Us Page with 2 sub ads",
-      "imageLocation": "/assets/templates/contact.png",
+      "imageLocation": "/assets/templates/images/contact.png",
       "devOnly": true,
       "contentAreaNames":[
-         "bodyCopy",
+         "bodyCopy1",
          "subAd1",
          "subAd2"
       ]

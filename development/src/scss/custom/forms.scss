@@ -1,9 +1,9 @@
-.form-container {
+.form-container,.online-banking-container,.search-results-form {
 	form {
 
 	}
 	label {
-
+		font-weight:normal;
 	}
 	select,
 	textarea,
@@ -36,9 +36,33 @@
 
 	}
 	.parsley-errors-list  {
-		
+		list-style-type: none;
+		padding-left:0;
+		color:$red;
+		font-size:$font-size-base - 3;
 	}
 	.form-control {
 
 	}
+	.btn {
+		position:relative;
+		.loading {
+			position:absolute;
+			right:-30px;
+			top:50%;
+			margin-top:-12px;
+			padding:0;
+		}
+		.error {
+			position:absolute;
+			right:0;
+			bottom:-30px;
+		}
+	}
+}
+.success-container {
+	clear:both;
+	min-height:200px;
+	display:none;
+	@extend .clearfix;
 }

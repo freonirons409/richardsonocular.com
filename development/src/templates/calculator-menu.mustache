@@ -1,7 +1,8 @@
 {{> partials/top}}
 <body class="subpage calculator">
   {{> partials/compliance}}
-  <div class="master-container">
+  
+<div class="master-container">
 
     {{> partials/header}}
 
@@ -10,10 +11,13 @@
       {{> partials/nav}}
 
       <div id="main" tabindex="-1">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-9 col-md-7 col-md-push-5 col-lg-push-3">
+          <div class="text-md-right text-xs-left content">
+            <a href="/calculators" class="btn btn-primary">Calculator Menu</a>
+          </div>
+          <div class="row">
+              
+              <div class="col-lg-9 col-md-7">
+                  <h1 class="page-title">{{page.title}}<!-- @if NODE_ENV!='production' -->Financial Calculators<!-- @endif --></h1>
                   <div class="content" data-content-block="bodyCopy1" data-content="content" data-editable="editable">
                     {{#page.bodyCopy1}}
                       {{& content}}
@@ -24,363 +28,27 @@
                   </div>
 
                   <div class="accordion-area hidden-content">
-                      <div class="panel-group" id="accordion">
-                          <div class="col-md-6">
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                      <span data-content-block="accordionHeader1" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader1}}
-                                            {{& content}}
-                                          {{/page.accordionHeader1}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Mortgage Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent1" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent1}}
-                                          {{& content}}
-                                        {{/page.accordionContent1}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                           <ul>
-                                                <li><a href="/calculator/bi-weekly">Bi-Weekly Payment Calculator</a></li>
-                                                <li><a href="/calculator/mortgage-loan">Current Mortgage Loan</a></li>
-                                                <li><a href="/calculator/mortgage-taxes">Mortgage Tax Savings</a></li>
-                                                <li><a href="/calculator/mortgage-adjustable">Adjustable Rate Mortgage</a></li>
-                                                <li><a href="/calculator/mortgage-apr">Mortgage APR</a></li>
-                                                <li><a href="/calculator/reverse-mortgage">Reverse Mortgage</a></li>
-                                                <li><a href="/calculator/mortgage-payoff">Mortgage Payoff</a></li>
-                                                <li><a href="/calculator/mortgage-points">Mortgage Points</a></li>
-                                                <li><a href="/calculator/mortgage-qualifier">Mortgage Qualifier</a></li>
-                                                <li><a href="/calculator/mortgage-refinance">Mortgage Refinance</a></li>
-                                                <li><a href="/calculator/mortgage-rent-vs-buy">Rent vs. Buy</a></li>
-                                                <li><a href="/calculator/should-i-refi">Refinance Interest Savings</a></li>
-                                                <li><a href="/calculator/mortgage-compare">Mortgage Comparison</a></li>
-                                          </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                      <span data-content-block="accordionHeader2" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader2}}
-                                            {{& content}}
-                                          {{/page.accordionHeader2}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Loans &amp; Credit Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse2" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent2" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent2}}
-                                          {{& content}}
-                                        {{/page.accordionContent2}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                          <ul>
-                                                  <li><a href="/calculator/debt-amount">Managing Debt</a></li>
-                                                  <li><a href="/calculator/student-rolldown">Student Loan Consolidation and Payoff</a></li>
-                                                  <li><a href="/calculator/consolidate">Personal Debt Consolidation</a></li>
-                                                  <li><a href="/calculator/payoff-cc">Credit Card Payoff</a></li>
-                                                  <li><a href="/calculator/simple-loan">Amortizing Loans</a></li>
-                                                  <li><a href="/calculator/payoff-line">Line of Credit Payoff Calculator</a></li>
-                                                  <li><a href="/calculator/payoff-cc">Credit Card Payoff Calculator</a></li>
-                                                  <li><a href="/calculator/payment-options">Loan &amp; Credit Line Payments</a></li>
-                                                  <li><a href="/calculator/line-taxes">Loan &amp; Credit Line Taxes</a></li>
-                                                  <li><a href="/calculator/credit-line">Home Equity Line of Credit</a></li>
-                                                  <li><a href="/calculator/existing-loan">Exiting Loan</a></li>
-                                                  <li><a href="/calculator/enhanced-loan">Enhanced Loan</a></li>
-                                                  <li><a href="/calculator/debt-consolidate">Debt Consolidation</a></li>
-                                                  <li><a href="/calculator/debt-amount">Managing Debt</a></li>
-                                                  <li><a href="/calculator/credit-assessment">Credit Assessment</a></li>
-                                                  <li><a href="/calculator/consolidate">Consolidate Calculator</a></li>
-                                                  <li><a href="/calculator/complex-loan">Payment Frequencies Calculator</a></li>
-                                                  <li><a href="/calculator/compare-loan">Loan Comparison</a></li>
-                                                  <li><a href="/calculator/cert-deposit">Certificate of Deposit</a></li>
-                                                  <li><a href="/calculator/cd-ladder">CD Ladder Calculator</a></li>
-                                                </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                      <span data-content-block="accordionHeader3" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader3}}
-                                            {{& content}}
-                                          {{/page.accordionHeader3}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Investments &amp; Retirement Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse3" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent3" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent3}}
-                                          {{& content}}
-                                        {{/page.accordionContent3}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                          <ul>
-                                              <li><a href="/calculator/roth-ira">Roth IRA</a> </li>
-                                              <li><a href="/calculator/roth-transfer">Roth IRA Conversions</a> </li>
-                                              <li><a href="/calculator/retire-401k">401k Savings</a> </li>
-                                              <li><a href="/calculator/regular-ira">Traditional IRA</a> </li>
-                                              <li><a href="/calculator/social-security">Social Security Benefits</a></li>
-                                              <li><a href="/calculator/retirement-plan">Retirement Planner</a></li>
-                                            </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                      <span data-content-block="accordionHeader4" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader4}}
-                                            {{& content}}
-                                          {{/page.accordionHeader4}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Savings Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse4" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent4" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent4}}
-                                          {{& content}}
-                                        {{/page.accordionContent4}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                          <ul>
-                                            <li><a href="/calculator/compound-interest">Compound Interest</a></li>
-                                            <li><a href="/calculator/college-savings">College Savings</a></li>
-                                            <li><a href="/calculator/cert-deposit">Certificate of Deposit</a></li>
-                                            <li><a href="/calculator/cd-ladder">CD Ladder</a></li>
-                                            <li><a href="/calculator/spend-less">Benefit of Spending Less</a></li>
-                                            <li><a href="/calculator/compound-savings">Accumulate Savings</a></li>
-                                            <li><a href="/calculator/millionaire">Save a Million</a></li>
-                                            <li><a href="/calculator/emergency">Emergency Savings</a></li>
-                                            <li><a href="/calculator/lunch-saver">Lunch Savings</a></li>
-                                            <li><a href="/calculator/savings-variables">Savings, Taxes &amp; Inflation</a> </li>
-                                          </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-                                      <span data-content-block="accordionHeader5" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader5}}
-                                            {{& content}}
-                                          {{/page.accordionHeader5}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Household Finance Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse5" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent5" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent5}}
-                                          {{& content}}
-                                        {{/page.accordionContent5}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                          <ul>
-                                            <li><a href="/calculator/spend-less">Spend Less</a> </li>
-                                            <li><a href="/calculator/social-security">Social Security</a></li>
-                                            <li><a href="/calculator/checkbooky">Checkbook Calculator</a></li>
-                                            <li><a href="/calculator/net-worth">Net Worth</a></li>
-                                            <li><a href="/calculator/millionaire">Sav a Million</a></li>
-                                            <li><a href="/calculator/lunch-saver">Lunch Savings</a></li>
-                                            <li><a href="/calculator/life-insurance">Life Insurance</a></li>
-                                            <li><a href="/calculator/disability">Disability Insurance</a></li>
-                                            <li><a href="/calculator/home-budget">Home Budget</a></li>
-                                            <li><a href="/calculator/credit-line">Home Equity Line of Credit</a></li>
-                                            <li><a href="/calculator/mortgage-rent-vs-buy">Rent vs. Buy</a></li>
-                                            <li><a href="/calculator/debt-consolidate">Debt Consolidation</a></li>
-                                            <li><a href="/calculator/debt-amount">Managing Debt</a></li>
-                                            <li><a href="/calculator/college-savings">College Savings</a></li>
-                                            <li><a href="/calculator/auto-rebate">Auto Rebate Calculator</a></li>
-                                          </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-                                      <span data-content-block="accordionHeader6" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader6}}
-                                            {{& content}}
-                                          {{/page.accordionHeader6}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Savings Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse6" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent6" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent6}}
-                                          {{& content}}
-                                        {{/page.accordionContent6}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                          <ul>
-                                            <li><a href="/calculator/savings-variables">Savings, Taxes &amp; Inflation</a> </li>
-                                            <li><a href="/calculator/savings">Savings Goals</a></li>
-                                            <li><a href="/calculator/hsa-goal">HSA Goals</a></li>
-                                            <li><a href="/calculator/hsa-contribution">HSA Contributions</a></li>
-                                            <li><a href="/calculator/hsa-savings">HSA Savings</a></li>
-                                            <li><a href="/calculator/hsa-vs-traditional">HSA vs. Traditional Health Plan</a></li>
-                                            <li><a href="/calculator/life-insurance">Life Insurance</a></li>
-                                            <li><a href="/calculator/disability">Disability Insurance</a></li>
-                                            <li><a href="/calculator/emergency">Emergency Savings</a></li>
-                                            <li><a href="/calculator/compound-savings">Compound Savings</a></li>
-                                            <li><a href="/calculator/compound-interest">Compound Interest</a></li>
-                                            <li><a href="/calculator/college-savings">College Savings</a></li>
-                                          </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-                                      <span data-content-block="accordionHeader7" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader7}}
-                                            {{& content}}
-                                          {{/page.accordionHeader7}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Savings Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse7" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent7" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent7}}
-                                          {{& content}}
-                                        {{/page.accordionContent7}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                          <ul>
-                                            <li><a href="/calculator/savings-variables">Savings, Taxes &amp; Inflation</a> </li>
-                                            <li><a href="/calculator/savings">Savings Goals</a></li>
-                                            <li><a href="/calculator/hsa-goal">HSA Goals</a></li>
-                                            <li><a href="/calculator/hsa-contribution">HSA Contributions</a></li>
-                                            <li><a href="/calculator/hsa-savings">HSA Savings</a></li>
-                                            <li><a href="/calculator/hsa-vs-traditional">HSA vs. Traditional Health Plan</a></li>
-                                            <li><a href="/calculator/life-insurance">Life Insurance</a></li>
-                                            <li><a href="/calculator/disability">Disability Insurance</a></li>
-                                            <li><a href="/calculator/emergency">Emergency Savings</a></li>
-                                            <li><a href="/calculator/compound-savings">Compound Savings</a></li>
-                                            <li><a href="/calculator/compound-interest">Compound Interest</a></li>
-                                            <li><a href="/calculator/college-savings">College Savings</a></li>
-                                          </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default hidden-content">
-                                <div class="panel-heading">
-                                  <div class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
-                                      <span data-content-block="accordionHeader8" data-content="content" data-editable="editable" >
-                                        {{#page.accordionHeader8}}
-                                            {{& content}}
-                                          {{/page.accordionHeader8}}
-                                          <!-- @if NODE_ENV!='production' -->
-                                              Savings Calculators
-                                          <!-- @endif -->
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                                <div id="collapse8" class="panel-collapse collapse">
-                                  <div class="panel-body">
-                                    <div class="content" data-content-block="accordionContent8" data-content="content" data-editable="editable" >
-                                      {{#page.accordionContent8}}
-                                          {{& content}}
-                                        {{/page.accordionContent8}}
-                                        <!-- @if NODE_ENV!='production' -->
-                                          <ul>
-                                            <li><a href="/calculator/savings-variables">Savings, Taxes &amp; Inflation</a> </li>
-                                            <li><a href="/calculator/savings">Savings Goals</a></li>
-                                            <li><a href="/calculator/hsa-goal">HSA Goals</a></li>
-                                            <li><a href="/calculator/hsa-contribution">HSA Contributions</a></li>
-                                            <li><a href="/calculator/hsa-savings">HSA Savings</a></li>
-                                            <li><a href="/calculator/hsa-vs-traditional">HSA vs. Traditional Health Plan</a></li>
-                                            <li><a href="/calculator/life-insurance">Life Insurance</a></li>
-                                            <li><a href="/calculator/disability">Disability Insurance</a></li>
-                                            <li><a href="/calculator/emergency">Emergency Savings</a></li>
-                                            <li><a href="/calculator/compound-savings">Compound Savings</a></li>
-                                            <li><a href="/calculator/compound-interest">Compound Interest</a></li>
-                                            <li><a href="/calculator/college-savings">College Savings</a></li>
-                                          </ul>
-                                        <!-- @endif -->
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                      </div>
+                      {{> blocks/accordion}}
                       <div class="spacer-30"></div>
                   </div>
 
-                  <div class="content" data-content-block="bodyCopy3" data-content="content" data-editable="editable" >
-                    {{#page.bodyCopy3}}
+                  <div class="content" data-content-block="bodyCopy2" data-content="content" data-editable="editable" >
+                    {{#page.bodyCopy2}}
                         {{& content}}
-                      {{/page.bodyCopy3}}
+                      {{/page.bodyCopy2}}
                       <!-- @if NODE_ENV!='production' -->
                           <h5>Third content area</h5>
                           <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis explicabo, dicta totam beatae tempore, vitae suscipit officia illum asperiores dolore harum cum cupiditate quidem alias? Delectus, quasi dignissimos asperiores consectetur. Explicabo, dolorem ullam aliquam assumenda autem odit nobis perferendis rerum itaque deleniti fugit inventore, officia nam eveniet voluptate? Cum saepe quod, nobis debitis autem, quam distinctio voluptatem dolorum beatae. Vitae magni voluptatem voluptate? Placeat, maiores?</div>
                       <!-- @endif -->
                   </div>
-                </div>
 
-                <div class="col-lg-3 col-md-5 left-column col-md-pull-7 col-lg-pull-9">
-                   <div class="content" data-content-block="bodyCopy2" data-content="content" data-editable="editable">
-                    {{#page.bodyCopy2}}
+              </div>
+
+              <div class="col-lg-3 col-md-5">
+                 <div class="content" data-content-block="bodyCopy3" data-content="content" data-editable="editable">
+                    {{#page.bodyCopy3}}
                       {{& content}}
-                    {{/page.bodyCopy2}}
+                    {{/page.bodyCopy3}}
                     <!-- @if NODE_ENV!='production' --> 
                         <h2>Related Links</h2>
                         <ul>
@@ -390,12 +58,11 @@
                           <li><a href="">Laboriosam vero obcaecati ipsa?</a></li>
                           <li><a href="">Accusamus, dolores nobis voluptate.</a></li>
                         </ul>
-                     <!-- @endif -->
+                    <!-- @endif -->
                   </div>
-                </div>
-                
-            </div>
-        </div>
+              </div>
+              
+          </div>
       </div>
     
     </div>

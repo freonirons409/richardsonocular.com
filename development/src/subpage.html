@@ -132,54 +132,39 @@
 
 <header class="header">
 	<div class="container">
-		  <span itemscope itemtype="http://schema.org/BankOrCreditUnion">
-		  	<span itemprop="name" class="sr-only">YourFI</span>
-		  	<a href="/" class="logo pull-left" title="YourFI, Cedar Falls, IA" itemprop="url">
-			  <span class="logotype" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-			  	<img src="/assets/img/banno-logo.svg" alt="YourFI" itemprop="url">
-			  </span>
+		<span itemscope itemtype="http://schema.org/BankOrCreditUnion">
+			<span itemprop="name" class="sr-only">YourFI</span>
+			<a href="/" class="logo pull-left" title="YourFI, Cedar Falls, IA" itemprop="url">
+				<span class="logotype" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<img src="/assets/img/banno-logo.svg" alt="YourFI" itemprop="url">
+				</span>
 			</a>
-		  </span>
-		  <div class="header-right pull-right">
-		    <!-- HTML for Members login component -->
-		    <banno:member-login landingPage="/member-page"></banno:member-login>
-		    <!-- End of Members Login -->
-
-		    <!-- HTML for Members login component -->
-			  <div class="banno-members-wrapper">
-			    <div class="banno-members-container">
-			      <div class="banno-members-login-container">
-			        <form action="/member-page" id="banno-members-login">
-			          <input type="email" name="email" class="email" placeholder="name@example.com" id="login-email">
-			          <input type="password" name="password" autocomplete="off" class="password" placeholder="Password" id="login-password">
-			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-login-btn">Login</button>
-			        </form>
-			        <a class="banno-members-link" id="reset-pass-control" href="#">Forgot password?</a>
-			      </div>
-			      <div class="banno-members-reset-container hide">
-			        <form method="post" id="banno-members-reset">
-			          <p class="banno-members-text">Enter your email and we'll send you a link to reset your password.</p>
-			          <input type="email" class="email" placeholder="name@example.com" id="forgot-email">
-			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-reset-btn">Send</button>
-			        </form>
-			        <a class="banno-members-link" id="login-control" href="#">Nevermind, I remember now.</a>
-			      </div>
-			    </div>
-			    <div class="alert alert-block alert-error hide" id="login-error">
-			      <h4 class="alert-heading">Unable to login!</h4>
-			      Double check your login credentials and try again.
-			    </div>
-			    <div class="alert alert-block alert-error hide" id="reset-error">
-			      <h4 class="alert-heading">Unable to reset password!</h4>
-			      Double check your email and try again.
-			    </div>
-			    <div class="alert alert-block alert-info hide" id="reset-confirm">
-			      <h4 class="alert-heading">Check your email.</h4>
-			      We're sending you an email with a link to reset your password.
-			    </div>
-			  </div>
-			  <!-- End of Members Login -->
-		  </div>
+		</span>
+		<div class="header-right">
+			<div class="toggle-login visible-xs">Login</div>
+<div class="online-banking-container">
+		<div class="row">
+			<form class="clearfix" action="" autocomplete="off" method="post" data-parsley-validate>
+					<div class="welcome-text">Online Banking Login</div>
+					<div class="col-sm-5">
+						<div class="form-group"><input type="text" name="username" placeholder="Username" title="Username" required></div>
+					</div>
+					<div class="col-sm-5">
+						<div class="form-group"><input type="password" name="password" placeholder="Password" title="Password" required></div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group"><button type="submit" class="btn btn-primary">Login</button></div>
+					</div>
+					<div class="col-xs-12">
+						<ul class="login-links list-inline">
+							<li><a href="#">Forgot Password?</a></li>
+							<li><a href="#">Enroll</a></li>
+						</ul>
+					</div>
+			</form>
+		</div>
+</div>
+		</div>
 	</div>
 </header>
     <div class="container">
@@ -417,7 +402,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-5">
-             <div class="content" data-content-block="bodyCopy2" data-content="content" data-editable="editable">
+            <div class="content" data-content-block="subAd1" data-content="content" data-editable="editable">
                   <p><a href="" class="btn">Default Button</a></p>
                   <p><a href="" class="btn btn-primary">Primary Button</a></p>
                   <p><a href="" class="btn btn-info">Info Button</a></p>
@@ -425,6 +410,11 @@
                   <p><a href="" class="btn btn-warning">Warning Button</a></p>
                   <p><a href="" class="btn btn-danger">Danger Button</a></p>
                   <p><a href="" class="btn btn-inverse">Inverse Button</a></p>
+            </div>
+            <div class="spacer-20"></div>
+            <div class="content" data-content-block="subAd2" data-content="content" data-editable="editable">
+                  <h3>Lorem ipsum dolor sit amet.</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae voluptates natus magnam blanditiis autem voluptas, consectetur, officiis, a nulla optio fugit perspiciatis possimus deserunt reprehenderit voluptatibus animi nostrum, earum ducimus doloribus dolorem accusamus. Suscipit ad quia maiores tempora, soluta, adipisci explicabo inventore magni itaque ratione, sapiente ipsam odit nobis molestias similique dolores! Hic omnis aspernatur, eius vitae doloribus assumenda.</p>
             </div>
           </div>
         </div>
@@ -437,18 +427,18 @@
       <a href="#" id="scrollTop" class="visible-xs-block">
         <img src="/assets/img/topScroll.png">
       </a>
+      <div class="footer-links">
+        <banno:menu menu-id="CHANGEME" ></banno:menu>
+            <ul class="banno-menu">
+              <li><a href="">Link #1</a></li>
+              <li><a href="">Link #2</a></li>
+              <li><a href="">Link #3</a></li>
+            </ul>
+      </div>
       <div class="copyright">
-        <span class="copytext">
-          &copy;<script>
-            var d = new Date();
-            var year = d.getFullYear();
-            document.write(year);
-          </script> YourFI. 
-        </span>
-        <span class="fdic">Member FDIC.</span>
-        <span class="ehl">
-          Equal Housing Lender <img src="/assets/img/ehl.png" srcset="/assets/img/ehl.png 1x, /assets/img/ehl@2x.png 2x" alt="Equal Housing Lender" class="ehl">
-        </span> 
+        <span class="copytext">&copy;<span class="copy-date"></span> YourFI.</span>
+        <span class="fdic">Member <span class="icon icon-fdic"></span></span>
+        <span class="ehl">Equal Housing Lender <span class="icon icon-ehl"></span></span> 
       </div>
   </div>
 </footer>

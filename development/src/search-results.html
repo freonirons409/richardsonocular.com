@@ -132,54 +132,39 @@
 
 <header class="header">
 	<div class="container">
-		  <span itemscope itemtype="http://schema.org/BankOrCreditUnion">
-		  	<span itemprop="name" class="sr-only">YourFI</span>
-		  	<a href="/" class="logo pull-left" title="YourFI, Cedar Falls, IA" itemprop="url">
-			  <span class="logotype" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-			  	<img src="/assets/img/banno-logo.svg" alt="YourFI" itemprop="url">
-			  </span>
+		<span itemscope itemtype="http://schema.org/BankOrCreditUnion">
+			<span itemprop="name" class="sr-only">YourFI</span>
+			<a href="/" class="logo pull-left" title="YourFI, Cedar Falls, IA" itemprop="url">
+				<span class="logotype" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<img src="/assets/img/banno-logo.svg" alt="YourFI" itemprop="url">
+				</span>
 			</a>
-		  </span>
-		  <div class="header-right pull-right">
-		    <!-- HTML for Members login component -->
-		    <banno:member-login landingPage="/member-page"></banno:member-login>
-		    <!-- End of Members Login -->
-
-		    <!-- HTML for Members login component -->
-			  <div class="banno-members-wrapper">
-			    <div class="banno-members-container">
-			      <div class="banno-members-login-container">
-			        <form action="/member-page" id="banno-members-login">
-			          <input type="email" name="email" class="email" placeholder="name@example.com" id="login-email">
-			          <input type="password" name="password" autocomplete="off" class="password" placeholder="Password" id="login-password">
-			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-login-btn">Login</button>
-			        </form>
-			        <a class="banno-members-link" id="reset-pass-control" href="#">Forgot password?</a>
-			      </div>
-			      <div class="banno-members-reset-container hide">
-			        <form method="post" id="banno-members-reset">
-			          <p class="banno-members-text">Enter your email and we'll send you a link to reset your password.</p>
-			          <input type="email" class="email" placeholder="name@example.com" id="forgot-email">
-			          <button type="submit" class="banno-members-submit btn btn-primary btn-large" id="banno-members-reset-btn">Send</button>
-			        </form>
-			        <a class="banno-members-link" id="login-control" href="#">Nevermind, I remember now.</a>
-			      </div>
-			    </div>
-			    <div class="alert alert-block alert-error hide" id="login-error">
-			      <h4 class="alert-heading">Unable to login!</h4>
-			      Double check your login credentials and try again.
-			    </div>
-			    <div class="alert alert-block alert-error hide" id="reset-error">
-			      <h4 class="alert-heading">Unable to reset password!</h4>
-			      Double check your email and try again.
-			    </div>
-			    <div class="alert alert-block alert-info hide" id="reset-confirm">
-			      <h4 class="alert-heading">Check your email.</h4>
-			      We're sending you an email with a link to reset your password.
-			    </div>
-			  </div>
-			  <!-- End of Members Login -->
-		  </div>
+		</span>
+		<div class="header-right">
+			<div class="toggle-login visible-xs">Login</div>
+<div class="online-banking-container">
+		<div class="row">
+			<form class="clearfix" action="" autocomplete="off" method="post" data-parsley-validate>
+					<div class="welcome-text">Online Banking Login</div>
+					<div class="col-sm-5">
+						<div class="form-group"><input type="text" name="username" placeholder="Username" title="Username" required></div>
+					</div>
+					<div class="col-sm-5">
+						<div class="form-group"><input type="password" name="password" placeholder="Password" title="Password" required></div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group"><button type="submit" class="btn btn-primary">Login</button></div>
+					</div>
+					<div class="col-xs-12">
+						<ul class="login-links list-inline">
+							<li><a href="#">Forgot Password?</a></li>
+							<li><a href="#">Enroll</a></li>
+						</ul>
+					</div>
+			</form>
+		</div>
+</div>
+		</div>
 	</div>
 </header>
     <div class="container">
@@ -387,58 +372,60 @@
   </div>
 </nav>
       <div id="main" tabindex="-1">
+
             <h1 class="page-title">Search Results</h1>
 
-            <h2>You searched for "<span class="search-query"></span>"</h2>
+            <div class="content">
+              <h2><em>You searched for "<span class="search-query">testing</span>"</em></h2>
+              <h3>Please type in something to search.</h3>
 
-            <h3>Please type in something to search.</h3>
+              <banno:sitesearch-input>
+                  <form class="search-results-form" action="/search" method="GET">
+                    <ul class="list-inline break-mobile">
+                      <li><input name="q" placeholder="Search Again" name="Search Terms" type="search" class="form-control" required></li>
+                      <li><button type="submit" id="searchSubmitButton" class="btn btn-primary">Search</button></li>
+                    </ul>
+                  </form>
+              </banno:sitesearch-input>
 
-            <banno:sitesearch-input>
-                <form class="search-form" action="/search" method="GET">
-                  <ul class="list-inline break-mobile">
-                    <li><input name="q" placeholder="Search Again" name="Search Terms" type="search" class="form-control" required></li>
-                    <li><button type="submit" id="searchSubmitButton" class="btn btn-primary">Search</button></li>
-                  </ul>
-                </form>
-            </banno:sitesearch-input>
+              <banno:sitesearch-result></banno:sitesearch-result>
+                <section class="search-container">
+                    <div class="search-item">
+                      <a href="/online-banking" class="search-link">
+                        <h3 class="search-title">Online Banking</h3>
+                      </a>
+                      <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                    </div>
 
-            <section class="search-container">
-                <banno:sitesearch-result></banno:sitesearch-result>
-                      <div class="search-item">
-                        <a href="/online-banking" class="search-link">
-                          <h3 class="search-title">Online Banking</h3>
-                        </a>
-                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-                      </div>
+                    <div class="search-item">
+                      <a href="/mobile-banking" class="search-link">
+                        <h3 class="search-title">Mobile Banking</h3>
+                      </a>
+                      <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                    </div>
 
-                      <div class="search-item">
-                        <a href="/mobile-banking" class="search-link">
-                          <h3 class="search-title">Mobile Banking</h3>
-                        </a>
-                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-                      </div>
+                    <div class="search-item">
+                      <a href="/rates" class="search-link">
+                        <h3 class="search-title">Rates</h3>
+                      </a>
+                      <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                    </div>
 
-                      <div class="search-item">
-                        <a href="/rates" class="search-link">
-                          <h3 class="search-title">Rates</h3>
-                        </a>
-                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-                      </div>
+                    <div class="search-item">
+                      <a href="/personal-checking" class="search-link">
+                        <h3 class="search-title">Checking</h3>
+                      </a>
+                      <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                    </div>
 
-                      <div class="search-item">
-                        <a href="/personal-checking" class="search-link">
-                          <h3 class="search-title">Checking</h3>
-                        </a>
-                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-                      </div>
-
-                      <div class="search-item">
-                        <a href="/personal-savings" class="search-link">
-                          <h3 class="search-title">Savings</h3>
-                        </a>
-                        <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-                      </div>
-            </section>
+                    <div class="search-item">
+                      <a href="/personal-savings" class="search-link">
+                        <h3 class="search-title">Savings</h3>
+                      </a>
+                      <p class="search-summary">This is how the text will be displayed for search results. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Personal checking felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+                    </div>
+                </section>
+            </div>
       </div>
     </div>
 
@@ -447,18 +434,18 @@
       <a href="#" id="scrollTop" class="visible-xs-block">
         <img src="/assets/img/topScroll.png">
       </a>
+      <div class="footer-links">
+        <banno:menu menu-id="CHANGEME" ></banno:menu>
+            <ul class="banno-menu">
+              <li><a href="">Link #1</a></li>
+              <li><a href="">Link #2</a></li>
+              <li><a href="">Link #3</a></li>
+            </ul>
+      </div>
       <div class="copyright">
-        <span class="copytext">
-          &copy;<script>
-            var d = new Date();
-            var year = d.getFullYear();
-            document.write(year);
-          </script> YourFI. 
-        </span>
-        <span class="fdic">Member FDIC.</span>
-        <span class="ehl">
-          Equal Housing Lender <img src="/assets/img/ehl.png" srcset="/assets/img/ehl.png 1x, /assets/img/ehl@2x.png 2x" alt="Equal Housing Lender" class="ehl">
-        </span> 
+        <span class="copytext">&copy;<span class="copy-date"></span> YourFI.</span>
+        <span class="fdic">Member <span class="icon icon-fdic"></span></span>
+        <span class="ehl">Equal Housing Lender <span class="icon icon-ehl"></span></span> 
       </div>
   </div>
 </footer>

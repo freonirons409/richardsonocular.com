@@ -3,18 +3,20 @@
       <a href="#" id="scrollTop" class="visible-xs-block">
         <img src="/assets/img/topScroll.png">
       </a>
+      <div class="footer-links">
+        <banno:menu menu-id="CHANGEME" ></banno:menu>
+          <!-- @if NODE_ENV!='production' -->
+            <ul class="banno-menu">
+              <li><a href="">Link #1</a></li>
+              <li><a href="">Link #2</a></li>
+              <li><a href="">Link #3</a></li>
+            </ul>
+          <!-- @endif -->
+      </div>
       <div class="copyright">
-        <span class="copytext">
-          &copy;<script>
-            var d = new Date();
-            var year = d.getFullYear();
-            document.write(year);
-          </script> YourFI. 
-        </span>
-        <span class="fdic">Member FDIC.</span>
-        <span class="ehl">
-          Equal Housing Lender <img src="/assets/img/ehl.png" srcset="/assets/img/ehl.png 1x, /assets/img/ehl@2x.png 2x" alt="Equal Housing Lender" class="ehl">
-        </span> 
+        <span class="copytext">&copy;<span class="copy-date"></span> YourFI.</span>
+        <span class="fdic">Member <span class="icon icon-fdic"></span></span>
+        <span class="ehl">Equal Housing Lender <span class="icon icon-ehl"></span></span> 
       </div>
   </div>
 </footer>

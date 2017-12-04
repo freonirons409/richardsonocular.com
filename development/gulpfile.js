@@ -376,9 +376,7 @@ gulp.task('clear', function (done) {
 
 
 // ============= Task watcher ============= //
-
-gulp.task('watch', ['mustache', 'make-iconfont','make-preview','plugins','local-px-rem'], function() {
-
+gulp.task('preview', function(){
     browserSync.init({
         server: {
             baseDir: "./src/",
@@ -402,6 +400,20 @@ gulp.task('watch', ['mustache', 'make-iconfont','make-preview','plugins','local-
     // Sprites
     //gulp.watch(["./src/images/sprites/*-2x.png" ], ['sprite']);
 });
+
+gulp.task('watch', ['mustache', 'make-iconfont','make-preview','plugins','local-px-rem'], function() {
+    runSequence(
+        'mustache',
+        'make-iconfont', 
+        'make-preview',
+        'plugins',
+        'local-px-rem',
+        'preview',
+        'styles',
+        'js'
+    );
+});
+
 
 gulp.task('default', function(){
     runSequence(

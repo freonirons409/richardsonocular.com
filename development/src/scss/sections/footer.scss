@@ -1,4 +1,4 @@
-// Header
+// FOOTER STYLES
 // =========================================================================================================
 
 footer.footer {
@@ -7,5 +7,15 @@ footer.footer {
 	margin-top:40px;
 	.container {
 
+	}
+	.banno-menu {
+		@extend .list-inline;
+		@media (max-width:$screen-xs-max) {
+			li {
+				display:block;
+				text-align:center;
+				margin-bottom:10px;
+			}
+		}
 	}
 }

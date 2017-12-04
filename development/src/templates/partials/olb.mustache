@@ -1,13 +1,22 @@
-<form class="form-inline form-control">
-          <h3 class="welcome-txt">Welcome to Banno Bank.</h3>
-          <select title="Online banking selector">
-            <option value="">Online Banking Login</option>
-          </select>
-          <input type="text" class="span2" name="username" placeholder="Username" title="Username">
-          <input type="password" class="span2" name="password" placeholder="Password" title="Password">
-          <button type="submit" class="btn btn-primary">Login</button>
-          <span class="login-links">
-            <a href="#">Forgot Password?</a> |
-            <a href="#">Enroll</a>
-          </span>
-        </form>
+<div class="online-banking-container">
+		<div class="row">
+			<form class="clearfix" action="" autocomplete="off" method="post" data-parsley-validate>
+					<div class="welcome-text">Online Banking Login</div>
+					<div class="col-sm-5">
+						<div class="form-group"><input type="text" name="username" placeholder="Username" title="Username" required></div>
+					</div>
+					<div class="col-sm-5">
+						<div class="form-group"><input type="password" name="password" placeholder="Password" title="Password" required></div>
+					</div>
+					<div class="col-sm-2">
+						<div class="form-group"><button type="submit" class="btn btn-primary">Login</button></div>
+					</div>
+					<div class="col-xs-12">
+						<ul class="login-links list-inline">
+							<li><a href="#">Forgot Password?</a></li>
+							<li><a href="#">Enroll</a></li>
+						</ul>
+					</div>
+			</form>
+		</div>
+</div>

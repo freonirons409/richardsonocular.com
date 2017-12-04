@@ -11,18 +11,20 @@
 .search-container {
   margin-top: 20px;
   .search-item {
-    margin-bottom: 20px;
-
-    .search-link:hover{
-      text-decoration: none;
-      .search-title {
-        color: $gray;
-      }
+    border-bottom:1px solid $gray-lighter;
+    padding-bottom:15px;
+    a {
+      display:inline-block;
     }
   }
-  .search-summary {
-    border-bottom: 1px solid $gray-lighter;
-    padding-bottom: 20px;
+}
+.search-results-form {
+  .list-inline {
+    margin-top:20px;
+    @extend .clearfix;
+    li {
+      float:left;
+    }
   }
 }
 

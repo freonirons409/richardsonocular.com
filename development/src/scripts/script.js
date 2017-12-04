@@ -76,6 +76,11 @@ banno.site.openNewWindow = function() {
       }
     });
 }
+banno.site.setDate = function() {
+  var d = new Date();
+  var year = d.getFullYear();
+  $(".copy-date").text(year);
+}
 banno.site.setDisclaimers = function(link) {
     var speedbump = link.attr('href');
     var exitMsg = setDisclaimerVerbiage("desktop","external");
@@ -213,7 +218,7 @@ banno.site.displayAlert = function() {
 
 // Function to get screen size, used in conjunction with the .screener class, 
 // typically placed in the footer
-// ==========================================================================
+// ==================================================================================================================================
 banno.site.getScreenSize = function() {
   var s = $(".screener").css("content").replace(/\"/g,"");
   switch(s) {
@@ -224,7 +229,7 @@ banno.site.getScreenSize = function() {
 }
 
 // function to set the overflow of the table container div and show/hide the swiper
-// ==========================================================================
+// ==================================================================================================================================
 banno.site.setTableScrolling = function() {
   $(".table-responsive").each(function(){
       var c = $(this).outerWidth();
@@ -240,17 +245,23 @@ banno.site.setTableScrolling = function() {
   });
 }
 
+// GLOBAL VARIABLES
+// ==================================================================================================================================
+var $body = $("body"), 
+    $bodyhtml = $("body,html"),
+    $slider = $(".slider"),
+    $logo = $('.logo');
 
 // Check to see if user is editing the site using top != self.
 // If they aren't start the slideshow and do not show #success on form pages
 // ==================================================================================================================================
 $(window).load(function() {
     if (top != self) {
-        $('.success-container').show();
-        $('body').addClass('edit');
+        $body.addClass('edit');
         $('.alert.hidden-alert').show();
-        $('.slider').slick({
+        $slider.slick({
           dots: true,
+          accessibility:false,
           infinite: true,
           fade: true,
           cssEase: 'linear',
@@ -264,8 +275,9 @@ $(window).load(function() {
           fade: true,
           accessibility: false,
           speed: 300,
+          autoplay: false,
+          cssEase: 'linear',
           adaptiveHeight: true,
-          autoplaySpeed: 8000,
           responsive: [{
 
             breakpoint: 992,
@@ -282,7 +294,7 @@ $(window).load(function() {
           }]
         });
     } else {
-        $('.slider').slick({
+        $slider.slick({
           dots: true,
           infinite: true,
           fade: false,
@@ -335,13 +347,28 @@ $(window).load(function() {
           }]
         });
         banno.site.openNewWindow();
-        $('.success-container').hide();
         $(".table-responsive").each(function(){
             $(this).prepend('<div class="swiper text-center">&laquo; Swipe for More &raquo;</div>');
         });
         banno.site.setTableScrolling();
+        // Trigger Anchor Button Click on spacebar
+        // ==================================================================================================================================
+        $('a.btn').keypress(function(e){
+          if(e.which === 32){
+            e.preventDefault();
+            $(this).get(0).click();
+          }
+        });
+        // React like a button for ADA
+        // ==================================================================================================================================
+        $('[role="button"]').keypress(function(e){
+          if(e.which === 32 || e.which === 13){  // 32 == spacebar, 13 == enter
+            e.preventDefault();
+            $(this).get(0).click();
+          }
+        });
     }
-})
+});
 
 $(function () {
     //Setup jquery placeholder
@@ -353,6 +380,7 @@ $(function () {
     // Run functions in initialize
     // ==================================================================================================================================
     banno.site.initialize();
+    banno.site.setDate();
 
     // Resize event handler
     // ==================================================================================================================================
@@ -361,29 +389,22 @@ $(function () {
         banno.site.setTableScrolling();
     });
 
-    // Trigger Anchor Button Click on spacebar
-    // ==================================================================================================================================
-    $('a.btn').keypress(function(e){
-    	if(e.which === 32){
-    		e.preventDefault();
-    		$(this).get(0).click();
-    	}
-    });
-    // React like a button for ADA
-    // ==================================================================================================================================
-    $('[role="button"]').keypress(function(e){
-      if(e.which === 32 || e.which === 13){  // 32 == spacebar, 13 == enter
-        e.preventDefault();
-        $(this).get(0).click();
-      }
-    });
-
     // Close Alert
     // ==================================================================================================================================
     $('.alert button.close').on('click', function(e) {
         e.preventDefault();
         createCookie('alert', true, 1);
         $('.alert').hide();
+    });
+
+    // Header Togglers
+    // ==================================================================================================================================
+    $(".toggle-login").on("click", function(){
+        $(".online-banking-container").toggleClass("toggled");
+    });
+
+    $('#navbar-collapse').on('show.bs.collapse', function() {
+      $(".online-banking-container").removeClass("toggled");
     });
 
     // Mobile Menu Functionality
@@ -427,15 +448,15 @@ $(function () {
         var code = e.keyCode;
         if(code === 13 || code === 32) {
           e.preventDefault();
-          $('html,body').animate({scrollTop: 0},600, function(){
-            $('.logo').focus();
+          $bodyhtml.animate({scrollTop: 0},600, function(){
+            $logo.focus();
           }); // scroll to top for all other browsers
         }
     });
     $('#scrollTop').on('click', function(e) {
         e.preventDefault();
-        $('html,body').animate({scrollTop: 0},600, function(){
-            $('.logo').focus();
+        $bodyhtml.animate({scrollTop: 0},600, function(){
+            $logo.focus();
         }); // scroll to top for all other browsers   
     });
 
@@ -466,7 +487,7 @@ $(function () {
             formContainer.hide();
             successContainer.fadeIn();
             if(submittableForm.hasClass("no-scroll")===false) {
-               $("html, body").animate({
+               $bodyhtml.animate({
                  scrollTop: successContainer.offset().top-40
                }, 600);
             }
