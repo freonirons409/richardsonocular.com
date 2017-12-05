@@ -411,12 +411,14 @@ gulp.task('preview', function(){
     //gulp.watch(["./src/images/sprites/*-2x.png" ], ['sprite']);
 });
 
-gulp.task('watch', ['mustache', 'make-iconfont','make-preview','plugins','local-px-rem'], function() {
+gulp.task('watch', function() {
     runSequence(
         'mustache',
         'make-iconfont', 
         'make-preview',
         'plugins',
+        'images',
+        'copy', 
         'local-px-rem',
         'preview',
         'styles',
