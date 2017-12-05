@@ -189,13 +189,23 @@ gulp.task('styles', function(cb) {
 });
 gulp.task('autoprefix', function(){
 
-    // return gulp.src('./src/assets/css/*.css')
-    //     .pipe(sourcemaps.init())
-    //     .pipe(postcss([ autoprefixer() ]))
-    //     .pipe(sourcemaps.write('./maps', { // use '.' to write the sourcemap to a separate file in the same dir
-    //         sourceRoot: './' // use the file's folder as source root
-    //     }))
-    //     .pipe(gulp.dest('./src/assets/css/'));
+    return gulp.src('./src/assets/css/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(sourcemaps.write('./maps', { // use '.' to write the sourcemap to a separate file in the same dir
+            sourceRoot: './' // use the file's folder as source root
+        }))
+        .pipe(gulp.dest('./src/assets/css/'));
+});
+gulp.task('autoprefix-deploy', function(){
+
+    return gulp.src('./deploy/css/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(sourcemaps.write('./maps', { // use '.' to write the sourcemap to a separate file in the same dir
+            sourceRoot: './' // use the file's folder as source root
+        }))
+        .pipe(gulp.dest('./deploy/css/'));
 });
 // gulp.task('calculators', function(cb) {
 //     runSequence('clear-calculators','calculator-split','calculator-clean');
@@ -410,7 +420,8 @@ gulp.task('watch', ['mustache', 'make-iconfont','make-preview','plugins','local-
         'local-px-rem',
         'preview',
         'styles',
-        'js'
+        'js',
+        'autoprefix'
     );
 });
 
@@ -430,6 +441,7 @@ gulp.task('default', function(){
         'make-preview',
         'autoprefix',
         'deploy',
+        'autoprefix-deploy',
         'compress'
     );
 });

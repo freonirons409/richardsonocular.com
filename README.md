@@ -2,6 +2,26 @@
 
 BannoBootstrap 3 is a group of files used as a starting point for developing a website on the Banno CMS. The README file contains the do's and dont's of building a website.
 
+## Recent Updates
+- Site structure set up so that bootstrap modifications are custom child elements, so that Bootstrap could be upgrade in the future without changing the look of the custom design.
+- Script file has been streamlined and slimmed down for better performance.
+- Created mustache “blocks” for commonly used elements like accordions, tabs, sliders, subAds, etc.
+- NPM project can easily be updated by running “npm update” and will upgrade all modules and plugins.
+- Javascript plugins are set up correctly so they can be installed and updated with one command.
+- Project should run easily always using the latest version of node.
+- NPM modules that were deprecate and contained security flaws have been upgrade or replaced.
+- Removed inline javascript from footer that sets the date because using document.write is a deprecated javascript method. This is now set in the main javascript file.
+- animate.css library installed by default.
+- All variables, colors, and components are set in the main.scss file and over-writable in the “custom” folder without modifying the core bootstrap files.
+- All text editor type using .content class editable in one file, type.scss
+- Removed redundant slick classes.
+- Moved .keypress functions to the “non-cms” only scripts to prevent accordions with button role from being un-editable in the CMS because you cannot use the space bar.
+- Contains built in pixel to rem gulp tasks, eliminating the need for inline pixel conversions.
+- $(".loader") scripts for preloading images with animated loading icons
+- Simplified the Disclaimer set to eliminate the need for 4 different messages.
+- .screener class and getScreenSize function allows you to write custom javascript that is based on the set screen size.
+
+
 ### Do's
 
 ### Dont's
@@ -405,5 +425,4 @@ BannoBootstrap 3 is a group of files used as a starting point for developing a w
 	    </div>
 	  </div>
 	</div>
-
 	

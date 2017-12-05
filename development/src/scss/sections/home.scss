@@ -31,18 +31,55 @@
 
 		}
 	}
+	.image {
+		img {
+			min-width:100%;
+			@media (max-width:$screen-sm-max) {
+				min-height:400px;
+				max-width:none;
+			}
+			// @media (max-width:$screen-xs-max) {
+			// 	position:relative;
+			// 	margin-left:-200px;
+			// }
+		}
+	}
 	.caption {
-		position:absolute;
-		top:0;
-		bottom:0;
-		left:0;
-		right:0;
-		@media(max-width:$screen-md-min) {
-			right:50%;
+		@media(min-width:$screen-sm-min) {
+			position:absolute;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
+			//right:50%;
+		}
+		.container {
+			position:relative;
+			height:100%;
+			margin:0 auto;
 		}
 		.content {
-			padding:40px;
-			@include vertical-align(absolute);
+			@media(min-width:$screen-sm-min) {
+				padding:20px 0;
+				@include vertical-align(absolute);
+			}
+		}
+	}
+	.slick-dots {
+		bottom:-40px;
+		li {
+			button {
+				background:$gray;
+				border-radius:100%;
+				&:before {
+					color:transparent;
+				}
+			}
+			&.slick-active {
+				button {
+					background:$brand-primary;
+				}
+			}
 		}
 	}
 }

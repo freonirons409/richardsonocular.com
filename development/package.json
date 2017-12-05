@@ -14,7 +14,7 @@
   "version": "1.0.0",
   "description": "Banno Bootstrap Website",
   "devDependencies": {
-    "autoprefixer": "latest",
+    "autoprefixer": "^7.2.1",
     "bootstrap-sass": "^3.3.7",
     "browser-sync": "latest",
     "del": "latest",
@@ -23,7 +23,6 @@
     "grunt-cms-site-scaffold": "git+ssh://git@github.com:Banno/grunt-cms-site-scaffold#v0.0.17",
     "grunt-cms-upload": "git+ssh://git@github.com:Banno/grunt-cms-upload.git#v0.2.1",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
     "gulp-concat": "^2.6.0",
     "gulp-file-include": "^1.2.0",
