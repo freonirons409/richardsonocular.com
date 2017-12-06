@@ -3,7 +3,6 @@ var gulp = require('gulp'),
 sass = require('gulp-sass'),
 minifyCss = require('gulp-clean-css'),
 sourcemaps = require('gulp-sourcemaps'),
-//autoprefixer = require('gulp-autoprefixer'),
 autoprefixer = require('autoprefixer'),
 rename = require('gulp-rename'),
 notify = require('gulp-notify'),
@@ -50,7 +49,7 @@ function logMatches(regex) {
                 console.log(fileName);
                 console.log("========================");
             }
-            console.log(match.replace("data-content-block=\"","").replace("\"",""));
+            console.log(","+match.replace("data-content-block=\"","").replace("\"",""));
           prevFileName = fileName;
         });
     }
@@ -91,27 +90,13 @@ var postcssOptions = {
     map: true  
 };
 
-gulp.task('px-rem',['deploy'], function() {
-    // var processors = [
-    //     autoprefixer({
-    //         browsers: 'last 1 version'
-    //     }),
-    //     pxtorem(pxtoremOptions, postcssOptions)
-    // ];
- 
+gulp.task('px-rem', function() {
     return gulp.src(['./deploy/css/*.css'])
         .pipe(pxtorem(pxtoremOptions, postcssOptions))
         .pipe(gulp.dest('./deploy/css/'))
         .on("error", function(err){ console.log(err); });
 });
-gulp.task('local-px-rem',['styles'], function() {
-    // var processors = [
-    //     autoprefixer({
-    //         browsers: 'last 1 version'
-    //     }),
-    //     pxtorem(pxtoremOptions, postcssOptions)
-    // ];
- 
+gulp.task('local-px-rem', ['styles'], function() { 
     return gulp.src(['./src/assets/css/*.css'])
         .pipe(pxtorem(pxtoremOptions, postcssOptions))
         .pipe(gulp.dest('./src/assets/css/'))
@@ -121,7 +106,7 @@ gulp.task('local-px-rem',['styles'], function() {
 
 // ============= Iconfont ============= //
 var fontName = 'Icons';
-gulp.task('iconfont', ['make-iconcss','make-preview'], function(){
+gulp.task('iconfont', ['make-iconcss'], function(){
     browserSync.reload();
 });
 
@@ -150,29 +135,6 @@ gulp.task('make-iconcss',['make-iconfont'], function(cb) {
         .pipe(gulp.dest('./src/iconfont/'));
 });
 
-gulp.task('make-preview',['make-iconfont'],function() {
-    var inputfile = "src/scss/icons.scss";
-    fs.readFile(inputfile, function(err, data) {
-        if (err) throw err;
-        var content = data.toString();
-        var html = "\t<div class='container'>\n\t\t<div style='font-size: 20px;'>\n\t\t\t<ul style='list-style-type:none;'>\n\t\t\t\t";
-        var re = /(icon\-\w.*(?=:))/g;
-        var matches = content.match(re);
-        matches.forEach(function(item) {
-            html += "<li><span class='icon " + item + "'> </span>&nbsp;&nbsp;<span style='padding-left:20px;font-size:12px;'>" + item + "</span></li>\n\t\t\t\t";
-        });
-        //console.log(html);
-        fs.writeFile('src/iconfont/icons-snippet.html', html + '</ul>\n\t\t</div>\n\t</div>', function(err) {
-             console.log("wrote icon snippet")
-            return gulp.src('src/iconfont/font-preview.html')
-                .pipe(fileinclude({
-                    prefix: '@@',
-                    basepath: '@file'
-                }))
-                .pipe(gulp.dest('./src'));
-        });
-    });
-});
 // ============= End Iconfont ============= //
 
 // ============= Styles ============= //
@@ -186,6 +148,7 @@ gulp.task('styles', function(cb) {
             sourceRoot: './' // use the file's folder as source root
         }))
         .pipe(gulp.dest('./src/assets/css/'))
+        .pipe(browserSync.stream({match: './src/assets/css/*.css'}));
 });
 gulp.task('autoprefix', function(){
 
@@ -231,11 +194,7 @@ gulp.task('calculator-clear', function(){
 
 // ============= Scripts ============= //
 gulp.task('js', function(cb) {
-    var scripts = gulp.src(['./src/scripts/bootstrap/collapse.js',
-                            './src/scripts/bootstrap/dropdown.js',
-                            './src/scripts/bootstrap/modal.js',
-                            './src/scripts/bootstrap/affix.js',
-                            './src/scripts/bootstrap/transition.js',
+    var scripts = gulp.src(['./src/scripts/bootstrap/*.js',
                             './src/scripts/plugins/*.js',
                             './src/scripts/lib/modernizr.custom.80639.js',
                             './src/scripts/script.js'])
@@ -301,16 +260,16 @@ gulp.task('plugins', function() {
 
 // ============= Fonts ============= //
 gulp.task('fonts', function(cb) {
-    return gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
-        .pipe(gulp.dest('./src/assets/font/'))
+    // return gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
+    //     .pipe(gulp.dest('./src/assets/font/'))
     // If alternate font is used, uncomment below and comment above
-    // var main = gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
-    //   .pipe(gulp.dest('./src/assets/font/'))
+    var main = gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
+      .pipe(gulp.dest('./src/assets/font/'))
 
-    // var alt = gulp.src('./node_modules/fonts/'+ pkg.altFont +'/*')
-    //   .pipe(gulp.dest('./src/assets/font/'))
+    var alt = gulp.src('./node_modules/fonts/'+ pkg.altFont +'/*')
+      .pipe(gulp.dest('./src/assets/font/'))
 
-    //return merge(main, alt);
+    return merge(main, alt);
 });
 
 // ============= Copy ============= //
@@ -344,14 +303,14 @@ gulp.task('deploy', function(cb) {
         .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true, minifyJS: true}))
         .pipe(gulp.dest('./deploy/templates/'))
 
-    var images = gulp.src(['./src/templates/**.png'])
+    var images = gulp.src(['./src/templates/images/**.png'])
         .pipe(gulp.dest('./deploy/templates/'))
 
     return merge(assets, templates, images)
 
 });
 // ============= Compress ============= //
-gulp.task('compress', ['px-rem'], function(cb) {
+gulp.task('compress', function(cb) {
     var minify = gulp.src('./deploy/css/main.min.css')
         .pipe(minifyCss())
         .pipe(gulp.dest('./deploy/css'));
@@ -384,10 +343,10 @@ gulp.task('clear', function (done) {
   return cache.clearAll(done);
 });
 
+gulp.task('watch', ['mustache', 'local-px-rem'], function() {
 
-// ============= Task watcher ============= //
-gulp.task('preview', function(){
     browserSync.init({
+        injectChanges: true,
         server: {
             baseDir: "./src/",
             index: "home.html"
@@ -398,10 +357,11 @@ gulp.task('preview', function(){
     // HTML Files
     gulp.watch("./src/*.html");
     // Mustache Files
-
     gulp.watch(["./src/templates/**/*.mustache"], ['mustache']);
+    //SVG Icon files
+    gulp.watch(["./src/iconfont-svgs/*.svg"], ['make-iconfont']);
     // SASS Files
-    gulp.watch(["./src/scss/**/*.scss"], ['styles','autoprefix']);
+    gulp.watch(["./src/scss/**/*.scss"], ['styles']);
     // Javascript Files
     gulp.watch(["./src/scripts/**/*.js"], ['js']);
     // Image Files
@@ -411,25 +371,11 @@ gulp.task('preview', function(){
     //gulp.watch(["./src/images/sprites/*-2x.png" ], ['sprite']);
 });
 
-gulp.task('watch', function() {
-    runSequence(
-        'mustache',
-        'make-iconfont', 
-        'make-preview',
-        'plugins',
-        'images',
-        'copy', 
-        'local-px-rem',
-        'preview',
-        'styles',
-        'js',
-        'autoprefix'
-    );
-});
-
 
 gulp.task('default', function(){
     runSequence(
+        'clean',
+        'clear',
         'plugins',
         'styles', 
         'js',
@@ -440,10 +386,10 @@ gulp.task('default', function(){
         'images', 
         'fonts',
         'make-iconfont',
-        'make-preview',
         'autoprefix',
         'deploy',
         'autoprefix-deploy',
+        'px-rem',
         'compress'
     );
 });
