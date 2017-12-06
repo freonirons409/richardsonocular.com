@@ -374,8 +374,6 @@ gulp.task('watch', ['mustache', 'local-px-rem'], function() {
 
 gulp.task('default', function(){
     runSequence(
-        'clean',
-        'clear',
         'plugins',
         'styles', 
         'js',
