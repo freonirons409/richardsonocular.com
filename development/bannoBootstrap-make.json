@@ -957,7 +957,7 @@
       "templateId":"home",
       "title":"Home",
       "description":"Home page",
-      "imageLocation": "/assets/templates/images/home.png",
+      "imageLocation": "/assets/templates/home.png",
       "contentAreaNames":[
          "hero1image",
          "hero1content",
@@ -979,7 +979,7 @@
       "templateId":"subpage",
       "title":"Subpage",
       "description":"Default subpage with main body area and 2 sub ads",
-      "imageLocation": "/assets/templates/images/2-column_sidebar-right.png",
+      "imageLocation": "/assets/templates/2-column_sidebar-right.png",
       "contentAreaNames":[
          "bodyCopy1",
          "subAd1",
@@ -991,7 +991,7 @@
       "title":"404",
       "description":"404 Page that holds 404 GA",
       "devOnly": true,
-      "imageLocation": "/assets/templates/images/dev-only.png",
+      "imageLocation": "/assets/templates/dev-only.png",
       "contentAreaNames":[
          "bodyCopy1",
          "subAd1",
@@ -1002,7 +1002,7 @@
       "templateId":"search-results",
       "title":"Search Results",
       "description":"Search results page with 2 sub ads",
-      "imageLocation": "/assets/templates/images/search-results.png",
+      "imageLocation": "/assets/templates/search-results.png",
       "devOnly": true,
       "contentAreaNames":[
          "subAd1",
@@ -1013,7 +1013,7 @@
       "templateId":"blank",
       "title":"Blank",
       "description":"One main body area",
-      "imageLocation": "/assets/templates/images/1-column.png",
+      "imageLocation": "/assets/templates/1-column.png",
       "contentAreaNames":[
          "bodyCopy"
       ]
@@ -1022,7 +1022,7 @@
       "templateId":"calculator",
       "title":"Calculator",
       "description":"Page to hold the dinkytown calculator",
-      "imageLocation": "/assets/templates/images/calculator.png",
+      "imageLocation": "/assets/templates/calculator.png",
       "contentAreaNames":[
         "bannerImage"
       ]
@@ -1031,7 +1031,7 @@
       "templateId":"calculator-menu",
       "title":"Calculator Menu Page",
       "description":"Page for the list of dinkytown calculators.",
-      "imageLocation": "/assets/templates/images/calculator.png",
+      "imageLocation": "/assets/templates/calculator.png",
       "contentAreaNames":[
         "bodyCopy1",
         "accordionHeader1",
@@ -1060,7 +1060,7 @@
       "templateId":"2-col-accordion",
       "title":"2 Column Accordions",
       "description":"10 accordions divided into 2 columns",
-      "imageLocation": "/assets/templates/images/2-column-sub.png",
+      "imageLocation": "/assets/templates/2-column-sub.png",
       "contentAreaNames":[
         "bodyCopy1",
         "bodyCopy2",
@@ -1091,7 +1091,7 @@
       "templateId":"atm",
       "title":"ATM",
       "description":"ATM Locator",
-      "imageLocation": "/assets/templates/images/atm.png",
+      "imageLocation": "/assets/templates/atm.png",
       "devOnly": true,
       "contentAreaNames":[
 
@@ -1101,7 +1101,7 @@
       "templateId":"contact",
       "title":"Contact Us",
       "description":"Contact Us Page with 2 sub ads",
-      "imageLocation": "/assets/templates/images/contact.png",
+      "imageLocation": "/assets/templates/contact.png",
       "devOnly": true,
       "contentAreaNames":[
          "bodyCopy1",

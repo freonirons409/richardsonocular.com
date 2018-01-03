@@ -30,12 +30,12 @@
                       <input type="hidden" name="formId" value="contactUs" class="form-id-input">
                       <div class="form-group">
                         <label for="firstName">First Name<span>*</span></label>
-                        <input type="text" class="form-control" name="person.firstName" id="firstName" required>
+                        <input type="text" class="form-control" name="firstName" id="firstName" required>
                       </div>
 
                       <div class="form-group">
                         <label for="lastName">Last Name<span>*</span></label>
-                        <input type="text" class="form-control" name="person.lastName" id="lastName" required>
+                        <input type="text" class="form-control" name="lastName" id="lastName" required>
                       </div>
 
                       <div class="form-group">
@@ -107,31 +107,32 @@
 
                       <div class="form-group">
                         <label for="zip">Zip<span>*</span></label>
-                        <input type="text" data-parsley-type="number" data-parsley-minlength="5" class="form-control" name="address.zip" id="zip" required>
+                        <input type="text" data-parsley-zip maxlength="5" class="form-control" name="address.zip" id="zip" required>
                       </div>
 
                       <div class="form-group">
                         <label for="phone">Phone<span>*</span></label>
-                        <input type="tel" data-parsley-minlength="10" data-parsley-type="phone" class="form-control" name="info.phone" id="phone" required>
+                        <input type="tel" data-parsley-phone class="form-control" name="phoneNumber" id="phone" required>
                       </div>
 
                       <div class="form-group">
                         <label for="email">Email<span>*</span></label>
-                        <input type="email" data-parsley-type="email" class="form-control" name="info.email" id="email" required>
+                        <input type="email" data-parsley-type="email" class="form-control" name="emailAddress" id="email" required>
                       </div>
 
                       <div class="form-group">
                         <p>Preferred Method of Contact</p>
                         <div class="radio">
                           <label for="preferredContactEmail">
-                            <input type="radio" id="preferredContactEmail" value="Email" name="preferredContact" class="" checked> Email
+                            <input type="radio" id="preferredContactEmail" value="Email" name="preferredContact" data-parsley-errors-container="#preferredContactError" required> Email
                           </label>
                         </div>
                         <div class="radio">
                           <label for="preferredContactPhone">
-                            <input type="radio" id="preferredContactPhone" value="Phone" name="preferredContact" class=""> Phone
+                            <input type="radio" id="preferredContactPhone" value="Phone" name="preferredContact" data-parsley-errors-container="#preferredContactError" required> Phone
                           </label>
                         </div>
+                        <div id="preferredContactError"></div>
                       </div>
 
                       <div class="form-group">
@@ -144,12 +145,10 @@
                         <textarea name="message" id="yourMessage" class="form-control" rows="5"></textarea>
                       </div>
 
-                      <div class="form-group captcha-container">
-                        <div class="spacer-20"></div>
-                        <banno:captcha></banno:captcha>
-                        <div class="spacer-20"></div>
-                      </div>
-
+                      
+                      {{> partials/captcha}}
+                      
+                      
                       <div class="form-group row">
                         <div class="col-sm-6 required text-md-left text-xs-center">
                           <strong><span>*</span> Required</strong>

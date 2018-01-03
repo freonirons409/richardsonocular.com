@@ -27,7 +27,7 @@ splitFiles = require("gulp-split-files"),
 runSequence = require('run-sequence');
 map = require("map-stream"),
 postcss = require('gulp-postcss'),
-pxtorem = require('gulp-pxtorem'),
+pxtorem = require('postcss-pxtorem'),
 htmlmin = require('gulp-htmlmin'),
 pkg = require('./package.json');
 
@@ -49,7 +49,7 @@ function logMatches(regex) {
                 console.log(fileName);
                 console.log("========================");
             }
-            console.log(","+match.replace("data-content-block=\"","").replace("\"",""));
+            console.log("\""+match.replace("data-content-block=\"","").replace("\"","")+"\",");
           prevFileName = fileName;
         });
     }
@@ -76,29 +76,39 @@ gulp.task('mustache', function() {
 // ==========================================================
 // convert pixels to rem
 // ==========================================================
-var pxtoremOptions = {
-    rootValue: 16,
-    //unitPrecision: 5,
-    replace: true,
-    propWhiteList: [],
-    //selectorBlackList: [],
-    mediaQuery: true,
-    minPixelValue: 1
-};
- 
-var postcssOptions = {
-    map: true  
-};
-
+var remOptions = {
+            rootValue: 16,
+            //unitPrecision: 5,
+            replace: true,
+            map: true,
+            propWhiteList: [],
+            //selectorBlackList: [],
+            mediaQuery: true,
+            minPixelValue: 1
+        };
 gulp.task('px-rem', function() {
+    var processors = [
+        autoprefixer({
+            browsers: 'last 1 version'
+        }),
+        pxtorem(remOptions)
+    ];
+ 
     return gulp.src(['./deploy/css/*.css'])
-        .pipe(pxtorem(pxtoremOptions, postcssOptions))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./deploy/css/'))
         .on("error", function(err){ console.log(err); });
 });
-gulp.task('local-px-rem', ['styles'], function() { 
+gulp.task('local-px-rem',['styles'], function() {
+    var processors = [
+        autoprefixer({
+            browsers: 'last 1 version'
+        }),
+        pxtorem(remOptions)
+    ];
+ 
     return gulp.src(['./src/assets/css/*.css'])
-        .pipe(pxtorem(pxtoremOptions, postcssOptions))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./src/assets/css/'))
         .on("error", function(err){ console.log(err); });
 });

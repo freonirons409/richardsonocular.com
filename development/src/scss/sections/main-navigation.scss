@@ -26,8 +26,7 @@
 //
 // When a container is present, change the behavior of the header and collapse.
 
-.container,
-.container-fluid {
+.container, .container-fluid {
   > .navbar-header,
   > .navbar-collapse {
     margin-right: -$navbar-padding-horizontal;
@@ -39,7 +38,6 @@
     }
   }
 }
-
 
 .navbar-collapse {
 	overflow-x: visible;
@@ -54,7 +52,6 @@
 	overflow-y: auto;
 	}
 }
-
 
 // Banno Menu CSS
 .navbar-collapse .banno-menu {
@@ -79,8 +76,6 @@
 		}
 	}
 }
-
-
 
 // medium down
 // From 767px and down
@@ -206,6 +201,18 @@
 			    	color: $navbar-link-hover-color;
 			    	background-color: $navbar-link-hover-bg;
 			    }
+	        }
+	        .menu-group {
+	        	position:relative;
+	        	.dropdown-menu {
+	        		left:100%;
+	        		top:0;
+	        	}
+	        }
+	        .group-item {
+	        	display:block;
+	        	position:relative;
+	        	padding: 3px 20px;
 	        }
 
 	        // If you want columns in your dropdown to show on desktop, uncomment below.

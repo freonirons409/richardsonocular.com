@@ -13,15 +13,12 @@ banno.site.dropdownMouseEventsOn = false;
 
 function setDisclaimerVerbiage(p,t) {
     var proceed = "<br/><br/>If you \"Proceed\",";
-    if(p==="mobile") {
-      proceed = "If you click \"Ok\",";
-    }
-    if(t==="email") {
-        return 'Because there is a risk that information transmitted via Internet email could fall into the wrong hands, ' + banno.site.name + ' suggests that confidential information, such as account numbers or social security numbers, not be transmitted via email. If this information must be stated, please contact ' + banno.site.name + ' by phone or at your nearest office. '+proceed+' the link will open a new email message in your default email program.';
-    } else {
-      return 'You will be linking to another website not owned or operated by ' + banno.site.name + '. ' + banno.site.name + ' is not responsible for the availability or content of this website and does not represent either the linked website or you, should you enter into a transaction. The inclusion of any hyperlink does not imply any endorsement, investigation, verification or monitoring by ' + banno.site.name + ' of any information in any hyperlinked site. We encourage you to review their privacy and security policies which may differ from ' + banno.site.name + '.' + proceed +' the link will open in a new window.';
-    }
+    if(p==="mobile") { proceed = "If you click \"Ok\","; }
+    if(t==="email") { return 'Because there is a risk that information transmitted via Internet email could fall into the wrong hands, ' + banno.site.name + ' suggests that confidential information, such as account numbers or social security numbers, not be transmitted via email. If this information must be stated, please contact ' + banno.site.name + ' by phone or at your nearest office. '+proceed+' the link will open a new email message in your default email program.';
+    } else { return 'You will be linking to another website not owned or operated by ' + banno.site.name + '. ' + banno.site.name + ' is not responsible for the availability or content of this website and does not represent either the linked website or you, should you enter into a transaction. The inclusion of any hyperlink does not imply any endorsement, investigation, verification or monitoring by ' + banno.site.name + ' of any information in any hyperlinked site. We encourage you to review their privacy and security policies which may differ from ' + banno.site.name + '.' + proceed +' the link will open in a new window.'; }
 }
+
+var defaultDisclaimerMessage = setDisclaimerVerbiage("desktop","external");
 
 // Initialize our banno.site namespace and kick off needed methods here
 banno.site.initialize = function() {
@@ -89,9 +86,7 @@ banno.site.setDisclaimers = function(link) {
     if(test===false) {
       if (Modernizr.mq('only all and (max-width: 767px)')) {
           var r = confirm(mobileExitMsg);
-          if (r === true) {
-              window.open(speedbump);
-          }
+          if (r === true) { window.open(speedbump); }
       }
       else {
         bootbox.confirm(exitMsg, 'Cancel', 'Proceed', function(result) {
@@ -170,7 +165,6 @@ banno.site.dropdownHandling = function(){
     }
 }
 
-
 $(window).bind('bannoDataReceived', function(event, scope) {
     if(scope !== null && scope !== undefined){
         banno.site.setExternalLinks(scope);
@@ -191,7 +185,6 @@ function createCookie(name,value,days) {
 }
 
 function readCookie(name) {
-
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
@@ -200,7 +193,6 @@ function readCookie(name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
 
     }
-
     return null;
 }
 
@@ -211,7 +203,6 @@ function eraseCookie(name) {
 banno.site.displayAlert = function() {
   var alert=readCookie("alert");
   if(alert == null && $.trim($('.alert.hidden-alert .alert-body').text())) {
-
     $('.alert.hidden-alert').show();
   }
 }
@@ -236,11 +227,11 @@ banno.site.setTableScrolling = function() {
       var t = $(this).find("table").width();
       //console.log(c,t);
       if(t > c) {
-        $(this).css({"overflow-x": "scroll"});
-        $(this).prev().show();
+        $(this).find(".table-inside").css({"overflow-x": "scroll"});
+        $(this).find(".swiper").show();
       } else {
-        $(this).css({"overflow-x": "hidden"});
-        $(this).prev().hide();
+        $(this).find(".table-inside").css({"overflow-x": "hidden"});
+        $(this).find(".swiper").hide();
       }
   });
 }
@@ -349,6 +340,7 @@ $(window).load(function() {
         banno.site.openNewWindow();
         $(".table-responsive").each(function(){
             $(this).prepend('<div class="swiper text-center">&laquo; Swipe for More &raquo;</div>');
+            $(this).find(".table").wrap("<div class=\"table-inside\"></div>");
         });
         banno.site.setTableScrolling();
         // Trigger Anchor Button Click on spacebar
@@ -374,7 +366,6 @@ $(function () {
     //Setup jquery placeholder
     // ==================================================================================================================================
     $('input, textarea').placeholder();
-
     $('.dropdown > .category-item, .dropdown > .group-item, span.dropdown-toggle').addClass('dropdown-toggle').attr('data-toggle','dropdown');
 
     // Run functions in initialize
@@ -395,6 +386,17 @@ $(function () {
         e.preventDefault();
         createCookie('alert', true, 1);
         $('.alert').hide();
+    });
+
+    //fix for modal elements auto-closing
+    //=======================================================
+    $("a[data-toggle='modal']").on("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var t = $(this).attr("href");
+      if(t) {
+        $(t).modal();
+      }
     });
 
     // Header Togglers
@@ -419,7 +421,6 @@ $(function () {
     $('.navbar-collapse ul.banno-menu li .dropdown-menu>li>span').on('click',function (e) {
       //e.preventDefault();
       e.stopPropagation();
-
       $(this).toggleClass("active");
       $(this).next('.dropdown-menu').toggleClass('active');
       //$(this).closest('li').toggleClass('calcOpen');
@@ -442,7 +443,7 @@ $(function () {
         }
     });
 
-    // Animation when scroll is clicked.
+    // Animation when scroll to top is clicked.
     // ==================================================================================================================================
     $('#scrollTop').on('keydown', function(e) {
         var code = e.keyCode;
@@ -460,6 +461,8 @@ $(function () {
         }); // scroll to top for all other browsers   
     });
 
+    // Removes empty content areas
+    //==================================================================================================================
     $(".hidden-content").each(function() {
       if (window.self !== window.top || $.trim($(this).text()) || $(this).has("img").length) {
         return $(this).show();
@@ -468,7 +471,7 @@ $(function () {
       }
     });
 
-    // Forms
+    // AJAX Form Scripts
     // ==================================================================================================================================
     $('.ajax-form').submit(function(e) {
       var submittableForm;
@@ -507,5 +510,43 @@ $(function () {
       }
     });
 
+    // Custom parsley validations
+    //==================================================================================================================
 
+    window.Parsley.addValidator('zip', {
+      validateString: function(value) {
+        var patt = new RegExp(/^\d{5}?$/);
+        return patt.test(value);
+      },
+      messages: {
+        en: 'This is not a valid zip code'
+      }
+    });
+    window.Parsley.addValidator('phone', {
+      validateString: function(value) {
+        var patt = new RegExp(/^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/);
+        return patt.test(value);
+      },
+      messages: {
+        en: 'Please enter a valid phone number'
+      }
+    });
+    window.Parsley.addValidator('date', {
+      validateString: function(value) {
+        var patt = new RegExp(/^(0?[1-9]|1[0-2])\/(0?[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/);
+        return patt.test(value);
+      },
+      messages: {
+        en: 'Please use a valid date in format MM/DD/YYYY'
+      }
+    });
+    // window.Parsley.addValidator('ssn', {
+    //   validateString: function(value) {
+    //     var patt = new RegExp(/^\d{4}$/);
+    //     return patt.test(value);
+    //   },
+    //   messages: {
+    //     en: 'Please enter only the last 4 digits'
+    //   }
+    // });
 });
