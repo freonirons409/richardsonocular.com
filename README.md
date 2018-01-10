@@ -26,6 +26,8 @@ BannoBootstrap 3 is a group of files used as a starting point for developing a w
     - use data-parsley-phone, data-parsley-zip, data-parsley-date instead of built in data-parsley-type=
 - Added example of custom parsley error message container for radio elements on contact form.
 - Added example code for captcha so it can be easily inserted into form and styled as if it were production.
+- Added video banner support for both <video> embeds and YouTube videos for full width background videos.
+- segmented scss files and partial mustaches files to match one another for easy location.
 
 
 

@@ -65,20 +65,22 @@
 @import "icons";
 
 @import "custom/helpers";
+@import "custom/animate";
 @import "custom/type";
 @import "custom/buttons";
 @import "custom/forms";
 @import "custom/tables";
-@import "custom/modals";
-@import "custom/accordion";
-@import "custom/tabs";
 @import "custom/slick";
 
+@import "blocks/accordion";
+@import "blocks/banners";
+@import "blocks/modals";
+@import "blocks/sliders";
+@import "blocks/tabs";
 
 @import "sections/header";
 @import "sections/olb";
 @import "sections/main-navigation";
-@import "sections/home";
 @import "sections/subpages";
 @import "sections/atmlocator";
 @import "sections/footer";
@@ -86,7 +88,6 @@
 @import "ie";
 @import "cms";
 
-@import "components/animate";
 @import "components/weather";
 @import "components/stocks";
 @import "components/ag";

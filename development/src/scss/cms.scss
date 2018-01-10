@@ -19,6 +19,36 @@
 	div[data-content="content"] {
 		
 	}
+	.bannerVideo__container {
+		height:auto!important;
+		video,iframe,img {
+			position:static!important;
+		}
+		div[data-content="content"] {
+			width:100%;
+			min-height:150px;
+		}
+		.video-container {
+			position:relative;
+			&:before {
+				@include contentTag();
+				z-index:4;
+				content: "Video/Embedd Code";
+			}
+		}
+		.poster {
+			position:relative;
+			&:before {
+				@include contentTag();
+				z-index:4;
+				content: "Fallback Image";
+			}
+			display:block!important;
+			img {
+
+			}
+		}
+	}
 }
 // Add padding to editable areas
 div.mce-edit-focus {
