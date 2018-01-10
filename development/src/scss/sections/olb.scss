@@ -1,6 +1,10 @@
 .online-banking-container {
+	@extend .clearfix;
 	@media (min-width:$screen-sm-min) {
-		max-width:320px;
+		.row {
+			margin:0;
+		}
+		//max-width:320px;
 		float:right;
 	}
 	@media (max-width:$screen-xs-max) {

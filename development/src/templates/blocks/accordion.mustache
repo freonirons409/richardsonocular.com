@@ -1,5 +1,5 @@
 <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
@@ -83,7 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
@@ -111,10 +111,10 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
             <span data-content-block="accordionHeader5" data-content="content" data-editable="editable" >
               {{#page.accordionHeader5}}
                   {{& content}}
@@ -126,7 +126,7 @@
           </a>
         </h4>
       </div>
-      <div id="collapse4" class="panel-collapse collapse">
+      <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body content">
           <div data-content-block="accordionContent5" data-content="content" data-editable="editable" >
             {{#page.accordionContent5}}
@@ -139,10 +139,10 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
             <span data-content-block="accordionHeader6" data-content="content" data-editable="editable" >
               {{#page.accordionHeader6}}
                   {{& content}}
@@ -154,7 +154,7 @@
           </a>
         </h4>
       </div>
-      <div id="collapse4" class="panel-collapse collapse">
+      <div id="collapse6" class="panel-collapse collapse">
         <div class="panel-body content">
           <div data-content-block="accordionContent6" data-content="content" data-editable="editable" >
             {{#page.accordionContent6}}
@@ -167,10 +167,10 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
             <span data-content-block="accordionHeader7" data-content="content" data-editable="editable" >
               {{#page.accordionHeader7}}
                   {{& content}}
@@ -182,7 +182,7 @@
           </a>
         </h4>
       </div>
-      <div id="collapse4" class="panel-collapse collapse">
+      <div id="collapse7" class="panel-collapse collapse">
         <div class="panel-body content">
           <div data-content-block="accordionContent7" data-content="content" data-editable="editable" >
             {{#page.accordionContent7}}
@@ -195,10 +195,10 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
             <span data-content-block="accordionHeader8" data-content="content" data-editable="editable" >
               {{#page.accordionHeader8}}
                   {{& content}}
@@ -210,7 +210,7 @@
           </a>
         </h4>
       </div>
-      <div id="collapse4" class="panel-collapse collapse">
+      <div id="collapse8" class="panel-collapse collapse">
         <div class="panel-body content">
           <div data-content-block="accordionContent8" data-content="content" data-editable="editable" >
             {{#page.accordionContent8}}
@@ -223,10 +223,10 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-content">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
             <span data-content-block="accordionHeader9" data-content="content" data-editable="editable" >
               {{#page.accordionHeader9}}
                   {{& content}}
@@ -238,7 +238,35 @@
           </a>
         </h4>
       </div>
-      <div id="collapse4" class="panel-collapse collapse">
+      <div id="collapse9" class="panel-collapse collapse">
+        <div class="panel-body content">
+          <div data-content-block="accordionContent9" data-content="content" data-editable="editable" >
+            {{#page.accordionContent9}}
+                {{& content}}
+              {{/page.accordionContent9}}
+              <!-- @if NODE_ENV!='production' -->
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam tempora recusandae mollitia inventore fuga quaerat totam id, delectus autem veritatis, tenetur minus provident qui iure in, cupiditate, atque odit unde dolores! Suscipit ea quaerat aliquid cupiditate temporibus eos repellat saepe.</p>
+              <!-- @endif -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default hidden-content">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+            <span data-content-block="accordionHeader10" data-content="content" data-editable="editable" >
+              {{#page.accordionHeader10}}
+                  {{& content}}
+                {{/page.accordionHeader10}}
+                <!-- @if NODE_ENV!='production' -->
+                    Accordion Header 10
+                <!-- @endif -->
+            </span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse10" class="panel-collapse collapse">
         <div class="panel-body content">
           <div data-content-block="accordionContent10" data-content="content" data-editable="editable" >
             {{#page.accordionContent10}}

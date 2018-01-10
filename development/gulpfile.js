@@ -77,11 +77,11 @@ gulp.task('mustache', function() {
 // convert pixels to rem
 // ==========================================================
 var remOptions = {
-            rootValue: 16,
+            rootValue: 14,
             //unitPrecision: 5,
             replace: true,
             map: true,
-            propWhiteList: [],
+            propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
             //selectorBlackList: [],
             mediaQuery: true,
             minPixelValue: 1
@@ -94,7 +94,7 @@ gulp.task('px-rem', function() {
         pxtorem(remOptions)
     ];
  
-    return gulp.src(['./deploy/css/*.css'])
+    gulp.src(['./deploy/css/*.css'])
         .pipe(postcss(processors))
         .pipe(gulp.dest('./deploy/css/'))
         .on("error", function(err){ console.log(err); });
@@ -106,6 +106,7 @@ gulp.task('local-px-rem',['styles'], function() {
         }),
         pxtorem(remOptions)
     ];
+    console.log("Running PX to REM conversion..."); 
  
     return gulp.src(['./src/assets/css/*.css'])
         .pipe(postcss(processors))
@@ -140,7 +141,7 @@ gulp.task('make-iconfont', function(cb) {
 });
 
 gulp.task('make-iconcss',['make-iconfont'], function(cb) {
-    gulp.src('./src/scss/icons.scss')
+    return gulp.src('./src/scss/icons.scss')
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest('./src/iconfont/'));
 });
@@ -160,26 +161,6 @@ gulp.task('styles', function(cb) {
         .pipe(gulp.dest('./src/assets/css/'))
         .pipe(browserSync.stream({match: './src/assets/css/*.css'}));
 });
-gulp.task('autoprefix', function(){
-
-    return gulp.src('./src/assets/css/*.css')
-        .pipe(sourcemaps.init())
-        .pipe(postcss([ autoprefixer() ]))
-        .pipe(sourcemaps.write('./maps', { // use '.' to write the sourcemap to a separate file in the same dir
-            sourceRoot: './' // use the file's folder as source root
-        }))
-        .pipe(gulp.dest('./src/assets/css/'));
-});
-gulp.task('autoprefix-deploy', function(){
-
-    return gulp.src('./deploy/css/*.css')
-        .pipe(sourcemaps.init())
-        .pipe(postcss([ autoprefixer() ]))
-        .pipe(sourcemaps.write('./maps', { // use '.' to write the sourcemap to a separate file in the same dir
-            sourceRoot: './' // use the file's folder as source root
-        }))
-        .pipe(gulp.dest('./deploy/css/'));
-});
 // gulp.task('calculators', function(cb) {
 //     runSequence('clear-calculators','calculator-split','calculator-clean');
 // });
@@ -198,7 +179,7 @@ gulp.task('calculator-clean', function() {
 });
 gulp.task('calculator-clear', function(){
     //console.log("Clearing calc files");
-    del(['./deploy/css/KJESiteSpecific.css']);
+    return del(['./deploy/css/KJESiteSpecific.css']);
     del(['./src/root/files/css/KJESiteSpecific.css']);
 });
 
@@ -346,11 +327,11 @@ gulp.task('compress', function(cb) {
 
 // ============= Clean Files ============= //
 gulp.task('clean', function(cb) {
-    del(['src/assets/css', 'src/assets/media', 'src/assets/js', 'src/assets/img', 'src/assets/root', 'src/assets/font', 'deploy'], cb)
+    return del(['src/assets/css', 'src/assets/media', 'src/assets/js', 'src/assets/img', 'src/assets/root', 'src/assets/font', 'deploy'], cb)
 });
 
 gulp.task('clear', function (done) {
-  return cache.clearAll(done);
+    return cache.clearAll(done);
 });
 
 gulp.task('watch', ['mustache', 'local-px-rem'], function() {
@@ -371,7 +352,7 @@ gulp.task('watch', ['mustache', 'local-px-rem'], function() {
     //SVG Icon files
     gulp.watch(["./src/iconfont-svgs/*.svg"], ['make-iconfont']);
     // SASS Files
-    gulp.watch(["./src/scss/**/*.scss"], ['styles']);
+    gulp.watch(["./src/scss/**/*.scss"], ['local-px-rem']);
     // Javascript Files
     gulp.watch(["./src/scripts/**/*.js"], ['js']);
     // Image Files
@@ -394,9 +375,7 @@ gulp.task('default', function(){
         'images', 
         'fonts',
         'make-iconfont',
-        'autoprefix',
         'deploy',
-        'autoprefix-deploy',
         'px-rem',
         'compress'
     );
