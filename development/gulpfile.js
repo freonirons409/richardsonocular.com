@@ -217,7 +217,7 @@ gulp.task('js', function(cb) {
 
 // ============= Images ============= //
 
-var imgSrc = './src/images/**/*.{gif,jpg,png,svg}';
+var imgSrc = './src/images/**/*.{gif,jpg,png,svg,mov,webm,ogv,avi,mp4}';
 var imgDest = './src/assets/img/';
 
 gulp.task('images', function(cb) {
