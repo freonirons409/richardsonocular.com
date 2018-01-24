@@ -1,16 +1,21 @@
 .panel-group {
 	margin-top:20px;
 	.panel-heading {
+		cursor:pointer;
+		&:hover {
+			background:$gray-lighter;
+		}
+		@extend h4;
 		padding:0;
-		a[data-toggle="collapse"] {
+		div[data-toggle="collapse"] {
 			display:block;
 			padding:10px 45px 10px 15px;
 			position:relative;
 			&:after {
 				content:"+";
 				position:absolute;
-				right:0;
-				top:5px;
+				right:10px;
+				top:8px;
 				line-height: 1;
 				font-size:105%;
 			}
