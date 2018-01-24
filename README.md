@@ -43,7 +43,7 @@ BannoBootstrap 3 is a group of files used as a starting point for developing a w
 
 ## Hidden Content Areas
 - Add the class .hidden-content to any tag that you want hidden.
-- As long as no text or image is inside of that div, the div will be styled with display: none;
+- As long as no text or image is inside of that div, the div will be removed from the DOM completely on load.
 
 **HTML**
 
