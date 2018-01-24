@@ -66,5 +66,16 @@
 
 			}
 		}
+		&.btn-large {
+			font-size:120%;
+			padding:10px 30px;
+		}
+		&.btn-small {
+			font-size:94%;
+		}
+		&.btn-mini {
+			font-size:90%;
+			padding:4px 10px;
+		}
 	}
 }

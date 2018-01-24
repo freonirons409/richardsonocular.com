@@ -234,7 +234,9 @@ gulp.task('images', function(cb) {
     var icons = gulp.src('./src/root/icons/*')
         .pipe(gulp.dest('./src/assets/root'))
 
-    return merge(images, icons)
+    var videos = gulp.src('./src/images/**/*.{mov,webm,ogv,avi,mp4}').pipe(gulp.dest('./src/assets/img/'));
+
+    return merge(images, icons, videos)
 });
 
 
