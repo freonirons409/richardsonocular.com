@@ -1,0 +1,24 @@
+#alertBox {
+	background:$brand-primary;
+	* {
+		color:$white;
+	}
+	.close {
+		position:absolute;
+		right:0;
+		top:50%;
+		color:$white;
+		font-weight:100;
+		opacity:1;
+		font-size:50px;
+		line-height: 1;
+		margin-top:-20px;
+		&:hover {
+			opacity:0.45;
+		}
+	}
+	.inner {
+		position:relative;
+		@extend .container;
+	}
+}

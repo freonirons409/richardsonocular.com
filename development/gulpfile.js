@@ -77,11 +77,11 @@ gulp.task('mustache', function() {
 // convert pixels to rem
 // ==========================================================
 var remOptions = {
-            rootValue: 14,
+            rootValue: 16,
             //unitPrecision: 5,
             replace: true,
             map: true,
-            propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+            propList: ['*'],
             //selectorBlackList: [],
             mediaQuery: true,
             minPixelValue: 1

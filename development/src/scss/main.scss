@@ -93,6 +93,12 @@
 @import "components/stocks";
 @import "components/ag";
 
+
+//setting the base font size on the html element so that rems can properly resize fonts
+html {
+	font-size:$font-size-base;
+}
+
 /*split*/
 /*splitfilename=KJESiteSpecific.css*/
 @import "KJEcalculator";
