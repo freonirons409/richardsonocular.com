@@ -469,6 +469,20 @@ $(window).load(function() {
 						$(this).get(0).click();
 					}
 				});
+
+				//sets the focus back on the button that toggles a modal when that modal is closed (ADA)
+				// ==================================================================================================================================
+				$("a[data-toggle='modal']").on("click", function(){
+					var target = $(this).attr("href").replace("#","");
+					var id = "parent"+target;
+					$(this).attr("id", id);
+					$("#"+target).attr("data-return-focus", id);
+				});
+
+				$('.modal').on('hidden.bs.modal', function (e) {
+				    var t = $(this).attr("data-return-focus");
+				    if(t) { $("#"+t).focus(); }
+				});
 		}
 });
 
