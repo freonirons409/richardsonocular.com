@@ -8,10 +8,10 @@
  */
 
 // Core variables and mixins
+@import "custom/colors"; // custom theme functions
 @import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "custom/functions";  // custom theme functions
 @import "custom/variables";  // custom theme variables
-@import "custom/colors"; // custom theme functions
 @import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "custom/mixins";
 
