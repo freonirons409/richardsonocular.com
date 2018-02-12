@@ -105,15 +105,28 @@ banno.site.setDisclaimers = function(link) {
 
 banno.site.attachEventHandlers = function(scope) {
 		$("a.external", scope).on('click', function(e) {
-			e.preventDefault();
-			e.stopPropagation();
-				banno.site.setDisclaimers($(this));
-		});
-		$(".social-feed-container").on('click',"a.external", function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-				banno.site.setDisclaimers($(this));
-		});
+	      e.preventDefault();
+	      e.stopPropagation();
+	        var checkDisc = 0;
+	        if($(this).attr('data-disclaimer-id')) {
+	          var checkDisc = $(this).attr('data-disclaimer-id').length;
+	        }
+	        if(checkDisc < 5) {
+	          //console.log("clicked link")
+	          banno.site.setDisclaimers($(this));
+	        }
+	    });
+	    // $(".social-feed-container").on('click',"a.external", function(e) {
+	    //     e.preventDefault();
+	    //     e.stopPropagation();
+	    //     var checkDisc = 0;
+	    //     if($(this).attr('data-disclaimer-id')) {
+	    //       var checkDisc = $(this).attr('data-disclaimer-id').length;
+	    //     }
+	    //     if(checkDisc < 5) {
+	    //       banno.site.setDisclaimers($(this));
+	    //     }
+	    // });
 		// Un comment to add Disclaimers to the news feed
 		// =======================================================================
 		// $('.b-news', scope).bind('bannoDataReceived', function(event, scope) {
@@ -621,15 +634,16 @@ $(function () {
 						return false;
 					},
 					beforeSend: function() {
-						submittableForm.find('button[type=submit]').attr('disabled', 'disabled');
-						submittableForm.find('.loading').fadeIn();
-						return submittableForm.find('div.error').hide().attr('aria-hidden', 'true');
-					},
-					error: function() {
-						submittableForm.find('button[type=submit]').removeAttr('disabled');
-						submittableForm.find('.loading').fadeOut('500');
-						return submittableForm.find('div.error').delay('600').fadeIn().removeAttr('aria-hidden');
-					}
+		            	submittableForm.find('button[type=submit]').attr('disabled', 'disabled');
+		            	submittableForm.find('.loading').fadeIn();
+		            	return submittableForm.find('div.error-container').hide().attr('aria-hidden', 'true');
+		          	},
+		          	error: function(x) {
+		            	//console.log(x);
+		            	submittableForm.find('button[type=submit]').removeAttr('disabled');
+		            	submittableForm.find('.loading').fadeOut('500');
+		            	return submittableForm.find('div.error-container').html("Error: "+x.status+" - "+x.statusText+"<br>"+x.responseText).delay('600').fadeIn().removeAttr('aria-hidden');
+		          	}
 				});
 			}
 		});

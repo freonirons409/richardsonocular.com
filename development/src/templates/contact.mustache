@@ -121,7 +121,7 @@
                       </div>
 
                       <div class="form-group">
-                        <p>Preferred Method of Contact</p>
+                        <p>Preferred Method of Contact<span>*</span></p>
                         <div class="radio">
                           <label for="preferredContactEmail">
                             <input type="radio" id="preferredContactEmail" value="Email" name="preferredContact" data-parsley-errors-container="#preferredContactError" required> Email
@@ -137,7 +137,7 @@
 
                       <div class="form-group">
                         <label for="best">Best time to contact?</label>
-                        <input type="text" class="form-control" name="bestTime" id="best" required>
+                        <input type="text" class="form-control" name="bestTime" id="best">
                       </div>
 
                       <div class="form-group">
@@ -155,7 +155,10 @@
                           <div class="spacer-20"></div>
                         </div>
                         <div class="col-sm-6 text-md-right text-xs-center">
-                          <button type="submit" class="btn btn-primary">Submit<span class="loading hide"><span class="loading-inner"></span></span><div style="color: red; " class="error hide">There was an error submitting the form</div></button>
+                          <button type="submit" class="btn btn-primary">Submit
+                              <span class="loading"><span class="loading-inner"></span></span>
+                          </button>
+                          <div class="error-container">There was an error submitting the form</div>
                         </div>
                       </div>
 
@@ -167,7 +170,8 @@
                         {{& content}}
                       {{/page.successCopy}}
                       <!-- @if NODE_ENV!='production' --> 
-                        <h4>Thank you for your submission!</h4><p>We will be in touch with you soon.</p>
+                        <h4>Thank you for your submission!</h4>
+                        <p>We will be in touch with you soon.</p>
                       <!-- @endif -->
                     </div>
                   </div>
@@ -175,32 +179,31 @@
                 <!-- End of Form Markup  -->
             </div>
             <div class="col-lg-3 col-md-5">
-            <div class="content" data-content-block="subAd1" data-content="content" data-editable="editable">
-              {{#page.subAd1}}
-                {{& content}}
-              {{/page.subAd1}}
-              <!-- @if NODE_ENV!='production' --> 
-                  <p><a href="" class="btn">Default Button</a></p>
-                  <p><a href="" class="btn btn-primary">Primary Button</a></p>
-                  <p><a href="" class="btn btn-info">Info Button</a></p>
-                  <p><a href="" class="btn btn-success">Success Button</a></p>
-                  <p><a href="" class="btn btn-warning">Warning Button</a></p>
-                  <p><a href="" class="btn btn-danger">Danger Button</a></p>
-                  <p><a href="" class="btn btn-inverse">Inverse Button</a></p>
-               <!-- @endif -->
+                <div class="content" data-content-block="subAd1" data-content="content" data-editable="editable">
+                  {{#page.subAd1}}
+                    {{& content}}
+                  {{/page.subAd1}}
+                  <!-- @if NODE_ENV!='production' --> 
+                      <p><a href="" class="btn">Default Button</a></p>
+                      <p><a href="" class="btn btn-primary">Primary Button</a></p>
+                      <p><a href="" class="btn btn-info">Info Button</a></p>
+                      <p><a href="" class="btn btn-success">Success Button</a></p>
+                      <p><a href="" class="btn btn-warning">Warning Button</a></p>
+                      <p><a href="" class="btn btn-danger">Danger Button</a></p>
+                      <p><a href="" class="btn btn-inverse">Inverse Button</a></p>
+                   <!-- @endif -->
+                </div>
+                <div class="spacer-20"></div>
+                <div class="content" data-content-block="subAd2" data-content="content" data-editable="editable">
+                  {{#page.subAd2}}
+                    {{& content}}
+                  {{/page.subAd2}}
+                  <!-- @if NODE_ENV!='production' --> 
+                      <h3>Lorem ipsum dolor sit amet.</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae voluptates natus magnam blanditiis autem voluptas, consectetur, officiis, a nulla optio fugit perspiciatis possimus deserunt reprehenderit voluptatibus animi nostrum, earum ducimus doloribus dolorem accusamus. Suscipit ad quia maiores tempora, soluta, adipisci explicabo inventore magni itaque ratione, sapiente ipsam odit nobis molestias similique dolores! Hic omnis aspernatur, eius vitae doloribus assumenda.</p>
+                   <!-- @endif -->
+                </div>
             </div>
-            <div class="spacer-20"></div>
-            <div class="content" data-content-block="subAd2" data-content="content" data-editable="editable">
-              {{#page.subAd2}}
-                {{& content}}
-              {{/page.subAd2}}
-              <!-- @if NODE_ENV!='production' --> 
-                  <h3>Lorem ipsum dolor sit amet.</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae voluptates natus magnam blanditiis autem voluptas, consectetur, officiis, a nulla optio fugit perspiciatis possimus deserunt reprehenderit voluptatibus animi nostrum, earum ducimus doloribus dolorem accusamus. Suscipit ad quia maiores tempora, soluta, adipisci explicabo inventore magni itaque ratione, sapiente ipsam odit nobis molestias similique dolores! Hic omnis aspernatur, eius vitae doloribus assumenda.</p>
-               <!-- @endif -->
-            </div>
-          </div>
-
           </div>
 
       </div>
