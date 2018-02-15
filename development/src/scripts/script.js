@@ -175,6 +175,18 @@ banno.site.dropdownHandling = function(){
 						$dropdowns.off('mouseover').off('mouseleave');
 						banno.site.dropdownMouseEventsOn = false;
 				}
+				$(".banno-menu >li >a,.banno-menu >li >span").on("click", function(e){
+		            e.preventDefault();
+		            e.stopPropagation();
+		            var $p = $(this).parent();
+		            $(".banno-menu >li.dropdown").not($p).removeClass("active open");
+
+		            if($p.hasClass("active open")) {
+		                $p.removeClass("active open");
+		            } else {
+		                $p.addClass("active open");
+		            }
+		        });
 		}
 }
 
@@ -642,6 +654,7 @@ $(function () {
 		            	//console.log(x);
 		            	submittableForm.find('button[type=submit]').removeAttr('disabled');
 		            	submittableForm.find('.loading').fadeOut('500');
+		            	$(".b-captcha-refresh").trigger("click");
 		            	return submittableForm.find('div.error-container').html("Error: "+x.status+" - "+x.statusText+"<br>"+x.responseText).delay('600').fadeIn().removeAttr('aria-hidden');
 		          	}
 				});
