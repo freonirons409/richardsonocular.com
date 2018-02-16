@@ -1,6 +1,6 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" role="tablist">
   <li class="active">
-    <a data-toggle="tab" href="#tab1">
+    <a data-toggle="tab" href="#tab1" role="tab">
       <span data-content-block="tab1title" data-content="content" data-editable="editable" >
         {{#page.tab1title}}
             {{& content}}
@@ -12,7 +12,7 @@
     </a>
   </li>
   <li>
-    <a data-toggle="tab" href="#tab2">
+    <a data-toggle="tab" href="#tab2" role="tab">
       <span data-content-block="tab2title" data-content="content" data-editable="editable" >
         {{#page.tab2title}}
             {{& content}}
@@ -24,7 +24,7 @@
     </a>
   </li>
   <li>
-    <a data-toggle="tab" href="#tab3">
+    <a data-toggle="tab" href="#tab3" role="tab">
       <span data-content-block="tab3title" data-content="content" data-editable="editable" >
         {{#page.tab3title}}
             {{& content}}
@@ -38,7 +38,7 @@
 </ul>
 
 <div class="tab-content">
-  <div id="tab1" class="tab-pane fade in active">
+  <div id="tab1" class="tab-pane fade in active" role="tabpanel">
     <div class="content" data-content-block="tab1content" data-content="content" data-editable="editable" >
       {{#page.tab1content}}
           {{& content}}
@@ -49,7 +49,7 @@
         <!-- @endif -->
     </div>
   </div>
-  <div id="tab2" class="tab-pane fade in active">
+  <div id="tab2" class="tab-pane fade" role="tabpanel">
     <div class="content" data-content-block="tab2content" data-content="content" data-editable="editable" >
       {{#page.tab2content}}
           {{& content}}
@@ -61,7 +61,7 @@
         <!-- @endif -->
     </div>
   </div>
-  <div id="tab3" class="tab-pane fade">
+  <div id="tab3" class="tab-pane fade" role="tabpanel">
     <div class="content" data-content-block="tab3content" data-content="content" data-editable="editable" >
       {{#page.tab3content}}
           {{& content}}

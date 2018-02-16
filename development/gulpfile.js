@@ -185,7 +185,12 @@ gulp.task('calculator-clear', function(){
 
 // ============= Scripts ============= //
 gulp.task('js', function(cb) {
-    var scripts = gulp.src(['./src/scripts/bootstrap/*.js',
+    var scripts = gulp.src(['./src/scripts/bootstrap/collapse.js',
+                            './src/scripts/bootstrap/dropdown.js',
+                            './src/scripts/bootstrap/modal.js',
+                            './src/scripts/bootstrap/affix.js',
+                            './src/scripts/bootstrap/tab.js',
+                            './src/scripts/bootstrap/transition.js',
                             './src/scripts/plugins/*.js',
                             './src/scripts/lib/modernizr.custom.80639.js',
                             './src/scripts/script.js'])
