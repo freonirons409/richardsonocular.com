@@ -94,7 +94,7 @@ gulp.task('px-rem', function() {
         pxtorem(remOptions)
     ];
  
-    gulp.src(['./deploy/css/*.css'])
+    return gulp.src(['./deploy/css/*.css'])
         .pipe(postcss(processors))
         .pipe(gulp.dest('./deploy/css/'))
         .on("error", function(err){ console.log(err); });
