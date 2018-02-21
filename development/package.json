@@ -1,28 +1,19 @@
 {
-  "site": "Banno Bootstrap",
-  "zip": "bannoBootstrap",
+  "site": "Bootstrap Template Site",
+  "zip": "template",
   "baseFont": "source-sans-pro",
   "altFont": "",
-  "domain": "https://bannoBootstrap.com",
-  "scaffold": "bannoBootstrap-make.json",
-  "url": {
-    "local": "http://bannobootstrap.dev.banno.com",
-    "staging": "https://bannoBootstrap-stag.banno.com",
-    "uat": "https://bannoBootstrap-uat.banno.com"
-  },
-  "name": "Banno-Bootstrap",
+  "domain": "https://aaronirons.net",
+  "name": "Template-Bootstrap",
   "version": "1.0.0",
-  "description": "Banno Bootstrap Website",
+  "description": "Bootstrap Website",
   "engine": "node >= 8.9.1",
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "bootstrap-sass": "3.3.x",
     "browser-sync": "^2.23.5",
     "del": "latest",
-    "fonts": "git+ssh://git@git.banno.com:cms-development/fonts.git",
     "grunt": "0.4.x",
-    "grunt-cms-site-scaffold": "git+ssh://git@github.com/Banno/grunt-cms-site-scaffold.git#v0.0.17",
-    "grunt-cms-upload": "git+ssh://git@github.com/Banno/grunt-cms-upload.git#v0.2.1",
     "gulp": "3.9.x",
     "gulp-clean-css": "^3.9.2",
     "gulp-concat": "2.6.x",
@@ -58,9 +49,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.banno.com:cms-development/bannobootstrap.git"
+    "url": "git@github.com:freonirons409/bootstrap-template.git"
   },
   "boostrap-version": "Bootstrap 3",
-  "author": "Web Team",
+  "author": "Aaron Irons",
   "license": "All Rights"
 }

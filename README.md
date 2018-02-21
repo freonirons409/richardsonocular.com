@@ -1,6 +1,6 @@
-# BannoBootstrap 3 Template Project - Version 2.0
+# Bootstrap 3 Template Project - Version 2.0
 
-BannoBootstrap 3 is a group of files used as a starting point for developing a website on the Banno CMS. The README file contains the do's and dont's of building a website.
+Bootstrap 3 is a group of files used as a starting point for developing a website with Bootstrap 3. The README file contains the do's and dont's of building a website.
 
 ## Recent Updates
 - Site structure set up so that bootstrap modifications are custom child elements, so that Bootstrap could be upgrade in the future without changing the look of the custom design.

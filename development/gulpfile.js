@@ -38,31 +38,6 @@ var onError = function (err) {
   this.emit('end');
 };
 
-function logMatches(regex) {
-    var prevFileName ="";
-  return map(function(file, done) {
-    if(file.contents.toString().match(regex)){
-        file.contents.toString().match(regex).forEach(function(match) {
-            var fileName = file.path.split('/').pop().split('\\').pop();
-            if(fileName != prevFileName) {
-                console.log("  ");
-                console.log(fileName);
-                console.log("========================");
-            }
-            console.log("\""+match.replace("data-content-block=\"","").replace("\"","")+"\",");
-          prevFileName = fileName;
-        });
-    }
-    done(null, file);
-  });
-}
-
-gulp.task('content-areas', function () {
-    var searchString = new RegExp(/data\-content\-block\=\"[a-zA-Z0-9\-\_\.]*\"/);
-    return gulp.src('./src/*.html')
-    .pipe(logMatches(/data\-content\-block\=\"[a-zA-Z0-9\-\_\.]*\"/g));
-});
-
 // Mustache Task
 gulp.task('mustache', function() {
     gulp.src("src/templates/*.mustache")
@@ -161,27 +136,6 @@ gulp.task('styles', function(cb) {
         .pipe(gulp.dest('./src/assets/css/'))
         .pipe(browserSync.stream({match: './src/assets/css/*.css'}));
 });
-// gulp.task('calculators', function(cb) {
-//     runSequence('clear-calculators','calculator-split','calculator-clean');
-// });
-gulp.task('calculator-split', function(cb) {
-    console.log("Splitting main.min into two files for calculators.");
-    return gulp.src("./src/assets/css/main.min.css")
-        .pipe(splitFiles())
-        //.pipe(rename('KJESiteSpecific.css'))
-        .pipe(gulp.dest("./src/root/files/css/"));
-        //.pipe(gulp.dest("./deploy/css/"));
-});
-gulp.task('calculator-clean', function() {
-    //console.log("Removed decoy files...");
-    return del(['./src/root/files/css/main.min-2.css']),
-    del(['./src/root/files/css/decoy.css']);
-});
-gulp.task('calculator-clear', function(){
-    //console.log("Clearing calc files");
-    return del(['./deploy/css/KJESiteSpecific.css']);
-    del(['./src/root/files/css/KJESiteSpecific.css']);
-});
 
 // ============= Scripts ============= //
 gulp.task('js', function(cb) {
@@ -257,18 +211,18 @@ gulp.task('plugins', function() {
 
 
 // ============= Fonts ============= //
-gulp.task('fonts', function(cb) {
-    // return gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
-    //     .pipe(gulp.dest('./src/assets/font/'))
-    // If alternate font is used, uncomment below and comment above
-    var main = gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
-      .pipe(gulp.dest('./src/assets/font/'))
+// gulp.task('fonts', function(cb) {
+//     // return gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
+//     //     .pipe(gulp.dest('./src/assets/font/'))
+//     // If alternate font is used, uncomment below and comment above
+//     var main = gulp.src('./node_modules/fonts/'+ pkg.baseFont +'/*')
+//       .pipe(gulp.dest('./src/assets/font/'))
 
-    var alt = gulp.src('./node_modules/fonts/'+ pkg.altFont +'/*')
-      .pipe(gulp.dest('./src/assets/font/'))
+//     var alt = gulp.src('./node_modules/fonts/'+ pkg.altFont +'/*')
+//       .pipe(gulp.dest('./src/assets/font/'))
 
-    return merge(main, alt);
-});
+//     return merge(main, alt);
+// });
 
 // ============= Copy ============= //
 gulp.task('copy', function(cb) {
@@ -375,12 +329,8 @@ gulp.task('default', function(){
         'plugins',
         'styles', 
         'js',
-        'calculator-clear',
-        'calculator-split',
-        'calculator-clean', 
         'copy', 
-        'images', 
-        'fonts',
+        'images',
         'make-iconfont',
         'deploy',
         'px-rem',
