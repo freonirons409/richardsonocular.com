@@ -1,39 +1,28 @@
 <div class="bannerVideo__container">
 	<div class="video-container">
 		<div class="filter"></div>
-		<div data-content-block="bannerVideo" data-content="content" data-editable="editable">
-			{{#page.bannerVideo}}
-				{{& content}}
-			{{/page.bannerVideo}}
-
+		<div>
 			<!-- @if NODE_ENV!='production' -->
-				{{! <iframe width="560" height="315" src="https://www.youtube.com/embed/LLpIMRowndg?autoplay=0&controls=0&rel=0&fs=0" frameborder="0" allowfullscreen></iframe> }}
 				<video autoplay loop class="fillWidth">
-					<source src="/assets/img/Main_Street.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-					<source src="/assets/img/Main_Street.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+					<source src="/assets/img/placeholder/Main_Street.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+					<source src="/assets/img/placeholder/Main_Street.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
 				</video>
 			<!-- @endif -->
 		</div>
-		<div class="poster hidden" data-content-block="bannerPoster" data-content="content" data-editable="editable">
-			{{#page.bannerPoster}}
-				{{& content}}
-			{{/page.bannerPoster}}
+		<div class="poster hidden">
 			<!-- @if NODE_ENV!='production' -->
-				<img src="/assets/img/Main_Street.jpg" alt="">
+				<img src="/assets/img/placeholder/Main_Street.jpg" alt="">
 			<!-- @endif -->
 		</div>
 	</div>
 	<div id="ytplayer"></div>
 	<div class="caption dark">
-		<div class="content" data-content-block="videoCaption" data-content="content" data-editable="editable" >
-			{{#page.videoCaption}}
-		      {{& content}}
-		    {{/page.videoCaption}}
-		    <!-- @if NODE_ENV!='production' -->
+		<div class="content">
+			<!-- @if NODE_ENV!='production' -->
 				<h1>Lorem ipsum dolor sit.</h1>
 				<h4>Lorem ipsum dolor sit amet.</h4>
-				<div><a href="#" class="btn">Some Button</a></div>
-		    <!-- @endif -->
+				<div><a href="#" class="btn btn-primary">Some Button</a></div>
+			<!-- @endif -->
 		</div>
 	</div>
 </div>

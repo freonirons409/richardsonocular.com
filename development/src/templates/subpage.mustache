@@ -1,6 +1,5 @@
 {{> partials/top}}
 <body class="subpage">
-  {{> partials/compliance}}
   <div class="master-container">
 
     {{> partials/header}}
@@ -10,14 +9,11 @@
 
       {{> blocks/banner-image}}
 
-      <div id="main" tabindex="-1">
+      <div id="main" tabindex="-1" role="main">
         <h1 class="page-title">{{page.title}}<!-- @if NODE_ENV!='production' -->Subpage Title<!-- @endif --></h1>
         <div class="row">
           <div class="col-lg-9 col-md-7">
-            <div class="content" data-content-block="bodyCopy1" data-content="content" data-editable="editable">
-              {{#page.bodyCopy1}}
-                {{& content}}
-              {{/page.bodyCopy1}}
+            <div class="content">
               <!-- @if NODE_ENV!='production' --> 
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
                   <h1>Heading Example 1</h1>
@@ -46,30 +42,24 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-5">
-            <div class="content" data-content-block="subAd1" data-content="content" data-editable="editable">
-              {{#page.subAd1}}
-                {{& content}}
-              {{/page.subAd1}}
+            <div class="content">
               <!-- @if NODE_ENV!='production' --> 
-                  <p><a href="" class="btn">Default Button</a></p>
                   <p><a href="" class="btn btn-primary">Primary Button</a></p>
+                  <p><a href="" class="btn btn-secondary">Secondary Button</a></p>
                   <p><a href="" class="btn btn-info">Info Button</a></p>
                   <p><a href="" class="btn btn-success">Success Button</a></p>
                   <p><a href="" class="btn btn-warning">Warning Button</a></p>
                   <p><a href="" class="btn btn-danger">Danger Button</a></p>
                   <p><a href="" class="btn btn-inverse">Inverse Button</a></p>
                   <hr>
-                  <p><p><a href="" class="btn btn-large">Large Button</a></p></p>
-                  <p><p><a href="" class="btn">Default Button</a></p></p>
-                  <p><p><a href="" class="btn btn-small">Small Button</a></p></p>
-                  <p><p><a href="" class="btn btn-mini">Mini Button</a></p></p>
+                  <p><p><a href="" class="btn btn-primary btn-large">Large Button</a></p></p>
+                  <p><p><a href="" class="btn btn-primary">Primary Button</a></p></p>
+                  <p><p><a href="" class="btn btn-primary btn-small">Small Button</a></p></p>
+                  <p><p><a href="" class="btn btn-primary btn-mini">Mini Button</a></p></p>
                <!-- @endif -->
             </div>
             <div class="spacer-20"></div>
-            <div class="content" data-content-block="subAd2" data-content="content" data-editable="editable">
-              {{#page.subAd2}}
-                {{& content}}
-              {{/page.subAd2}}
+            <div class="content">
               <!-- @if NODE_ENV!='production' --> 
                   <h3>Lorem ipsum dolor sit amet.</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae voluptates natus magnam blanditiis autem voluptas, consectetur, officiis, a nulla optio fugit perspiciatis possimus deserunt reprehenderit voluptatibus animi nostrum, earum ducimus doloribus dolorem accusamus. Suscipit ad quia maiores tempora, soluta, adipisci explicabo inventore magni itaque ratione, sapiente ipsam odit nobis molestias similique dolores! Hic omnis aspernatur, eius vitae doloribus assumenda.</p>

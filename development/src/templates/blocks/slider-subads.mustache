@@ -1,106 +1,82 @@
 <div class="subads__container hidden-content">
-    <div class="subads__slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
-        <div class="subads__slide">
-            <div class="subads__image">
-              <div class="subads__image__overlay"></div>
-              <div data-content-block="feature1image" data-content="content" data-editable="editable" >
-                {{#page.feature1image}}
-                    {{& content}}
-                  {{/page.feature1image}}
-                  <!-- @if NODE_ENV!='production' -->
-                    <img src="http://placehold.it/600x500" alt="">
-                  <!-- @endif -->
-              </div>
-            </div>
-            <div class="subads__content">
-                <div class="inside">
-                  <div data-content-block="feature1content" data-content="content" data-editable="editable" >
-                    {{#page.feature1content}}
-                        {{& content}}
-                      {{/page.feature1content}}
-                      <!-- @if NODE_ENV!='production' -->
-                        <h2>Feature 1</h2>
-                        <a href="http://www.google.com" class="btn btn-default">Test External Link</a>
-                      <!-- @endif -->
-                  </div>
-                </div>
-            </div>
-        </div>
-        <div class="subads__slide">
-            <div class="subads__image">
-              <div class="subads__image__overlay"></div>
-              <div data-content-block="feature2image" data-content="content" data-editable="editable" >
-                {{#page.feature2image}}
-                    {{& content}}
-                  {{/page.feature2image}}
-                  <!-- @if NODE_ENV!='production' -->
-                    <img src="http://placehold.it/600x500/333333/ffffff" alt="">
-                  <!-- @endif -->
-              </div>
-            </div>
-            <div class="subads__content">
-                <div class="inside">
-                  <div data-content-block="feature2content" data-content="content" data-editable="editable" >
-                    {{#page.feature2content}}
-                        {{& content}}
-                      {{/page.feature2content}}
-                      <!-- @if NODE_ENV!='production' -->
-                        <h2>Feature 2</h2>
-                      <!-- @endif -->
-                  </div>
-                </div>
-            </div>
-        </div>
-        <div class="subads__slide">
-            <div class="subads__image">
-              <div class="subads__image__overlay"></div>
-              <div data-content-block="feature3image" data-content="content" data-editable="editable" >
-                {{#page.feature3image}}
-                    {{& content}}
-                  {{/page.feature3image}}
-                  <!-- @if NODE_ENV!='production' -->
-                    <img src="http://placehold.it/600x500/f9f9f9/333333" alt="">
-                  <!-- @endif -->
-              </div>
-            </div>
-            <div class="subads__content">
-                <div class="inside">
-                  <div data-content-block="feature3content" data-content="content" data-editable="editable" >
-                    {{#page.feature3content}}
-                        {{& content}}
-                      {{/page.feature3content}}
-                      <!-- @if NODE_ENV!='production' -->
-                        <h2>Feature 3</h2>
-                      <!-- @endif -->
-                  </div>
-                </div>
-            </div>
-        </div>
-        <div class="subads__slide">
-            <div class="subads__image">
-              <div class="subads__image__overlay"></div>
-              <div data-content-block="feature4image" data-content="content" data-editable="editable" >
-                {{#page.feature4image}}
-                    {{& content}}
-                  {{/page.feature4image}}
-                  <!-- @if NODE_ENV!='production' -->
-                    <img src="http://placehold.it/600x500/555555/ffffff" alt="">
-                  <!-- @endif -->
-              </div>
-            </div>
-            <div class="subads__content">
-                <div class="inside">
-                  <div data-content-block="feature4content" data-content="content" data-editable="editable" >
-                    {{#page.feature4content}}
-                        {{& content}}
-                      {{/page.feature4content}}
-                      <!-- @if NODE_ENV!='production' -->
-                        <h2>Feature 4</h2>
-                      <!-- @endif -->
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="swiper"></div>
+		<div class="subads__slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+				<div class="subads__slide">
+						<div class="subads__image">
+							<div class="subads__image__overlay"></div>
+							<div>
+									<!-- @if NODE_ENV!='production' -->
+										<img src="http://placehold.it/600x500" alt="">
+									<!-- @endif -->
+							</div>
+						</div>
+						<div class="subads__content">
+								<div class="inside">
+									<div>
+											<!-- @if NODE_ENV!='production' -->
+												<h2>Feature 1</h2>
+												<a href="http://www.google.com" class="btn btn-default">Test External Link</a>
+											<!-- @endif -->
+									</div>
+								</div>
+						</div>
+				</div>
+				<div class="subads__slide">
+						<div class="subads__image">
+							<div class="subads__image__overlay"></div>
+							<div>
+									<!-- @if NODE_ENV!='production' -->
+										<img src="http://placehold.it/600x500/333333/ffffff" alt="">
+									<!-- @endif -->
+							</div>
+						</div>
+						<div class="subads__content">
+								<div class="inside">
+									<div>
+											<!-- @if NODE_ENV!='production' -->
+												<h2>Feature 2</h2>
+											<!-- @endif -->
+									</div>
+								</div>
+						</div>
+				</div>
+				<div class="subads__slide">
+						<div class="subads__image">
+							<div class="subads__image__overlay"></div>
+							<div>
+									<!-- @if NODE_ENV!='production' -->
+										<img src="http://placehold.it/600x500/f9f9f9/333333" alt="">
+									<!-- @endif -->
+							</div>
+						</div>
+						<div class="subads__content">
+								<div class="inside">
+									<div>
+											<!-- @if NODE_ENV!='production' -->
+												<h2>Feature 3</h2>
+											<!-- @endif -->
+									</div>
+								</div>
+						</div>
+				</div>
+				<div class="subads__slide">
+						<div class="subads__image">
+							<div class="subads__image__overlay"></div>
+							<div>
+									<!-- @if NODE_ENV!='production' -->
+										<img src="http://placehold.it/600x500/555555/ffffff" alt="">
+									<!-- @endif -->
+							</div>
+						</div>
+						<div class="subads__content">
+								<div class="inside">
+									<div>
+											<!-- @if NODE_ENV!='production' -->
+												<h2>Feature 4</h2>
+											<!-- @endif -->
+									</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<div class="swiper"></div>
 </div>

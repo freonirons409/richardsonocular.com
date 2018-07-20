@@ -6,22 +6,22 @@
 
 		}
 		h1 {
-			color:$hero-font-size-h1;
+			color:$h1-font-size + 5;
 		}
 		h2 {
-			color:$hero-font-size-h2;	
+			color:$h2-font-size + 5;	
 		}
 		h3 {
-			color:$hero-font-size-h3;	
+			color:$h3-font-size + 5;	
 		}
 		h4 {
-			color:$hero-font-size-h4;	
+			color:$h4-font-size + 5;	
 		}
 		h5 {
-			color:$hero-font-size-h5;	
+			color:$h5-font-size + 5;	
 		}
 		h6 {
-			color:$hero-font-size-h6;	
+			color:$h6-font-size + 5;	
 		}
 		div, p {
 
@@ -36,18 +36,18 @@
 	.hero__image {
 		img {
 			min-width:100%;
-			@media (max-width:$screen-sm-max) {
+			@include media-breakpoint-down(sm) {
 				min-height:400px;
 				max-width:none;
 			}
-			// @media (max-width:$screen-xs-max) {
+			// @include media-breakpoint-down(xs) {
 			// 	position:relative;
 			// 	margin-left:-200px;
 			// }
 		}
 	}
 	.hero__caption {
-		@media(min-width:$screen-sm-min) {
+		@include media-breakpoint-up(sm) {
 			position:absolute;
 			top:0;
 			bottom:0;
@@ -61,7 +61,7 @@
 			margin:0 auto;
 		}
 		.content {
-			@media(min-width:$screen-sm-min) {
+			@include media-breakpoint-up(sm) {
 				padding:20px 0;
 				@include vertical-align(absolute);
 			}
@@ -71,7 +71,7 @@
 		bottom:-40px;
 		li {
 			button {
-				background:$gray;
+				background:$gray-600;
 				border-radius:100%;
 				&:before {
 					color:transparent;
@@ -79,7 +79,7 @@
 			}
 			&.slick-active {
 				button {
-					background:$brand-primary;
+					background:$secondary;
 				}
 			}
 		}
@@ -108,7 +108,7 @@
 	}
 	.swiper {
 		display:none;
-		@media(max-width:$screen-xs-max) {
+		@include media-breakpoint-down(xs) {
 			display:block;
 			text-align:center;
 			padding:20px;

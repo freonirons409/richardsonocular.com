@@ -1,23 +1,23 @@
 // Global styles
 // =================================================
 img {
-  max-width:100%;
+		max-width:100%;
 }
 .master-container {
-  position:relative;
-  overflow-x:hidden;
+		position:relative;
+		overflow-x:hidden;
 }
 #main {
-  outline: 0;
+		outline: 0;
 }
 .input-wrapper,.relative {
-  position:relative;
+		position:relative;
 }
 .absolute {
-  position:absolute;
+		position:absolute;
 }
 .hidden-content, .hidden-alert {
-  display: none;
+		display: none;
 }
 .inner-xs     { padding: 5px;  @include clearfix; }
 .inner-sm     { padding: 10px; @include clearfix; }
@@ -43,10 +43,10 @@ img {
 .padder-v-xl  { padding-top: 50px; padding-bottom: 50px;}
 
 .no-gutter {
-  [class^="span-"] {
-    padding-left: 0;
-    padding-right: 0;
-  }
+	[class^="span-"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 .m-xs     { margin: 5px; }
 .m-sm     { margin: 10px; }
@@ -89,118 +89,118 @@ img {
 
 
 .break-mobile {
-  @media (max-width:$screen-xs-max) {
-    margin-top:10px;
-    li {
-        display:block;
-        width:100%;
-        margin-bottom:10px;
-    }
-  }
+	@include media-breakpoint-down(xs) {
+		margin-top:10px;
+		li {
+				display:block;
+				width:100%;
+				margin-bottom:10px;
+		}
+	}
 }
 
 
 // SPACER BLOCKS
 // =================================================
 .spacer-10 {
-  display:block;
-  width:100%;
-  height:10px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:10px;
+	clear:both;
 }
 .spacer-15 {
-  display:block;
-  width:100%;
-  height:15px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:15px;
+	clear:both;
 }
 .spacer-20 {
-  display:block;
-  width:100%;
-  height:20px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:20px;
+	clear:both;
 }
 .spacer-30 {
-  display:block;
-  width:100%;
-  height:30px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:30px;
+	clear:both;
 }
 .spacer-40 {
-  display:block;
-  width:100%;
-  font-size: 13px;
-  height:40px;
-  clear:both;
+	display:block;
+	width:100%;
+	font-size: 13px;
+	height:40px;
+	clear:both;
 }
 .spacer-50 {
-  display:block;
-  width:100%;
-  height:50px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:50px;
+	clear:both;
 }
 .spacer-60 {
-  display:block;
-  width:100%;
-  height:60px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:60px;
+	clear:both;
 }
 .spacer-70 {
-  display:block;
-  width:100%;
-  height:70px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:70px;
+	clear:both;
 }
 .spacer-80 {
-  display:block;
-  width:100%;
-  height:80px;
-  clear:both;
+	display:block;
+	width:100%;
+	height:80px;
+	clear:both;
 }
 
 // LOADING SCREEN FOR SLIDESHOWS AND IMAGE BLOCKS
 // =================================================
 .loader {
-  position:relative;
-  .loading {
-    position:relative;
-    top:50%;
-    margin-top:-30;
-    .loading-inner {
-      margin:0 auto;
-    }
-  }
-  .load-watch {
-    opacity:0;
-  }
-  overflow:hidden;
-  height:440px;
-  @media (min-width:$screen-sm-min) {
-    height:440px;
-  }
-  @media (min-width:$screen-md-min) {
-    height:80vh;
-  }
-  &.grid-lines {
-    background: repeating-linear-gradient(
-      -55deg,
-      rgba($white,0.1),
-      rgba($white,0.1) 5,
-      rgba($gray,0.1) 5,
-      rgba($gray,0.1) 6
-    );
-    border-bottom:1px solid rgba($gray,0.1);
-    border-top:1px solid rgba($gray,0.1);
-  }
-  &.smaller {
-      height:240px;
-    @media (min-width:$screen-sm-min) {
-      height:240px;
-    }
-    @media (min-width:$screen-md-min) {
-      height:240px;
-    }
-  }
+	position:relative;
+	.loading {
+		position:relative;
+		top:50%;
+		margin-top:-30;
+		.loading-inner {
+			margin:0 auto;
+		}
+	}
+	.load-watch {
+		opacity:0;
+	}
+	overflow:hidden;
+	height:440px;
+	@include media-breakpoint-up(sm) {
+		height:440px;
+	}
+	@include media-breakpoint-up(md) {
+		height:80vh;
+	}
+	&.grid-lines {
+		background: repeating-linear-gradient(
+			-55deg,
+			rgba($white,0.1),
+			rgba($white,0.1) 5,
+			rgba($gray-700,0.1) 5,
+			rgba($gray-700,0.1) 6
+		);
+		border-bottom:1px solid rgba($gray-700,0.1);
+		border-top:1px solid rgba($gray-700,0.1);
+	}
+	&.smaller {
+			height:240px;
+		@include media-breakpoint-up(sm) {
+			height:240px;
+		}
+		@include media-breakpoint-up(md) {
+			height:240px;
+		}
+	}
 }
 
 // =================================================
@@ -211,32 +211,32 @@ img {
 //==================================================
 
 .screener {
-  content:"large";
-  position:absolute;
-  font-size:0;
-  line-height:0;
-  height:0px;
-  width:0px;
-  @media (min-width:$screen-md-min) and (max-width:$screen-md-max) {
-    content:"medium"
-  }
-  @media (min-width:$screen-sm-min) and (max-width:$screen-sm-max) {
-    content:"small";
-  }
-  @media (max-width:$screen-xs-max) {
-    content:"xsmall";
-  }
+	content:"large";
+	position:absolute;
+	font-size:0;
+	line-height:0;
+	height:0px;
+	width:0px;
+	@include media-breakpoint-only(md) {
+		content:"medium"
+	}
+	@include media-breakpoint-only(sm) {
+		content:"small";
+	}
+	@include media-breakpoint-down(xs) {
+		content:"xsmall";
+	}
 }
 
 //==================================================
 
 .flex-video {
-  position: relative;
-  padding-top: 25px;
-  padding-bottom: 67.5%;
-  height: 0;
-  margin-bottom: 16px;
-  overflow: hidden;
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 67.5%;
+	height: 0;
+	margin-bottom: 16px;
+	overflow: hidden;
 }
 
 .flex-video.widescreen { padding-bottom: 57.25%; }
@@ -245,42 +245,42 @@ img {
 .flex-video iframe,
 .flex-video object,
 .flex-video embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
-  .flex-video { padding-top: 0; }
+	.flex-video { padding-top: 0; }
 }
 
 //loading animation styles
 //==================================================
 span.loading {
-   &,span.loading-inner {
-    display:block;
-   }
+	 &,span.loading-inner {
+		display:block;
+	 }
 }
 
 .loading {
-  padding: 10px 0;
+	padding: 10px 0;
 }
 .loading-inner {
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #333333;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    @include animation(spin 1.5s linear infinite);
+		border: 5px solid #f3f3f3;
+		border-top: 5px solid #333333;
+		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		@include animation(spin 1.5s linear infinite);
 }
 @-webkit-keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
 }
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
 }
 
 
@@ -289,37 +289,37 @@ span.loading {
 //==================================================
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
 }
 .hidden-compliance {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-  &:focus {
-    background-color: $brand-default;
-    color: #fff;
-    top: 16px;
-    left: 10px;
-    width: auto;
-    height: auto;
-    padding: 20px;
-    margin: 0;
-    clip: auto;
-    display: block;
-    z-index: 1000000;
-  }
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+	&:focus {
+		background-color: $primary;
+		color: #fff;
+		top: 16px;
+		left: 10px;
+		width: auto;
+		height: auto;
+		padding: 20px;
+		margin: 0;
+		clip: auto;
+		display: block;
+		z-index: 1000000;
+	}
 }
 
 // Use in conjunction with .sr-only to only display content when it's focused.
@@ -327,13 +327,13 @@ span.loading {
 // Credit: HTML5 Boilerplate
 
 .sr-only-focusable {
-  &:active,
-  &:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto;
-  }
+	&:active,
+	&:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+	}
 }

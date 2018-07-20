@@ -1,10 +1,21 @@
+$navbar-padding-horizontal:  20px;
+$navbar-height: 50px;
+$navbar-padding-vertical: 20px;
+$navbar-toggle-border-color: $gray-400;
+$navbar-toggle-icon-bar-bg: $gray-400;
+$navbar-toggle-hover-bg: $gray-600;
+$nav-link-vertical-padding: 15px;
+$nav-link-horizontal-padding: 15px;
+$navbar-link-hover-color: $white;
+$navbar-link-hover-bg: $primary;
+
 .navbar {
 	position: relative;
-	min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-	margin-bottom: $navbar-margin-bottom;
+	min-height: $navbar-height;
+	margin-bottom: $navbar-height / 2;
 	border: 1px solid transparent;
-	background-color: $navbar-bg;
-  	border-color: $navbar-border;
+	background-color: $gray-100;
+	border-color: $gray-200;
 	// Prevent floats from breaking the navbar
 	@include clearfix;
 
@@ -27,16 +38,15 @@
 // When a container is present, change the behavior of the header and collapse.
 
 .container, .container-fluid {
-  > .navbar-header,
-  > .navbar-collapse {
-    margin-right: -$navbar-padding-horizontal;
-    margin-left:  -$navbar-padding-horizontal;
-
-    @media (min-width: $grid-float-breakpoint) {
-      margin-right: 0;
-      margin-left:  0;
-    }
-  }
+	> .navbar-header,
+	> .navbar-collapse {
+		margin-right: -$navbar-padding-horizontal;
+		margin-left:  -$navbar-padding-horizontal;
+		@include media-breakpoint-up(sm) {
+			margin-right: 0;
+			margin-left:  0;
+		}
+	}
 }
 
 .navbar-collapse {
@@ -53,8 +63,8 @@
 	}
 }
 
-// Banno Menu CSS
-.navbar-collapse .banno-menu {
+// Custom Menu CSS
+.navbar-collapse .custom-menu {
 	margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
 	padding: 0;
 	list-style: none;
@@ -64,14 +74,14 @@
 		display: block;
 
 		> a, > span {
-		  position: relative;
-		  display: block;
-		  padding: $nav-link-vertical-padding $nav-link-horizontal-padding;
-		  cursor: pointer;
-		  line-height: $line-height-computed;
-		  color: $navbar-color;
+			position: relative;
+			display: block;
+			padding: $nav-link-vertical-padding $nav-link-horizontal-padding;
+			cursor: pointer;
+			line-height: $line-height-lg;
+			color: $gray-800;
 			&:focus {
-		    @include tab-focus;
+				@include tab-focus;
 			}
 		}
 	}
@@ -79,172 +89,147 @@
 
 // medium down
 // From 767px and down
-@media screen and (max-width: $grid-float-breakpoint-max) {
+@include media-breakpoint-down(sm) {
 	// Navbar toggle
 	//
 	// Custom button for toggling the `.navbar-collapse`, powered by the collapse
 	// JavaScript plugin.
 
 	.navbar-toggle {
-	  position: relative;
-	  float: right;
-	  margin-right: $navbar-padding-horizontal;
-	  padding: 9px 10px;
-	  background-color: transparent;
-	  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-	  border: 1px solid transparent;
-	  border-radius: $border-radius-base;
-	  border-color: $navbar-toggle-border-color;
+		position: relative;
+		float: right;
+		margin-right: $navbar-padding-horizontal;
+		padding: 9px 10px;
+		background-color: transparent;
+		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+		border: 1px solid transparent;
+		border-radius: $border-radius;
+		border-color: $navbar-toggle-border-color;
 
-	  // We remove the `outline` here, but later compensate by attaching `:hover`
-	  // styles to `:focus`.
-	  &:focus {
-	    outline: 0;
-	  }
-
-	    &:hover,
+		// We remove the `outline` here, but later compensate by attaching `:hover`
+		// styles to `:focus`.
 		&:focus {
-	  		background-color: $navbar-toggle-hover-bg;
+			outline: 0;
 		}
 
-	  // Bars
-	  .icon-bar {
-	    display: block;
-	    width: 22px;
-	    height: 2px;
-	    border-radius: 1px;
-	    background-color: $navbar-toggle-icon-bar-bg;
-	  }
-	  .icon-bar + .icon-bar {
-	    margin-top: 4px;
-	  }
+		&:hover,
+		&:focus {
+			background-color: $navbar-toggle-hover-bg;
+		}
+
+		// Bars
+		.icon-bar {
+			display: block;
+			width: 22px;
+			height: 2px;
+			border-radius: 1px;
+			background-color: $navbar-toggle-icon-bar-bg;
+		}
+		.icon-bar + .icon-bar {
+			margin-top: 4px;
+		}
 	}
 
-	.navbar-collapse .banno-menu {
+	.navbar-collapse .custom-menu {
 		.open .dropdown-menu {
-	      position: static;
-	      float: none;
-	      width: auto;
-	      margin-top: 0;
-	      background-color: transparent;
-	      border: 0;
-	      box-shadow: none;
+			position: static;
+			float: none;
+			width: auto;
+			margin-top: 0;
+			background-color: transparent;
+			border: 0;
+			box-shadow: none;
 
-	      > li > a, > li > span {
-	        line-height: $line-height-computed;
-	        padding: 5px 15px 5px 25px;
-	        &:hover,
-	        &:focus {
-	          background-image: none;
-	        }
-	      }
+			> li > a, > li > span {
+				line-height: $line-height-lg;
+				padding: 5px 15px 5px 25px;
+				&:hover,
+				&:focus {
+					background-image: none;
+				}
+			}
 
-	      	&.active {
-	          display: block;
-	          margin: 0 15px;
-	        }
-	    }
+			&.active {
+				display: block;
+				margin: 0 15px;
+			}
+		}
 	}
 }
 
 // medium up
 // From 768px and up
-@media screen and (min-width: $grid-float-breakpoint) {
+@include media-breakpoint-up(md) {
 	.navbar-header {
-	  float: left;
+		float: left;
 	}
 
 	.navbar-collapse {
-	    width: auto;
-	    border-top: 0;
-	    box-shadow: none;
-	    padding: 0;
+		width: auto;
+		border-top: 0;
+		box-shadow: none;
+		padding: 0;
 
-	    &.collapse {
-	      display: block !important;
-	      visibility: visible !important;
-	      height: auto !important;
-	      padding-bottom: 0; // Override default setting
-	      overflow: visible !important;
-	    }
+		&.collapse {
+			display: block !important;
+			visibility: visible !important;
+			height: auto !important;
+			padding-bottom: 0; // Override default setting
+			overflow: visible !important;
+		}
 
-	    &.in {
-	      overflow-y: visible;
-	    }
+		&.in {
+			overflow-y: visible;
+		}
 
-	    // Undo the collapse side padding for navbars with containers to ensure
-	    // alignment of right-aligned contents.
-	    .navbar-fixed-top &,
-	    .navbar-static-top &,
-	    .navbar-fixed-bottom & {
-	      padding-left: 0;
-	      padding-right: 0;
-	    }
+		// Undo the collapse side padding for navbars with containers to ensure
+		// alignment of right-aligned contents.
+		.navbar-fixed-top &,
+		.navbar-static-top &,
+		.navbar-fixed-bottom & {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 
 	.navbar-toggle {
 		display: none;
 	}
 
-	.navbar-collapse .banno-menu {
-	    margin: 0;
+	.navbar-collapse .custom-menu {
+		margin: 0;
 
-	    > li {
-	      	float: left;
-	      	> a, > span {
-	        	padding-top:    $navbar-padding-vertical;
-	        	padding-bottom: $navbar-padding-vertical;
+		> li {
+			float: left;
+			> a, > span {
+				padding-top:    $navbar-padding-vertical;
+				padding-bottom: $navbar-padding-vertical;
 
 				// Change top most links color/background
-	            &:hover,
-			    &:focus {
-			    	color: $navbar-link-hover-color;
-			    	background-color: $navbar-link-hover-bg;
-			    }
-	        }
-	        .menu-group {
-	        	position:relative;
-	        	.dropdown-menu {
-	        		left:100%;
-	        		top:0;
-	        	}
-	        }
-	        .group-item {
-	        	display:block;
-	        	position:relative;
-	        	padding: 3px 20px;
-	        }
-
-	        // If you want columns in your dropdown to show on desktop, uncomment below.
-		    // > ul {
-		    //   	min-width: 500px;
-
-		    //   	> li {
-			   //    	float: left;
-			   //    	min-width: 135px;
-
-			   //    	> span, > a {
-			   //    		font-size: 18px;
-
-			   //    	}
-
-			   //    	> ul {
-			   //    		display: block;
-			   //    		position: static;
-			   //    		padding: 0;
-			   //    		box-shadow: none;
-			   //    		border: none !important;
-			   //    	}
-
-
-			   //  }
-		    // }
-	    }
+				&:hover,
+				&:focus {
+					color: $navbar-link-hover-color;
+					background-color: $navbar-link-hover-bg;
+				}
+			}
+			.menu-group {
+				position:relative;
+				.dropdown-menu {
+					left:100%;
+					top:0;
+				}
+			}
+			.group-item {
+				display:block;
+				position:relative;
+				padding: 3px 20px;
+			}
+		}
 	}
 }
 
 nav.navbar {
-	.banno-menu {
+	.custom-menu {
 		>li {
 			>a,>span {
 				//styles for first tier 

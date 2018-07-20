@@ -1,6 +1,5 @@
 {{> partials/top}}
 <body class="subpage form">
-  {{> partials/compliance}}
   <div class="master-container">
 
     {{> partials/header}}
@@ -9,17 +8,14 @@
 
       {{> partials/nav}}
 
-      <div id="main" tabindex="-1">
+      <div id="main" tabindex="-1" role="main">
           <h1 class="page-title">{{page.title}}<!-- @if NODE_ENV!='production' -->Contact Us<!-- @endif --></h1>
           <div class="row">
             <div class="col-lg-9 col-md-7">
               <!-- Start of Form Markup -->
                 <div class="ajax-form-container">
                   <div class="form-container">
-                    <div class="content" data-content-block="bodyCopy1" data-content="content" data-editable="editable">
-                      {{#page.bodyCopy1}}
-                        {{& content}}
-                      {{/page.bodyCopy1}}
+                    <div class="content">
                       <!-- @if NODE_ENV!='production' --> 
                           <h3>Lorem ipsum dolor sit amet.</h3>
                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae voluptates natus magnam blanditiis autem voluptas, consectetur, officiis, a nulla optio fugit perspiciatis possimus deserunt reprehenderit voluptatibus animi nostrum, earum ducimus doloribus dolorem accusamus. Suscipit ad quia maiores tempora, soluta, adipisci explicabo inventore magni itaque ratione, sapiente ipsam odit nobis molestias similique dolores! Hic omnis aspernatur, eius vitae doloribus assumenda.</p>
@@ -158,17 +154,14 @@
                           <button type="submit" class="btn btn-primary">Submit
                               <span class="loading"><span class="loading-inner"></span></span>
                           </button>
-                          <div class="error-container">There was an error submitting the form</div>
+                          <div class="error">There was an error submitting the form</div>
                         </div>
                       </div>
 
                     </form>
                   </div>
                   <div class="success-container">
-                    <div class="content" data-content-block="successCopy" data-content="content" data-editable="editable">
-                      {{#page.successCopy}}
-                        {{& content}}
-                      {{/page.successCopy}}
+                    <div class="content">
                       <!-- @if NODE_ENV!='production' --> 
                         <h4>Thank you for your submission!</h4>
                         <p>We will be in touch with you soon.</p>
@@ -179,10 +172,7 @@
                 <!-- End of Form Markup  -->
             </div>
             <div class="col-lg-3 col-md-5">
-                <div class="content" data-content-block="subAd1" data-content="content" data-editable="editable">
-                  {{#page.subAd1}}
-                    {{& content}}
-                  {{/page.subAd1}}
+                <div class="content">
                   <!-- @if NODE_ENV!='production' --> 
                       <p><a href="" class="btn">Default Button</a></p>
                       <p><a href="" class="btn btn-primary">Primary Button</a></p>
@@ -194,10 +184,7 @@
                    <!-- @endif -->
                 </div>
                 <div class="spacer-20"></div>
-                <div class="content" data-content-block="subAd2" data-content="content" data-editable="editable">
-                  {{#page.subAd2}}
-                    {{& content}}
-                  {{/page.subAd2}}
+                <div class="content">
                   <!-- @if NODE_ENV!='production' --> 
                       <h3>Lorem ipsum dolor sit amet.</h3>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae voluptates natus magnam blanditiis autem voluptas, consectetur, officiis, a nulla optio fugit perspiciatis possimus deserunt reprehenderit voluptatibus animi nostrum, earum ducimus doloribus dolorem accusamus. Suscipit ad quia maiores tempora, soluta, adipisci explicabo inventore magni itaque ratione, sapiente ipsam odit nobis molestias similique dolores! Hic omnis aspernatur, eius vitae doloribus assumenda.</p>

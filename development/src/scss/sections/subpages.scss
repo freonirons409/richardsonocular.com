@@ -10,7 +10,7 @@
 .search-container {
   margin-top: 20px;
   .search-item {
-    border-bottom:1px solid $gray-lighter;
+    border-bottom:1px solid $gray-600;
     padding-bottom:15px;
     a {
       display:inline-block;
@@ -30,7 +30,7 @@
 body.error-page {
   .error-page-body {
     min-height:480px;
-    @media (max-width:$screen-xs-max) {
+    @include media-breakpoint-down(xs) {
       min-height:300px;
     }
   }

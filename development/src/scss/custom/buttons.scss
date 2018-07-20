@@ -2,8 +2,7 @@
 // ===================================================================================
 .content {
 	.btn {
-		@extend .btn-default;
-		&,&.btn-default {
+		&,&.btn-primary {
 
 			&:hover {
 
@@ -12,8 +11,7 @@
 
 			}
 		}
-		&.btn-primary {
-			@extend .btn-primary;
+		&.btn-secondary {
 			&:hover {
 
 			}
@@ -22,7 +20,6 @@
 			}
 		}
 		&.btn-info {
-			@extend .btn-info;
 			&:hover {
 
 			}
@@ -31,7 +28,6 @@
 			}
 		}
 		&.btn-success {
-			@extend .btn-success;
 			&:hover {
 
 			}
@@ -40,7 +36,6 @@
 			}
 		}
 		&.btn-warning {
-			@extend .btn-warning;
 			&:hover {
 
 			}
@@ -49,7 +44,6 @@
 			}
 		}
 		&.btn-danger {
-			@extend .btn-danger;
 			&:hover {
 
 			}

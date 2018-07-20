@@ -1,23 +1,21 @@
 <footer class="footer">
-  <div class="container">
-      <a href="#" id="scrollTop" class="visible-xs-block">
-        <img src="/assets/img/topScroll.png" alt="Back to Top">
-      </a>
-      <div class="footer-links">
-        <banno:menu menu-id="CHANGEME" ></banno:menu>
-          <!-- @if NODE_ENV!='production' -->
-            <ul class="banno-menu">
-              <li><a href="">Link #1</a></li>
-              <li><a href="">Link #2</a></li>
-              <li><a href="">Link #3</a></li>
-            </ul>
-          <!-- @endif -->
-      </div>
-      <div class="copyright">
-        <span class="copytext">&copy;<span class="copy-date"></span> YourFI.</span>
-        <span class="fdic">Member <span class="icon icon-fdic"></span></span>
-        <span class="ehl">Equal Housing Lender <span class="icon icon-ehl"></span></span> 
-      </div>
-  </div>
+	<div class="container">
+			<a href="#" id="scrollTop" class="d-sm-none">
+				<img src="/assets/img/topScroll.png" alt="Back to Top">
+			</a>
+			<nav class="footer-links">
+					<!-- @if NODE_ENV!='production' -->
+						<ul class="nav justify-content">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+							<li><a href="">Link #3</a></li>
+						</ul>
+					<!-- @endif -->
+			</nav>
+			<div class="spacer-40"></div>
+			<div class="copyright">
+				<span class="copytext">&copy; <span class="copy-date"></span> YourSite.</span>
+			</div>
+	</div>
 </footer>
-<div class="screener"></div>
+<div class="screener" aria-hidden="true"></div>

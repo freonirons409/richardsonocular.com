@@ -3,7 +3,7 @@
 	.panel-heading {
 		cursor:pointer;
 		&:hover {
-			background:$gray-lighter;
+			background:$gray-600;
 		}
 		@extend h4;
 		padding:0;

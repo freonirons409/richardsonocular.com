@@ -1,59 +1,40 @@
 {{> partials/top}}
 <body class="home">
-  {{> partials/compliance}}
-  <div class="master-container">
+	<div class="master-container">
+		
+		{{> partials/header}}
 
-    
-    {{> partials/header}}
+			<div class="container">
+					{{> partials/nav}}
+			</div>
+			
+			<div id="main" tabindex="-1" role="main">
 
-      <div class="container">
-          {{> partials/nav}}
-      </div>
-      
-      <div id="main" tabindex="-1">
+					{{> blocks/banner-video }}
 
-          {{> blocks/banner-video }}
+					<div class="container">
+								<hr>
 
-          <div class="container">
-                <hr>
+								{{> blocks/accordion}}
 
-                {{> blocks/accordion}}
+								<hr>
 
-                <hr>
+								{{> blocks/tabs}}
 
-                {{> blocks/tabs}}
+								<hr>
 
-                <hr>
+								{{> blocks/slider-subads}}
 
-                {{> blocks/slider-subads}}
+								<hr>
+					</div>
+				
+			</div>
 
-                <hr>
+		{{> partials/footer}}
 
+	</div>
 
-                <div class="row">
-                  <div class="col-lg-4 col-sm-6">
-                    <h2>Stocks</h2>
-                    {{> components/stocks}}
-                  </div>
-                  <div class="col-lg-4 col-sm-6">
-                    <h2>Weather</h2>
-                    {{> components/weather}}
-                  </div>
-                  <div class="col-lg-4 visible-lg-inline">
-                    <h2>Ag</h2>
-                    {{> components/ag}}
-                  </div>
-                </div>
-
-          </div>
-        
-      </div>
-
-    {{> partials/footer}}
-
-  </div>
-
-  {{> partials/scripts}}
+	{{> partials/scripts}}
 
 </body>
 </html>

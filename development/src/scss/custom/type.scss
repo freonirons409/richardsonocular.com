@@ -20,22 +20,22 @@
 	// }
 
 	h1 {
-		font-size:$font-size-h1;
+		font-size:$h1-font-size;
 	}
 	h2 {
-		font-size:$font-size-h2;
+		font-size:$h2-font-size;
 	}
 	h3 {
-		font-size:$font-size-h3;
+		font-size:$h3-font-size;
 	}
 	h4 {
-		font-size:$font-size-h4;
+		font-size:$h4-font-size;
 	}
 	h5 {
-		font-size:$font-size-h5;
+		font-size:$h5-font-size;
 	}
 	h6 {
-		font-size:$font-size-h6;
+		font-size:$h6-font-size;
 	}
 	div,p,li,td {
 		font-size:$font-size-base;
@@ -67,23 +67,23 @@
 .text-xs-center { text-align: center; }
 .text-xs-justify { text-align: justify; }
 
-@media (min-width: $screen-sm-min) {
-  .text-sm-left { text-align: left; }
-  .text-sm-right { text-align: right; }
-  .text-sm-center { text-align: center; }
-  .text-sm-justify { text-align: justify; }
+@include media-breakpoint-up(sm) {
+	.text-sm-left { text-align: left; }
+	.text-sm-right { text-align: right; }
+	.text-sm-center { text-align: center; }
+	.text-sm-justify { text-align: justify; }
 }
 
-@media (min-width: $screen-md-min) {
-  .text-md-left { text-align: left; }
-  .text-md-right { text-align: right; }
-  .text-md-center { text-align: center; }
-  .text-md-justify { text-align: justify; }
+@include media-breakpoint-up(md) {
+	.text-md-left { text-align: left; }
+	.text-md-right { text-align: right; }
+	.text-md-center { text-align: center; }
+	.text-md-justify { text-align: justify; }
 }
 
-@media (min-width: $screen-lg-min) {
-  .text-lg-left { text-align: left; }
-  .text-lg-right { text-align: right; }
-  .text-lg-center { text-align: center; }
-  .text-lg-justify { text-align: justify; }
+@include media-breakpoint-up(lg) {
+	.text-lg-left { text-align: left; }
+	.text-lg-right { text-align: right; }
+	.text-lg-center { text-align: center; }
+	.text-lg-justify { text-align: justify; }
 }

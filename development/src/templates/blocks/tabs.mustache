@@ -1,77 +1,27 @@
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active">
-    <a data-toggle="tab" href="#tab1" role="tab">
-      <span data-content-block="tab1title" data-content="content" data-editable="editable" >
-        {{#page.tab1title}}
-            {{& content}}
-          {{/page.tab1title}}
-          <!-- @if NODE_ENV!='production' -->
-              Tab One
-          <!-- @endif -->
-      </span>
-    </a>
-  </li>
-  <li>
-    <a data-toggle="tab" href="#tab2" role="tab">
-      <span data-content-block="tab2title" data-content="content" data-editable="editable" >
-        {{#page.tab2title}}
-            {{& content}}
-          {{/page.tab2title}}
-          <!-- @if NODE_ENV!='production' -->
-              Tab Two
-          <!-- @endif -->
-      </span>
-    </a>
-  </li>
-  <li>
-    <a data-toggle="tab" href="#tab3" role="tab">
-      <span data-content-block="tab3title" data-content="content" data-editable="editable" >
-        {{#page.tab3title}}
-            {{& content}}
-          {{/page.tab3title}}
-          <!-- @if NODE_ENV!='production' -->
-              Tab Three
-          <!-- @endif -->
-      </span>
-    </a>
-  </li>
-</ul>
-
-<div class="tab-content">
-  <div id="tab1" class="tab-pane fade in active" role="tabpanel">
-    <div class="content" data-content-block="tab1content" data-content="content" data-editable="editable" >
-      {{#page.tab1content}}
-          {{& content}}
-        {{/page.tab1content}}
-        <!-- @if NODE_ENV!='production' -->
-          <h2>Tab 1 Content</h2>
-          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
-        <!-- @endif -->
-    </div>
-  </div>
-  <div id="tab2" class="tab-pane fade" role="tabpanel">
-    <div class="content" data-content-block="tab2content" data-content="content" data-editable="editable" >
-      {{#page.tab2content}}
-          {{& content}}
-        {{/page.tab2content}}
-        <!-- @if NODE_ENV!='production' -->
-          <h2>Tab 2 Content</h2>
-          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
-
-        <!-- @endif -->
-    </div>
-  </div>
-  <div id="tab3" class="tab-pane fade" role="tabpanel">
-    <div class="content" data-content-block="tab3content" data-content="content" data-editable="editable" >
-      {{#page.tab3content}}
-          {{& content}}
-        {{/page.tab3content}}
-        <!-- @if NODE_ENV!='production' -->
-          <h2>Tab 3 Content</h2>
-          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illum odio perspiciatis voluptate, error, quas autem. Consequatur temporibus iure a doloribus, incidunt vitae tempore totam veniam sunt id iusto est at aliquid quasi, rerum illo voluptatem laudantium laborum consectetur unde nobis corporis sapiente distinctio. Rem!</p>
-
-        <!-- @endif -->
-    </div>
-  </div>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+		<a class="nav-item nav-link active" id="nav-tab-one" data-toggle="tab" href="#nav-tab-content-one" role="tab" aria-controls="nav-tab-content-one" aria-selected="true"><!-- @if NODE_ENV!='production' -->Tab One<!-- @endif --></a>
+		<a class="nav-item nav-link" id="nav-tab-two" data-toggle="tab" href="#nav-tab-content-two" role="tab" aria-controls="nav-tab-content-two" aria-selected="false"><!-- @if NODE_ENV!='production' -->Tab Two<!-- @endif --></a>
+		<a class="nav-item nav-link" id="nav-tab-three" data-toggle="tab" href="#nav-tab-content-three" role="tab" aria-controls="nav-tab-content-three" aria-selected="false"><!-- @if NODE_ENV!='production' -->Tab Three<!-- @endif --></a>
+	</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+	<div class="tab-pane fade show active" id="nav-tab-content-one" role="tabpanel" aria-labelledby="nav-tab-one">
+		<!-- @if NODE_ENV!='production' -->
+			<h2>Tab 1 Content</h2>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
+		<!-- @endif -->
+	</div>
+	<div class="tab-pane fade" id="nav-tab-content-two" role="tabpanel" aria-labelledby="nav-tab-two">
+		<!-- @if NODE_ENV!='production' -->
+			<h2>Tab 2 Content</h2>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
+		<!-- @endif -->
+	</div>
+	<div class="tab-pane fade" id="nav-tab-content-three" role="tabpanel" aria-labelledby="nav-tab-three">
+		<!-- @if NODE_ENV!='production' -->
+			<h2>Tab 3 Content</h2>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloribus id corporis tempore omnis dolore recusandae ipsa deleniti aperiam nemo?</div>
+		<!-- @endif -->
+	</div>
 </div>
