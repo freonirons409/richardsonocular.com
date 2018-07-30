@@ -1,6 +1,7 @@
 // Main Full-width hero slider
 // =================================================
 .hero__slider {
+	margin-bottom:0;
 	div[data-content="content"] {
 		h1,h2,h3,h4,h5,h6 {
 
@@ -47,8 +48,10 @@
 		}
 	}
 	.hero__caption {
+
 		@include media-breakpoint-up(sm) {
 			position:absolute;
+			max-width:680px;
 			top:0;
 			bottom:0;
 			left:0;
@@ -61,9 +64,31 @@
 			margin:0 auto;
 		}
 		.content {
+			background: -moz-linear-gradient(0% 50% 0deg,rgba(3, 160, 12, 1) 0%,rgba(3, 160, 12, 0.1) 100%);
+			background: -webkit-linear-gradient(0deg, rgba(3, 160, 12, 1) 0%, rgba(3, 160, 12, 0.1) 100%);
+			background: -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(3, 160, 12, 1) ),color-stop(1,rgba(3, 160, 12, 0.1) ));
+			background: -o-linear-gradient(0deg, rgba(3, 160, 12, 1) 0%, rgba(3, 160, 12, 0.1) 100%);
+			background: -ms-linear-gradient(0deg, rgba(3, 160, 12, 1) 0%, rgba(3, 160, 12, 0.1) 100%);
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#03A00C', endColorstr='#03A00C' ,GradientType=0)";
+			background: linear-gradient(90deg, rgba(3, 160, 12, 1) 0%, rgba(3, 160, 12, 0.1) 100%);
+			opacity: 0.75;
+			filter: alpha(opacity=75) progid:DXImageTransform.Microsoft.Alpha(opacity=75) progid:DXImageTransform.Microsoft.gradient(startColorstr='#03A00C',endColorstr='#03A00C' , GradientType=1);
+
 			@include media-breakpoint-up(sm) {
-				padding:20px 0;
+				padding:60px 90px;
+				padding-left:10%;
 				@include vertical-align(absolute);
+			}
+			h1 {
+				font-size:45px;
+			}
+			h1,h2,h3,h4,h5,h6 {
+				font-family:$sedgewick;
+				color:$white;
+			}
+			hr {
+				border-color:$white;
+
 			}
 		}
 	}

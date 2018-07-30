@@ -1,7 +1,7 @@
 // Global styles
 // =================================================
 img {
-		max-width:100%;
+	max-width:100%;
 }
 .master-container {
 		position:relative;
@@ -76,6 +76,8 @@ img {
 
 .b        { border: 1px solid #ebebeb; }
 .bordered     { border: 1px solid #d1d3d4; }
+.b-b-green { border-bottom:5px solid $green; }
+.b-t-green { border-top:5px solid $green; }
 
 .img-circle   { border-radius: 50%; }
 

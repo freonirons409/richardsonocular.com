@@ -2,15 +2,28 @@
 // =========================================================================================================
 
 footer.footer {
-	background:$gray-600;
+	background: -moz-linear-gradient(50.03% -3030.19% 90deg,rgba(255, 255, 255, 0.1) 0%,rgba(243, 243, 243, 0.25) 16.96%,rgba(210, 210, 210, 0.53) 47.9%,rgba(157, 157, 157, 0.9) 89.06%,rgba(142, 142, 142, 1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(243, 243, 243, 0.25) 16.96%, rgba(210, 210, 210, 0.53) 47.9%, rgba(157, 157, 157, 0.9) 89.06%, rgba(142, 142, 142, 1) 100%);
+	background: -webkit-gradient(linear,50.03% -3030.19% ,50.03% -3130.19% ,color-stop(0,rgba(255, 255, 255, 0.1) ),color-stop(0.1696,rgba(243, 243, 243, 0.25) ),color-stop(0.479,rgba(210, 210, 210, 0.53) ),color-stop(0.8906,rgba(157, 157, 157, 0.9) ),color-stop(1,rgba(142, 142, 142, 1) ));
+	background: -o-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(243, 243, 243, 0.25) 16.96%, rgba(210, 210, 210, 0.53) 47.9%, rgba(157, 157, 157, 0.9) 89.06%, rgba(142, 142, 142, 1) 100%);
+	background: -ms-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(243, 243, 243, 0.25) 16.96%, rgba(210, 210, 210, 0.53) 47.9%, rgba(157, 157, 157, 0.9) 89.06%, rgba(142, 142, 142, 1) 100%);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#8E8E8E' ,GradientType=0)";
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(243, 243, 243, 0.25) 16.96%, rgba(210, 210, 210, 0.53) 47.9%, rgba(157, 157, 157, 0.9) 89.06%, rgba(142, 142, 142, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8E8E8E',endColorstr='#FFFFFF' , GradientType=0);
 	padding:40px 0;
-	margin-top:40px;
+	margin-top:0;
 	.container {
-		* {
-			color:$white;
+
+	}
+	.footer-logo {
+		max-width:173px;
+		display:block;
+		img {
+			max-width:100%;
 		}
 	}
-	.custom-menu {
+	.nav {
+		margin-top:40px;
 		@extend .list-inline;
 		@include media-breakpoint-down(xs) {
 			li {
@@ -19,12 +32,19 @@ footer.footer {
 				margin-bottom:10px;
 			}
 		}
+		li {
+			a {
+				font-weight:900;
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+		}
 	}
 	.copyright {
-
-		@include media-breakpoint-down(xs) {
 			display:block;
 			margin-top:40px;
+		@include media-breakpoint-down(xs) {
 			.ehl,.copytext,.fdic {
 				display:block;
 				text-align:center;

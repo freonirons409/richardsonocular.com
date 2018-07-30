@@ -1,192 +1,210 @@
-/*
-
-
-
-
 @font-face {
-    font-family: 'PT Serif';
-    src: url('/assets/font/pt_serif-web-regular.eot');
-    src: url('/assets/font/pt_serif-web-regular.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/pt_serif-web-regular.woff2') format('woff2'),
-         url('/assets/font/pt_serif-web-regular.woff') format('woff'),
-         url('/assets/font/pt_serif-web-regular.ttf') format('truetype'),
-         url('/assets/font/pt_serif-web-regular.svg#pt_serifregular') format('svg');
+    font-family: 'Sedgewick Ave';
+    src: url('/assets/font/sedgwickave-regular-webfont.eot');
+    src: url('/assets/font/sedgwickave-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/sedgwickave-regular-webfont.woff2') format('woff2'),
+         url('/assets/font/sedgwickave-regular-webfont.woff') format('woff'),
+         url('/assets/font/sedgwickave-regular-webfont.ttf') format('truetype'),
+         url('/assets/font/sedgwickave-regular-webfont.svg#sedgwickave') format('svg');
     font-weight: normal;
+    font-style: normal
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-thin-webfont.eot');
+    src: url('/assets/font/montserrat-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-thin-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-thin-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-thin-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-thin-webfont.svg#montserratthin') format('svg');
+    font-weight: 100;
     font-style: normal;
-
 }
-
 @font-face {
-    font-family: 'PT Serif';
-    src: url('/assets/font/pt_serif-web-italic-webfont.eot');
-    src: url('/assets/font/pt_serif-web-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/pt_serif-web-italic-webfont.woff2') format('woff2'),
-         url('/assets/font/pt_serif-web-italic-webfont.woff') format('woff'),
-         url('/assets/font/pt_serif-web-italic-webfont.ttf') format('truetype'),
-         url('/assets/font/pt_serif-web-italic-webfont.svg#pt_serifitalic') format('svg');
-    font-weight: normal;
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-thinitalic-webfont.eot');
+    src: url('/assets/font/montserrat-thinitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-thinitalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-thinitalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-thinitalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-thinitalic-webfont.svg#montserratthin_italic') format('svg');
+    font-weight: 100;
     font-style: italic;
-
 }
-
 @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-italic.eot');
-    src: url('/assets/font/sourcesanspro-italic.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-italic.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-italic.woff') format('woff'),
-         url('/assets/font/sourcesanspro-italic.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-italic.svg#source_sans_proitalic') format('svg');
-    font-weight: normal;
-    font-style: italic;
-
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-regular.eot');
-    src: url('/assets/font/sourcesanspro-regular.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-regular.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-regular.woff') format('woff'),
-         url('/assets/font/sourcesanspro-regular.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-regular.svg#source_sans_proregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-lightitalic.eot');
-    src: url('/assets/font/sourcesanspro-lightitalic.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-lightitalic.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-lightitalic.woff') format('woff'),
-         url('/assets/font/sourcesanspro-lightitalic.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-lightitalic.svg#source_sans_prolight_italic') format('svg');
-    font-weight: 300;
-    font-style: italic;
-
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-light.eot');
-    src: url('/assets/font/sourcesanspro-light.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-light.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-light.woff') format('woff'),
-         url('/assets/font/sourcesanspro-light.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-light.svg#source_sans_prolight') format('svg');
-    font-weight: 300;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-extralightitalic.eot');
-    src: url('/assets/font/sourcesanspro-extralightitalic.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-extralightitalic.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-extralightitalic.woff') format('woff'),
-         url('/assets/font/sourcesanspro-extralightitalic.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-extralightitalic.svg#source_sans_proXLtIt') format('svg');
-    font-weight: 200;
-    font-style: italic;
-
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-extralight.eot');
-    src: url('/assets/font/sourcesanspro-extralight.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-extralight.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-extralight.woff') format('woff'),
-         url('/assets/font/sourcesanspro-extralight.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-extralight.svg#source_sans_proextralight') format('svg');
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-extralight-webfont.eot');
+    src: url('/assets/font/montserrat-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-extralight-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-extralight-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-extralight-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-extralight-webfont.svg#montserratextralight') format('svg');
     font-weight: 200;
     font-style: normal;
-
 }
-
 @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-semibold.eot');
-    src: url('/assets/font/sourcesanspro-semibold.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-semibold.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-semibold.woff') format('woff'),
-         url('/assets/font/sourcesanspro-semibold.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-semibold.svg#source_sans_prosemibold') format('svg');
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-extralightitalic-webfont.eot');
+    src: url('/assets/font/montserrat-extralightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-extralightitalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-extralightitalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-extralightitalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-extralightitalic-webfont.svg#montserratextralight_italic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-light-webfont.eot');
+    src: url('/assets/font/montserrat-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-light-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-light-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-light-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-light-webfont.svg#montserratlight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-lightitalic-webfont.eot');
+    src: url('/assets/font/montserrat-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-lightitalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-lightitalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-lightitalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-lightitalic-webfont.svg#montserratlight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-regular-webfont.eot');
+    src: url('/assets/font/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-regular-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-regular-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-regular-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-regular-webfont.svg#montserratregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-italic-webfont.eot');
+    src: url('/assets/font/montserrat-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-italic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-italic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-italic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-italic-webfont.svg#montserratitalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-medium-webfont.eot');
+    src: url('/assets/font/montserrat-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-medium-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-medium-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-medium-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-medium-webfont.svg#montserratmedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-mediumitalic-webfont.eot');
+    src: url('/assets/font/montserrat-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-mediumitalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-mediumitalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-mediumitalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-mediumitalic-webfont.svg#montserratmedium_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-semibold-webfont.eot');
+    src: url('/assets/font/montserrat-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-semibold-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-semibold-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-semibold-webfont.svg#montserratsemibold') format('svg');
     font-weight: 600;
     font-style: normal;
-
 }
-
-
 @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-semibolditalic.eot');
-    src: url('/assets/font/sourcesanspro-semibolditalic.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-semibolditalic.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-semibolditalic.woff') format('woff'),
-         url('/assets/font/sourcesanspro-semibolditalic.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-semibolditalic.svg#source_sans_proSBdIt') format('svg');
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-semibolditalic-webfont.eot');
+    src: url('/assets/font/montserrat-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-semibolditalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-semibolditalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-semibolditalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-semibolditalic-webfont.svg#montserratsemibold_italic') format('svg');
     font-weight: 600;
     font-style: italic;
-
 }
-
 @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-black.eot');
-    src: url('/assets/font/sourcesanspro-black.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-black.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-black.woff') format('woff'),
-         url('/assets/font/sourcesanspro-black.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-black.svg#source_sans_problack') format('svg');
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-bold-webfont.eot');
+    src: url('/assets/font/montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-bold-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-bold-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-bold-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-bold-webfont.svg#montserratbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-bolditalic-webfont.eot');
+    src: url('/assets/font/montserrat-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-bolditalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-bolditalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-bolditalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-bolditalic-webfont.svg#montserratbold_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-extrabold-webfont.eot');
+    src: url('/assets/font/montserrat-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-extrabold-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-extrabold-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-extrabold-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-extrabold-webfont.svg#montserratextrabold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-extrabolditalic-webfont.eot');
+    src: url('/assets/font/montserrat-extrabolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-extrabolditalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-extrabolditalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-extrabolditalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-extrabolditalic-webfont.svg#montserratextrabold_italic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-black-webfont.eot');
+    src: url('/assets/font/montserrat-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-black-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-black-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-black-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-black-webfont.svg#montserratblack') format('svg');
     font-weight: 900;
     font-style: normal;
-
 }
-
 @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-blackitalic.eot');
-    src: url('/assets/font/sourcesanspro-blackitalic.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-blackitalic.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-blackitalic.woff') format('woff'),
-         url('/assets/font/sourcesanspro-blackitalic.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-blackitalic.svg#source_sans_problack_italic') format('svg');
+    font-family: 'Montserrat';
+    src: url('/assets/font/montserrat-blackitalic-webfont.eot');
+    src: url('/assets/font/montserrat-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/font/montserrat-blackitalic-webfont.woff2') format('woff2'),
+         url('/assets/font/montserrat-blackitalic-webfont.woff') format('woff'),
+         url('/assets/font/montserrat-blackitalic-webfont.ttf') format('truetype'),
+         url('/assets/font/montserrat-blackitalic-webfont.svg#montserratblack_italic') format('svg');
     font-weight: 900;
     font-style: italic;
 
 }
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-bolditalic.eot');
-    src: url('/assets/font/sourcesanspro-bolditalic.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-bolditalic.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-bolditalic.woff') format('woff'),
-         url('/assets/font/sourcesanspro-bolditalic.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-bolditalic.svg#source_sans_probold_italic') format('svg');
-    font-weight: 700;
-    font-style: italic;
-
-}
-
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('/assets/font/sourcesanspro-bold.eot');
-    src: url('/assets/font/sourcesanspro-bold.eot?#iefix') format('embedded-opentype'),
-         url('/assets/font/sourcesanspro-bold.woff2') format('woff2'),
-         url('/assets/font/sourcesanspro-bold.woff') format('woff'),
-         url('/assets/font/sourcesanspro-bold.ttf') format('truetype'),
-         url('/assets/font/sourcesanspro-bold.svg#source_sans_probold') format('svg');
-    font-weight: 700;
-    font-style: normal;
-
-}
-
-
-
-*/

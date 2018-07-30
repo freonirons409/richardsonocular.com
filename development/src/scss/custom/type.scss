@@ -6,36 +6,43 @@
 .content {
 	@include clearfix;
 
-	img.pull-left {
-		margin-bottom: 10px;
-		margin-right: 10px;
+	img {
+		&.float-left,&.float-sm-left,&.float-md-left,&.float-lg-left,&.float-xl-left {
+			margin-bottom: 20px;
+			margin-right: 20px;
+		}
 	}
-	img.pull-right {
-		margin-bottom: 10px;
-		margin-left: 10px;
+	img {
+
+		&.float-right,&.float-sm-right,&.float-md-right,&.float-lg-right,&.float-xl-right {
+			margin-bottom: 20px;
+			margin-left: 20px;
+		}
 	}
 	// i {
 	//   display: inline-block;
 	//   vertical-align: top;
 	// }
 
-	h1 {
+	h1,.h1 {
 		font-size:$h1-font-size;
 	}
-	h2 {
+	h2,.h2 {
 		font-size:$h2-font-size;
 	}
-	h3 {
-		font-size:$h3-font-size;
+	h3,.h3 {
+		font-size:28px;
+		font-weight:400;
 	}
-	h4 {
+	h4,.h4 {
 		font-size:$h4-font-size;
 	}
-	h5 {
+	h5,.h5 {
 		font-size:$h5-font-size;
 	}
-	h6 {
-		font-size:$h6-font-size;
+	h6,.h6 {
+		font-size:20px;
+		font-weight:200;
 	}
 	div,p,li,td {
 		font-size:$font-size-base;

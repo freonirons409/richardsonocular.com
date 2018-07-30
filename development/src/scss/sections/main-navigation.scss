@@ -23,6 +23,13 @@ $navbar-link-hover-bg: $primary;
 	// border-radius: $navbar-border-radius;
 	// }
 }
+nav.nav {
+	@include media-breakpoint-up(md) {
+		position:relative;
+		top:20px;
+	}
+}
+
 
 // Navbar heading
 //
@@ -64,7 +71,7 @@ $navbar-link-hover-bg: $primary;
 }
 
 // Custom Menu CSS
-.navbar-collapse .custom-menu {
+.navbar-collapse .nav{
 	margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
 	padding: 0;
 	list-style: none;
@@ -79,10 +86,12 @@ $navbar-link-hover-bg: $primary;
 			padding: $nav-link-vertical-padding $nav-link-horizontal-padding;
 			cursor: pointer;
 			line-height: $line-height-lg;
-			color: $gray-800;
+			font-weight:900;
+			color: $black;
 			&:focus {
 				@include tab-focus;
 			}
+			@include transition-all(0.15s);
 		}
 	}
 }
@@ -130,7 +139,7 @@ $navbar-link-hover-bg: $primary;
 		}
 	}
 
-	.navbar-collapse .custom-menu {
+	.navbar-collapse .nav {
 		.open .dropdown-menu {
 			position: static;
 			float: none;
@@ -196,7 +205,7 @@ $navbar-link-hover-bg: $primary;
 		display: none;
 	}
 
-	.navbar-collapse .custom-menu {
+	.navbar-collapse .nav {
 		margin: 0;
 
 		> li {
@@ -229,10 +238,11 @@ $navbar-link-hover-bg: $primary;
 }
 
 nav.navbar {
-	.custom-menu {
+	.nav {
 		>li {
 			>a,>span {
 				//styles for first tier 
+
 			}
 		}
 	}

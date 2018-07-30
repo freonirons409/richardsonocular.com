@@ -1,6 +1,6 @@
 $(window).load(function() {
 	$slider.slick({
-		dots: true,
+		dots: false,
 		infinite: true,
 		fade: false,
 		speed: 300,
