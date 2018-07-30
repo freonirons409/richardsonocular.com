@@ -1,4 +1,4 @@
-# Galavant Outdoors -
+# Bootstrap 4 Website Template -
 
 Bootstrap 4 is a group of files used as a starting point for developing a website with Bootstrap 4. The README file contains the do's and dont's of building a website.
 
