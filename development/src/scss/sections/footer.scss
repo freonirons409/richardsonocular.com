@@ -2,6 +2,43 @@
 // =========================================================================================================
 
 footer.footer {
+	.back-to-top {
+		position:fixed;
+		right:0;
+		bottom:0;
+		padding:20px;
+		background:$green;
+		opacity:0;
+		z-index:-1;
+		text-align:center;
+		-webkit-box-shadow: -4px -3px 10px 0px rgba(50, 50, 50, 0.25);
+		-moz-box-shadow:    -4px -3px 10px 0px rgba(50, 50, 50, 0.25);
+		box-shadow:         -4px -3px 10px 0px rgba(50, 50, 50, 0.25);
+		@include transition-all(0.35s);
+		&.toggled {
+			z-index:99;
+			opacity:1;
+		}
+		&:hover,&:focus {
+			background:$black;
+			text-decoration:none;
+		}
+		&:active {
+			background:lighten($green,15%);
+		}
+		.icon {
+			display:block;
+			font-size:10px;
+			line-height:1;
+			color:$white;
+		}
+		.text {
+			display:block;
+			color:$white;
+			font-weight:400;
+			font-size:12px;
+		}
+	}
 	background: -moz-linear-gradient(50.03% -3030.19% 90deg,rgba(255, 255, 255, 0.1) 0%,rgba(243, 243, 243, 0.25) 16.96%,rgba(210, 210, 210, 0.53) 47.9%,rgba(157, 157, 157, 0.9) 89.06%,rgba(142, 142, 142, 1) 100%);
 	background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(243, 243, 243, 0.25) 16.96%, rgba(210, 210, 210, 0.53) 47.9%, rgba(157, 157, 157, 0.9) 89.06%, rgba(142, 142, 142, 1) 100%);
 	background: -webkit-gradient(linear,50.03% -3030.19% ,50.03% -3130.19% ,color-stop(0,rgba(255, 255, 255, 0.1) ),color-stop(0.1696,rgba(243, 243, 243, 0.25) ),color-stop(0.479,rgba(210, 210, 210, 0.53) ),color-stop(0.8906,rgba(157, 157, 157, 0.9) ),color-stop(1,rgba(142, 142, 142, 1) ));
@@ -25,11 +62,17 @@ footer.footer {
 	.nav {
 		margin-top:40px;
 		@extend .list-inline;
-		@include media-breakpoint-down(xs) {
+		@include media-breakpoint-down(sm) {
 			li {
 				display:block;
-				text-align:center;
+				width:100%;
+				text-align:right;
 				margin-bottom:10px;
+			}
+		}
+		@include media-breakpoint-down(xs) {
+			li {
+				text-align:center;
 			}
 		}
 		li {

@@ -32,7 +32,7 @@
 	}
 	h3,.h3 {
 		font-size:28px;
-		font-weight:300;
+		font-weight:200;
 		color:$black;
 	}
 	h4,.h4 {
@@ -46,20 +46,31 @@
 		font-size:20px;
 		font-weight:200;
 	}
-	div,p,li,td {
+	div,p,li,td,address {
 		font-size:$font-size-base + 0.125;
-		font-weight:300;
+		font-weight:200;
+	}
+	address {
+		margin:0;
+		padding:0;
 	}
 	.small,.sm {
 		font-weight:200;
-		font-size:$font-size-base;
+		&,address {
+			font-size:$font-size-base;
+		}
 		strong {
 			font-weight:400;
 		}
 	}
 	.smallest,.xs {
 		font-weight:200;
-		font-size:$font-size-base - 0.15;
+		&,address {
+			font-size:$font-size-base - 0.15;
+		}
+		strong {
+			font-weight:400;
+		}
 	}
 	.big {
 		font-weight:200;
@@ -84,7 +95,7 @@
 		margin-bottom:30px;
 	}
 	a:not(.btn) {
-		color:$green;
+		color:$black;
 		text-decoration:underline;
 		font-weight:500;
 		&:hover {
@@ -128,7 +139,7 @@
 			font-size:20px;
 			&,a {
 				color:$black;
-				font-weight:300;
+				font-weight:200;
 			}
 		}
 		margin-bottom:30px;
@@ -146,12 +157,7 @@ body.subpage {
 	.page-title {
 		font-size:35px;
 		font-weight:200;
-		margin-bottom:0;
-	}
-	.content {
-		p,div {
-			font-weight:300;
-		}
+		margin-bottom:7px;
 	}
 }
 

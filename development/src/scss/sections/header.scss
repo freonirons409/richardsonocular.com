@@ -18,16 +18,18 @@ header.header {
 
 }
 .logotype {
+	display:block;
 	img {
   		max-width: 304px;
   	}
 }
-.toggle-login {
-	@extend .btn;
-	@extend .btn-primary;
-	@include media-breakpoint-down(xs) {
-		float:right;
-		margin-bottom:0;
-		margin-top:10px;
+@include media-breakpoint-down(xs) {
+	.logo {
+		display:inline-block;
+		margin:0 auto;
+		padding-bottom:0;
+	}
+	.header-left {
+		text-align:center;
 	}
 }

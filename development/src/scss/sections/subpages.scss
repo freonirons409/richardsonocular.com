@@ -9,29 +9,11 @@ body.subpage {
       .content {
         padding-right:50px;
       }
-    }
-  }
-}
-
-// Search page
-// =========================================================================================================
-
-.search-container {
-  margin-top: 20px;
-  .search-item {
-    border-bottom:1px solid $gray-600;
-    padding-bottom:15px;
-    a {
-      display:inline-block;
-    }
-  }
-}
-.search-results-form {
-  .list-inline {
-    margin-top:20px;
-    @extend .clearfix;
-    li {
-      float:left;
+      &.no-pad {
+        .content {
+          padding-right:10px;
+        }
+      }
     }
   }
 }
@@ -42,5 +24,119 @@ body.error-page {
     @include media-breakpoint-down(xs) {
       min-height:300px;
     }
+  }
+}
+
+
+//contact page
+//===========================
+.locationJumps__container {
+
+}
+.location__headline {
+  h4 {
+    font-size:25px;
+    font-weight:700;
+    margin:0;
+  }
+  background: #e8f6e9;
+  padding:7px 15px;
+  margin-bottom:15px;
+  margin-top:15px;
+}
+.location__details {
+    .image, .content {
+
+    }
+    .image {
+      margin-bottom:0;
+      img {
+        min-width:100%;
+      }
+      // @include media-breakpoint-up(sm) {
+      //   &.order-sm-1 {
+      //     padding-right:0;
+      //   }
+      //   &.order-sm-2 {
+      //     padding-left:0;
+      //   }
+      // }
+    }
+    .content {
+        padding-top:50px;
+        &,* {
+          font-size:24px;
+        }
+        @include media-breakpoint-down(sm) {
+          &,* {
+            font-size:18px;
+          }
+          padding:20px;
+          padding-top:10px;
+        }
+        a {
+          font-weight:400;
+        }
+    }
+}
+.location__navigation {
+  ul {
+    li {
+      font-size:25px;
+      font-weight:700;
+      margin-bottom:30px;
+      a.jumper-link {
+        .text {
+          text-decoration:underline;
+        }
+        .icon {
+          display:inline-block;
+          @include transition-all(0.35s);
+          position:relative;
+          color:$green;
+          font-size:18px;
+          padding-left:8px;
+        }
+        &:hover {
+          text-decoration:none;
+          .text {
+            text-decoration:none;
+          }
+          .icon {
+            color:$black;
+            padding-left:15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.testimonials__container {
+  blockquote {
+    font-size: 18px;
+    font-weight:300;
+    padding:20px 15px 70px 15px;
+    position:relative;
+    &.odd {
+      background:#f4f4f4;
+    }
+    cite {
+      position:absolute;
+      right:15px;
+      bottom:15px;
+      font-weight:600;
+      font-style:normal;
+    }
+  }
+}
+.beforeAfter__item {
+  margin-bottom:30px;
+  .before {
+    margin-bottom:10px;
+  }
+  p {
+    margin-bottom:0;
+    font-size:25px;
   }
 }

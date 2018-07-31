@@ -93,6 +93,11 @@ img {
 .bg-white     { background-color: #ffffff; }
 .bg-black       { background-color: #000000; }
 
+.image-left img {
+	margin-left:0;
+	margin-right:auto;
+}
+
 
 .break-mobile {
 	@include media-breakpoint-down(xs) {

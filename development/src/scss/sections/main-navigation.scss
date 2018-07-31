@@ -167,7 +167,7 @@ nav.nav {
 		max-width:275px;
 		background:rgba($black,0.85);
 		z-index:99;
-		right:10%;
+		right:0;
 		li,a,span {
 			color:$white;
 		}
@@ -214,7 +214,7 @@ nav.nav {
 
 // medium up
 // From 768px and up
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
 	.navbar-header {
 		float: left;
 	}
@@ -279,6 +279,26 @@ nav.nav {
 				position:relative;
 				padding: 3px 20px;
 			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	nav.nav {
+		position:relative;
+	}
+	#navbar-collapse {
+		left:20px;
+		right:20px;;
+		max-width:none;
+	}
+	.navbar-header {
+		position:relative;
+		text-align:center;
+		.navbar-toggle {
+			float:none;
+			top:0;
+			margin-right:0;
 		}
 	}
 }

@@ -74,6 +74,14 @@ $(function () {
 				$(t).modal();
 			}
 		});
+		$(window).scroll(function() {    
+		    var scroll = $(window).scrollTop();
+		    if (scroll >= 800) {
+		        $(".back-to-top").addClass("toggled");
+		    } else {
+		        $(".back-to-top").removeClass("toggled");
+		    }
+		});
 
 		// Header Togglers
 		// ==================================================================================================================================
@@ -146,6 +154,21 @@ $(function () {
 				$(this).remove();
 			}
 		});
+		$(".jumper-link").on("click", function(e){
+			e.preventDefault();
+			var href = $(this).attr("href");
+			if (href) {
+				if($(href)) {
+					$bodyhtml.animate({
+						 scrollTop: $(href).offset().top-40
+					 }, 600, function(){
+					 	setTimeout(function() {
+					 		$(href).focus();
+					 	},500);
+					 });
+				}
+			}
+		})
 
 		// AJAX Form Scripts
 		// ==================================================================================================================================
