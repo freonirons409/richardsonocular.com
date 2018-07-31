@@ -2,6 +2,7 @@
 // =================================================
 .hero__slider {
 	margin-bottom:0;
+	min-height:200px;
 	div[data-content="content"] {
 		h1,h2,h3,h4,h5,h6 {
 
@@ -41,15 +42,15 @@
 				min-height:400px;
 				max-width:none;
 			}
-			// @include media-breakpoint-down(xs) {
-			// 	position:relative;
-			// 	margin-left:-200px;
-			// }
+			@include media-breakpoint-down(xs) {
+				min-height:200px;
+				max-width:420px;
+			}
 		}
 	}
 	.hero__caption {
 
-		@include media-breakpoint-up(sm) {
+		//@include media-breakpoint-up(sm) {
 			position:absolute;
 			max-width:680px;
 			top:0;
@@ -57,7 +58,7 @@
 			left:0;
 			right:0;
 			//right:50%;
-		}
+		//}
 		.container {
 			position:relative;
 			height:100%;
@@ -73,14 +74,17 @@
 			background: linear-gradient(90deg, rgba(3, 160, 12, 1) 0%, rgba(3, 160, 12, 0.1) 100%);
 			opacity: 0.75;
 			filter: alpha(opacity=75) progid:DXImageTransform.Microsoft.Alpha(opacity=75) progid:DXImageTransform.Microsoft.gradient(startColorstr='#03A00C',endColorstr='#03A00C' , GradientType=1);
-
+			@include vertical-align(absolute);
+			padding:20px;
 			@include media-breakpoint-up(sm) {
 				padding:60px 90px;
 				padding-left:10%;
-				@include vertical-align(absolute);
 			}
 			h1 {
 				font-size:45px;
+				@include media-breakpoint-down(xs) {
+					font-size:26px;
+				}
 			}
 			h1,h2,h3,h4,h5,h6 {
 				font-family:$sedgewick;

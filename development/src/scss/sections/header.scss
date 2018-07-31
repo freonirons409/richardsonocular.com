@@ -5,6 +5,12 @@ header.header {
   	@include clearfix();
   	padding: 10px 0;
   	border-radius:0;
+  	@include media-breakpoint-down(md) {
+		.container {
+			width:100%;
+			max-width:100%;
+		}
+  	}
 }
 .logo {
   	display: block;

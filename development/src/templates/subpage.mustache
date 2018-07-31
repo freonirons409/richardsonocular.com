@@ -3,28 +3,44 @@
   <div class="master-container">
 
     {{> partials/header}}
-
+    
     <div class="container">
-      {{> partials/nav}}
-
-      {{> blocks/banner-image}}
-
+      <div class="spacer-40"></div>
       <div id="main" tabindex="-1" role="main">
-        <h1 class="page-title">{{page.title}}<!-- @if NODE_ENV!='production' -->Subpage Title<!-- @endif --></h1>
+        <h1 class="page-title">Subpage Title</h1>
         <div class="row">
-          <div class="col-lg-9 col-md-7">
+          <div class="col-lg-8 col-md-7 left-column">
             <div class="content">
-              <!-- @if NODE_ENV!='production' --> 
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
                   <h1>Heading Example 1</h1>
                   <p>Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                   <h2>Heading Example 2</h2>
                   <h3>Sub-Heading Example 3</h3>
                   <ul>
-                    <li>Nam ne cante sed lacinia</li>
+                    <li>Nam ne cante sed lacinia Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium molestiae expedita eveniet libero doloribus similique ipsa, nesciunt veniam dignissimos amet sunt ut magni, a perferendis alias quae eum tempora fuga pariatur! Voluptatem unde facilis, molestias repellat eligendi suscipit, error ab.</li>
                     <li>Urna non tincidunt mattis</li>
                     <li>Tortor neque adipiscing diam</li>
                     <li>Ante quis turpis <a href="">example link</a></li>
+                  </ul>
+                  <hr>
+
+                  <ul class="list-unstyled">
+                    <li><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in?</h4>
+                        <ul class="list-unstyled">
+                          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt fuga architecto, quibusdam veritatis, officiis laboriosam cupiditate. Voluptatibus, nostrum natus dignissimos corporis aliquam, praesentium sint hic pariatur ad, voluptas id tempora obcaecati labore corrupti tenetur inventore rerum ipsa? Necessitatibus, quo, repellendus?</li>
+                          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto itaque quaerat eaque ipsam, excepturi?</li>
+                        </ul>
+                    </li>
+                    <li><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in?</h4>
+                        <ul class="list-unstyled">
+                          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt fuga architecto, quibusdam veritatis, officiis laboriosam cupiditate. Voluptatibus, nostrum natus dignissimos corporis aliquam, praesentium sint hic pariatur ad, voluptas id tempora obcaecati labore corrupti tenetur inventore rerum ipsa? Necessitatibus, quo, repellendus?</li>
+                        </ul>
+                    </li>
+                    <li><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in?</h4>
+                        <ul class="list-unstyled">
+                          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt fuga architecto, quibusdam veritatis, officiis laboriosam cupiditate. Voluptatibus, nostrum natus dignissimos corporis aliquam, praesentium sint hic pariatur ad, voluptas id tempora obcaecati labore corrupti tenetur inventore rerum ipsa? Necessitatibus, quo, repellendus?</li>
+                        </ul>
+                    </li>
                   </ul>
 
                   <h4>Heading Example 4</h4>
@@ -38,12 +54,10 @@
                     <li>Nam nec ante sed lacinia</li>
                     <li>Ante quis turpis <a href="">example link</a></li>
                   </ul>
-               <!-- @endif -->
             </div>
           </div>
-          <div class="col-lg-3 col-md-5">
+          <div class="col-lg-4 col-md-5 right-column">
             <div class="content">
-              <!-- @if NODE_ENV!='production' --> 
                   <p><a href="" class="btn btn-primary">Primary Button</a></p>
                   <p><a href="" class="btn btn-secondary">Secondary Button</a></p>
                   <p><a href="" class="btn btn-info">Info Button</a></p>
@@ -56,18 +70,21 @@
                   <p><p><a href="" class="btn btn-primary">Primary Button</a></p></p>
                   <p><p><a href="" class="btn btn-primary btn-small">Small Button</a></p></p>
                   <p><p><a href="" class="btn btn-primary btn-mini">Mini Button</a></p></p>
-               <!-- @endif -->
             </div>
             <div class="spacer-20"></div>
             <div class="content">
-              <!-- @if NODE_ENV!='production' --> 
                   <h3>Lorem ipsum dolor sit amet.</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae voluptates natus magnam blanditiis autem voluptas, consectetur, officiis, a nulla optio fugit perspiciatis possimus deserunt reprehenderit voluptatibus animi nostrum, earum ducimus doloribus dolorem accusamus. Suscipit ad quia maiores tempora, soluta, adipisci explicabo inventore magni itaque ratione, sapiente ipsam odit nobis molestias similique dolores! Hic omnis aspernatur, eius vitae doloribus assumenda.</p>
-               <!-- @endif -->
             </div>
+          </div>
+          <div class="spacer-20"></div>
+          <div class="col-sm-12 content">
+              <h2><strong>Lorem ipsum dolor sit.</strong></h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab eos perferendis debitis laboriosam sed doloribus cumque, recusandae quidem, sequi quos quas necessitatibus autem ipsam eius quam quis explicabo quibusdam enim libero veniam fugit sit quisquam soluta distinctio? Molestiae eos facere quibusdam dolore doloremque debitis maxime, illo. Optio odit vero porro?</p>
           </div>
         </div>
       </div>
+      <div class="spacer-60"></div>
 
     </div>
 

@@ -3,6 +3,15 @@
 .page-title {
   margin-bottom:20px;
 }
+body.subpage {
+  .left-column {
+    @include media-breakpoint-up(md) {
+      .content {
+        padding-right:50px;
+      }
+    }
+  }
+}
 
 // Search page
 // =========================================================================================================

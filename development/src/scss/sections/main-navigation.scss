@@ -49,7 +49,7 @@ nav.nav {
 	> .navbar-collapse {
 		margin-right: -$navbar-padding-horizontal;
 		margin-left:  -$navbar-padding-horizontal;
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(md) {
 			margin-right: 0;
 			margin-left:  0;
 		}
@@ -98,7 +98,7 @@ nav.nav {
 
 // medium down
 // From 767px and down
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
 	// Navbar toggle
 	//
 	// Custom button for toggling the `.navbar-collapse`, powered by the collapse
@@ -108,62 +108,108 @@ nav.nav {
 		position: relative;
 		float: right;
 		margin-right: $navbar-padding-horizontal;
-		padding: 9px 10px;
+		padding: 0;
+		top:15px;
+		cursor:pointer;
 		background-color: transparent;
 		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 		border: 1px solid transparent;
+		overflow:visible;
 		border-radius: $border-radius;
-		border-color: $navbar-toggle-border-color;
-
+		//border-color: $navbar-toggle-border-color;
+		padding:20px;
 		// We remove the `outline` here, but later compensate by attaching `:hover`
 		// styles to `:focus`.
+		@include transition-all(0.35s);
 		&:focus {
 			outline: 0;
 		}
 
 		&:hover,
 		&:focus {
-			background-color: $navbar-toggle-hover-bg;
+			background-color: $white;
+			border-color:$gray-200;
 		}
-
+		.menu-text {
+			font-weight:900;
+			display:inline-block;
+			position:relative;
+			top:0px;
+		}
+		.menu-bars {
+			display:inline-block;
+			width:22px;
+			position:relative;
+			top:1px;
+			margin-left:5px;
+		}
 		// Bars
 		.icon-bar {
 			display: block;
-			width: 22px;
-			height: 2px;
-			border-radius: 1px;
-			background-color: $navbar-toggle-icon-bar-bg;
-		}
-		.icon-bar + .icon-bar {
-			margin-top: 4px;
+			width: 20px;
+			height: 3.8px;
+			padding:0;
+			border-radius: 2px;
+			background-color: #c1c1c1;
+			margin-bottom:2px;
+			&.two {
+				background-color:#666;
+			}
+			&.three {
+				background-color:$black;
+				margin-bottom:0;
+			}
+
 		}
 	}
-
-	.navbar-collapse .nav {
-		.open .dropdown-menu {
-			position: static;
-			float: none;
-			width: auto;
-			margin-top: 0;
-			background-color: transparent;
-			border: 0;
-			box-shadow: none;
-
-			> li > a, > li > span {
-				line-height: $line-height-lg;
-				padding: 5px 15px 5px 25px;
-				&:hover,
-				&:focus {
-					background-image: none;
+	#navbar-collapse {
+		position:absolute;
+		max-width:275px;
+		background:rgba($black,0.85);
+		z-index:99;
+		right:10%;
+		li,a,span {
+			color:$white;
+		}
+		li.nav-item {
+			float:none;
+			clear:both;
+			width:100%;
+			display:block;
+			&:hover {
+				a {
+					background:$white;
+					color:$black;
 				}
 			}
-
-			&.active {
-				display: block;
-				margin: 0 15px;
-			}
 		}
 	}
+	// .navbar-collapse .nav {
+	// 	.open .dropdown-menu {
+	// 		position: static;
+	// 		float: none;
+	// 		width: auto;
+	// 		margin-top: 0;
+	// 		background-color: transparent;
+	// 		border: 0;
+	// 		box-shadow: none;
+	// 		> li > a, > li > span {
+	// 			line-height: $line-height-lg;
+	// 			padding: 5px 15px 5px 25px;
+	// 			&:hover,
+	// 			&:focus {
+	// 				background-image: none;
+	// 				background:$white;
+	// 			}
+	// 			color:$white;
+	// 		}
+
+	// 		&.active {
+	// 			display: block;
+	// 			margin: 0 15px;
+	// 		}
+	// 	}
+	// }
 }
 
 // medium up
