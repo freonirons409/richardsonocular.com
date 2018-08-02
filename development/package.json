@@ -15,6 +15,7 @@
 		"gulp": "3.9.x",
 		"gulp-clean-css": "^3.9.2",
 		"gulp-concat": "2.6.x",
+		"gulp-connect-php": "^1.0.3",
 		"gulp-file-include": "1.2.x",
 		"gulp-gzip": "1.2.x",
 		"gulp-htmlmin": "3.0.x",

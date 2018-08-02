@@ -1,8 +1,23 @@
+<!-- @if NODE_ENV=='live' -->
+<?php 
+$page_title = "Blank Page";
+$page_description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, consequuntur.";
+$page_keywords = "prosthetics, ocular, eyes, nashville, health, vision";
+
+include('includes/top.php'); ?>
+<!-- @endif -->
+<!-- @if NODE_ENV!='live' -->
 {{> partials/top}}
+<!-- @endif -->
 <body class="subpage">
 	<div class="master-container">
 
-		{{> partials/header}}
+			<!-- @if NODE_ENV=='live' -->
+			<?php include('includes/header.php'); ?>
+			<!-- @endif -->
+			<!-- @if NODE_ENV!='live' -->
+			{{> partials/header}}
+			<!-- @endif -->
 
 		<div class="container">
 
@@ -41,11 +56,21 @@
 
 		</div>
 
+		<!-- @if NODE_ENV=='live' -->
+		<?php include('includes/footer.php'); ?>
+		<!-- @endif -->
+		<!-- @if NODE_ENV!='live' -->
 		{{> partials/footer}}
+		<!-- @endif -->
 
 	</div>
 
+	<!-- @if NODE_ENV=='live' -->
+	<?php include('includes/scripts.php'); ?>
+	<!-- @endif -->
+	<!-- @if NODE_ENV!='live' -->
 	{{> partials/scripts}}
+	<!-- @endif -->
 
 </body>
 </html>

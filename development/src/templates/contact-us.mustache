@@ -1,8 +1,23 @@
+<!-- @if NODE_ENV=='live' -->
+<?php 
+$page_title = "Contact Us";
+$page_description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, consequuntur.";
+$page_keywords = "contact,prosthetics, ocular, eyes, nashville, health, vision";
+
+include('includes/top.php'); ?>
+<!-- @endif -->
+<!-- @if NODE_ENV!='live' -->
 {{> partials/top}}
+<!-- @endif -->
 <body class="subpage">
   <div class="master-container">
 
-    {{> partials/header}}
+      <!-- @if NODE_ENV=='live' -->
+      <?php include('includes/header.php'); ?>
+      <!-- @endif -->
+      <!-- @if NODE_ENV!='live' -->
+      {{> partials/header}}
+      <!-- @endif -->
     
     <div class="container">
       <div class="spacer-40"></div>
@@ -73,7 +88,7 @@
                     <div class="location__headline">
                         <h4>Tennessee</h4>
                     </div>
-                    {{! Tennessee  - Location #1 }}
+                    <!-- {{! Tennessee  - Location #1 }} -->
                     <div class="location__details">
                       <div class="row">
                         <div class="col-sm-6 image order-sm-1">
@@ -87,7 +102,7 @@
                         </div>
                       </div>
                     </div>
-                    {{! Tennessee  - Location #2 }}
+                    <!-- {{! Tennessee  - Location #2 }} -->
                     <div class="location__details">
                       <div class="row">
                         <div class="col-sm-6 image order-sm-2">
@@ -101,7 +116,7 @@
                         </div>
                       </div>
                     </div>
-                    {{! Tennessee  - Location #3 }}
+                    <!-- {{! Tennessee  - Location #3 }} -->
                     <div class="location__details">
                       <div class="row">
                         <div class="col-sm-6 image order-sm-1">
@@ -115,7 +130,7 @@
                         </div>
                       </div>
                     </div>
-                    {{! Tennessee  - Location #4 }}
+                    <!-- {{! Tennessee  - Location #4 }} -->
                     <div class="location__details">
                       <div class="row">
                         <div class="col-sm-6 image order-sm-2">
@@ -129,7 +144,7 @@
                         </div>
                       </div>
                     </div>
-                    {{! Tennessee  - Location #5 }}
+                    <!-- {{! Tennessee  - Location #5 }} -->
                     <div class="location__details">
                       <div class="row">
                         <div class="col-sm-6 image order-sm-1">
@@ -146,7 +161,7 @@
                 </section>
                 <section id="kentucky" tabindex="1">
                       <div class="location__headline"><h4>Kentucky</h4></div>
-                      {{! Kentucky  - Location #2 }}
+                      <!-- {{! Kentucky  - Location #1 }} -->
                       <div class="location__details">
                         <div class="row">
                           <div class="col-sm-6 image order-sm-1">
@@ -160,7 +175,7 @@
                           </div>
                         </div>
                       </div>
-                      {{! Kentucky  - Location #2 }}
+                      <!-- {{! Kentucky  - Location #2 }} -->
                       <div class="location__details">
                         <div class="row">
                           <div class="col-sm-6 image order-sm-2">
@@ -177,7 +192,7 @@
                 </section>
                 <section id="mississippi" tabindex="1">
                       <div class="location__headline"><h4>Mississippi</h4></div>
-                      {{! Mississippi  - Location #1 }}
+                      <!-- {{! Mississippi  - Location #1 }} -->
                       <div class="location__details">
                         <div class="row">
                           <div class="col-sm-6 image order-sm-1">
@@ -198,11 +213,21 @@
 
     </div>
 
-      {{> partials/footer}}
+    <!-- @if NODE_ENV=='live' -->
+    <?php include('includes/footer.php'); ?>
+    <!-- @endif -->
+    <!-- @if NODE_ENV!='live' -->
+    {{> partials/footer}}
+    <!-- @endif -->
 
   </div>
 
+  <!-- @if NODE_ENV=='live' -->
+  <?php include('includes/scripts.php'); ?>
+  <!-- @endif -->
+  <!-- @if NODE_ENV!='live' -->
   {{> partials/scripts}}
+  <!-- @endif -->
 
 </body>
 </html>

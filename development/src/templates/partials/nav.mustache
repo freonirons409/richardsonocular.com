@@ -14,7 +14,12 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav justify-content-end">
-				{{> nav-links}}
+					<!-- @if NODE_ENV=='live' -->
+					<?php include('nav-links.php'); ?>
+					<!-- @endif -->
+					<!-- @if NODE_ENV!='live' -->
+					{{> nav-links}}
+					<!-- @endif -->
 			</ul>
 		</div>
 	</div>

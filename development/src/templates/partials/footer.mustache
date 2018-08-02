@@ -20,7 +20,12 @@
 			<div class="col-sm-6 col-md-8 footer-right">
 				<nav class="footer-links">
 					<ul class="nav justify-content-end">
-						{{> nav-links }}
+						<!-- @if NODE_ENV=='live' -->
+						<?php include('nav-links.php'); ?>
+						<!-- @endif -->
+						<!-- @if NODE_ENV!='live' -->
+						{{> nav-links}}
+						<!-- @endif -->
 					</ul>
 				</nav>
 				<div class="copyright text-right">

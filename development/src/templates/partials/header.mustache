@@ -12,7 +12,12 @@
 				</span>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-8 header-right">
+				<!-- @if NODE_ENV=='live' -->
+				<?php include('nav.php'); ?>
+				<!-- @endif -->
+				<!-- @if NODE_ENV!='live' -->
 				{{> nav}}
+				<!-- @endif -->
 			</div>
 		</div>
 	</div>

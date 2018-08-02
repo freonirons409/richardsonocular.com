@@ -4,22 +4,51 @@
 <!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{page.title}} &rsaquo; Richardson Ocular Prosthetics</title>
-    <meta name="description" content="{{page.description}}">
-    <meta name="keywords" content="{{page.keywords}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-title" content="Richardson Ocular Prosthetics">
-    
-    {{> ga-404}}
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- @if NODE_ENV=='live' -->
+		<title><?php echo $page_title; ?> &rsaquo; Richardson Ocular Prosthetics</title>
+	<!-- @endif -->
+	<!-- @if NODE_ENV!='live' -->
+		<title>{{page.title}} &rsaquo; Richardson Ocular Prosthetics</title>
+	<!-- @endif -->
+	<!-- @if NODE_ENV=='live' -->
+		<meta name="description" content="<?php echo $page_description; ?>">
+	<!-- @endif -->
+	<!-- @if NODE_ENV!='live' -->
+		<meta name="description" content="{{page.description}}">
+	<!-- @endif -->
+	<!-- @if NODE_ENV=='live' -->
+		<meta name="keywords" content="<?php echo $page_keywords; ?>"">
+	<!-- @endif -->
+	<!-- @if NODE_ENV!='live' -->
+		<meta name="keywords" content="{{page.keywords}}">
+	<!-- @endif -->
+	
+	<!-- @if NODE_ENV=='live' -->
+	<?php include('meta.php'); ?>
+	<!-- @endif -->
+	<!-- @if NODE_ENV!='live' -->
+	{{> meta }}
+	<!-- @endif -->
 
-    <link rel="stylesheet" href="/assets/css/main.min.css">
+	<!-- @if NODE_ENV=='live' -->
+	<?php include('ga-404.php'); ?>
+	<!-- @endif -->
+	<!-- @if NODE_ENV!='live' -->
+	{{> ga-404}}
+	<!-- @endif -->
 
-    {{> fonts}}
+	<link rel="stylesheet" href="/assets/css/main.min.css?v=@version@">
 
-    <!--[if IE 8]> <script src="/assets/js/polyfills.min.js"></script> <![endif]-->
-    <!--[if lt IE 9]> <script src="/assets/js/html5shiv.min.js"></script> <![endif]-->
+	<!-- @if NODE_ENV=='live' -->
+	<?php include('fonts.php'); ?>
+	<!-- @endif -->
+	<!-- @if NODE_ENV!='live' -->
+	{{> fonts}}
+	<!-- @endif -->
 
-  </head>
+	<!--[if IE 8]> <script src="/assets/js/polyfills.min.js"></script> <![endif]-->
+	<!--[if IE 8]> <script src="/assets/js/html5shiv.min.js"></script> <![endif]-->
+</head>
