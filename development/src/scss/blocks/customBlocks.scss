@@ -39,6 +39,16 @@
 		@include media-breakpoint-down(sm) {
 			margin-top:40px;
 		}
+		h6.h3 {
+			margin-bottom:14px;
+			a {
+				color:$gray-700; font-weight:200;
+				text-decoration:none;
+				&:hover {
+					text-decoration:underline;
+				}
+			}
+		}
 	}
 }
 .fullWidthContentArea__headline {

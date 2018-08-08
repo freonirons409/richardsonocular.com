@@ -58,6 +58,14 @@ footer.footer {
 		img {
 			max-width:100%;
 		}
+		@include media-breakpoint-down(sm) {
+			text-align:center;
+			margin:0 auto;
+			display:block;
+			img {
+				margin:0 auto;
+			}
+		}
 	}
 	.nav {
 		margin-top:40px;

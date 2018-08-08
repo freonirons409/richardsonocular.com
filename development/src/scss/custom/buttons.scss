@@ -7,12 +7,17 @@
 			padding:15px 30px;
 			font-size:22px;
 			white-space:normal;
+			@include transition-all(0.15s);
 			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#179e1f+0,8cbc4f+100 */
 			background: rgb(23,158,31); /* Old browsers */
 			background: -webkit-linear-gradient(rgba(23,158,31,1) 0%, rgba(140,188,79,1) 100%);
 			background: -o-linear-gradient(rgba(23,158,31,1) 0%, rgba(140,188,79,1) 100%);
 			background: linear-gradient(rgba(23,158,31,1) 0%, rgba(140,188,79,1) 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#179e1f', endColorstr='#8cbc4f',GradientType=0 ); /* IE6-9 */
+			&:hover,&:active {
+				text-shadow: 1px 0 0 $white;
+				text-decoration:underline;
+			}
 		}
 		&.btn-primary {
 

@@ -15,7 +15,7 @@
 	
 	<?php include('ga.php'); ?>
 
-	<link rel="stylesheet" href="/assets/css/main.min.css?v=1533219525177">
+	<link rel="stylesheet" href="/assets/css/main.min.css?v=1533770814664">
 
 	<?php include('fonts.php'); ?>
 

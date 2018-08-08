@@ -43,8 +43,9 @@
 				max-width:none;
 			}
 			@include media-breakpoint-down(xs) {
-				min-height:200px;
-				max-width:420px;
+				height:200px;
+				max-width:none;
+				margin-left:-20px;
 			}
 		}
 	}
