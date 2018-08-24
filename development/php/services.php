@@ -1,6 +1,6 @@
 <?php 
 $page_title = "Services";
-$page_description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, consequuntur.";
+$page_description = "Richardson Ocular strives to provide the best in custom made ocular prosthetics tailor made for the unique characteristcs of each individual.";
 $page_keywords = "prosthetics, ocular, eyes, nashville, health, vision";
 
 include('includes/top.php'); ?>

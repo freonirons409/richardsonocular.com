@@ -1,6 +1,6 @@
 <?php 
 $page_title = "Ocular Prosthetics 101";
-$page_description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, consequuntur.";
+$page_description = "The following is important information you will want to know about your custom made prosthesis. The suggestions and recommendations are for the average patient. Any special instructions your Doctor or Ocularist gives you should take precedence.";
 $page_keywords = "prosthetics, ocular, eyes, nashville, health, vision";
 
 include('includes/top.php'); ?>

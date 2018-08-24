@@ -1,6 +1,6 @@
 <?php 
 $page_title = "403 Error";
-$page_description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, consequuntur.";
+$page_description = "Sorry, but you are not authorized to view this plage. Please return and try your selection again.";
 $page_keywords = "prosthetics, ocular, eyes, nashville, health, vision";
 include('includes/top-404.php'); ?>
 

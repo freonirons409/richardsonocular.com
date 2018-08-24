@@ -1,6 +1,6 @@
 <?php 
 $page_title = "Contact Us";
-$page_description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, consequuntur.";
+$page_description = "Below are our locations and phone numbers, please don’t hesitate to call with any questions or help with your prosthetic.";
 $page_keywords = "contact,prosthetics, ocular, eyes, nashville, health, vision";
 
 include('includes/top.php'); ?>

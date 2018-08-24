@@ -9,13 +9,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title><?php echo $page_title; ?> &rsaquo; Richardson Ocular Prosthetics</title>
 		<meta name="description" content="<?php echo $page_description; ?>">
-		<meta name="keywords" content="<?php echo $page_keywords; ?>"">
+		<meta name="keywords" content="<?php echo $page_keywords; ?>">
 	
 	<?php include('meta.php'); ?>
 	
 	<?php include('ga.php'); ?>
 
-	<link rel="stylesheet" href="/assets/css/main.min.css?v=1533770814664">
+	<link rel="stylesheet" href="/assets/css/main.min.css?v=1534959199475">
 
 	<?php include('fonts.php'); ?>
 

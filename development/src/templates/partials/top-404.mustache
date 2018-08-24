@@ -20,11 +20,12 @@
 		<meta name="description" content="{{page.description}}">
 	<!-- @endif -->
 	<!-- @if NODE_ENV=='live' -->
-		<meta name="keywords" content="<?php echo $page_keywords; ?>"">
+		<meta name="keywords" content="<?php echo $page_keywords; ?>">
 	<!-- @endif -->
 	<!-- @if NODE_ENV!='live' -->
 		<meta name="keywords" content="{{page.keywords}}">
 	<!-- @endif -->
+		<meta name="robots" content="nofollow,noindex">
 	
 	<!-- @if NODE_ENV=='live' -->
 	<?php include('meta.php'); ?>
